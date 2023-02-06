@@ -931,7 +931,7 @@ function barplot_form(button) {
 	// })
 	new_form.change(function () {
 		// If the table is not included hide the extra table options
-		if (!new_form.find('.table-options').find('.include-table input').prop('checked')) {
+		if (new_form.find('.table-options').find('input[value=graph]').prop('checked')) {
 			new_form.find('.table-options-extra').hide();
 			
 			return;
@@ -939,25 +939,24 @@ function barplot_form(button) {
 
 		// Otherwise show the extra table options
 		new_form.find('.table-options-extra').show();
+		new_form.find('.cross-tab-table-margins').show();
+		new_form.find('.cross-tab-table-percent-margins').show();
 
-		// If crosstab is not checked remove the margin options
-		if (!new_form.find('.cross-tab input').prop('checked')) {
+		// If crosstab isn't checked
+		if(!new_form.find('input[name=crosstab]').prop("checked")) {
+			// Hide table percent margin options
 			new_form.find('.cross-tab-table-percent-margins').hide();
+			// and hide table margin options
 			new_form.find('.cross-tab-table-margins').hide();
 			return;
 		}
 
-		// Otherwise display the margin options
-		new_form.find('.cross-tab-table-percent-margins').show();
-		new_form.find('.cross-tab-table-margins').show();
-
-		// If percents aren't selected hide the percent margin options
-		if (!new_form.find('.table-options').find('.cross-tab-table-percent input').prop('checked')) {
+		// If percents isn't checked
+		if (new_form.find('input[name=table_percents][value=false]').prop('checked')) {
+			// Hide table percent margin options
 			new_form.find('.cross-tab-table-percent-margins').hide();
-			
 			return;
 		}
-
 	});
 
 	new_form.find('.cross-tab input').change(function () {
