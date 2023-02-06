@@ -170,19 +170,13 @@ function likert_form(button) {
 			<label>Description<input type="text" name="description"></label>
 			<br><label>Size of field labels<input type="number" step="1" name="label_text" value="10"></input></label>
 			<div class="radio label-length">
-				<hr><h3>How should labels be handeled?</h3>
+				<hr><h3>How should x-axis be handeled?</h3>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="true" checked><div class="radio-button"></div>Wrap</label>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>Truncate</label>
 				<label class="radio-label"><input class="radio-state label-as-is" name="wrap_label" type="radio" value="true"><div class="radio-button"></div>As-is</label>
 				<br><label class="label-length-label"><span class="trunc-wrap">Wrap</span> after <input type="number" class="max_label_length" step="1" name="max_label_length" value="30"></input> characters</label>
 		  	</div>
 			<div class="radio axis-logic">
-			  <hr><h3>How should x-axis be handeled?</h3>
-			  <label>x-axis title size <input type="number" name="x_title_size" value="30" step="1"></label><br>
-			  <label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
-			  <label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
-			  <label class="radio-label"><input class="radio-state label-as-is" name="x_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
-			  <br><label class="x_title_length">Max x-axis characters<input type="number" step="1" name="x_title_length" value="80"></label>
 			  <hr><h3>How should y-axis be handeled?</h3>
 			  <label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
 			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
