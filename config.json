@@ -83,7 +83,7 @@
 		{
 			"key": "projects-api-tokens",
 			"name": "Projects API tokens",
-			"required": true,
+			"required": false,
 			"type": "sub_settings",
 			"repeatable":true,
 			"sub_settings":[
