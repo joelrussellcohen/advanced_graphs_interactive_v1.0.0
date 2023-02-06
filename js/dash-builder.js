@@ -170,7 +170,7 @@ function likert_form(button) {
 			<label>Description<input type="text" name="description"></label>
 			<br><label>Size of field labels<input type="number" step="1" name="label_text" value="10"></input></label>
 			<div class="radio label-length">
-				<hr><h3>How should x-axis be handeled?</h3>
+				<hr><h3>How should x-axis labels be handeled?</h3>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="true" checked><div class="radio-button"></div>Wrap</label>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>Truncate</label>
 				<label class="radio-label"><input class="radio-state label-as-is" name="wrap_label" type="radio" value="true"><div class="radio-button"></div>As-is</label>
