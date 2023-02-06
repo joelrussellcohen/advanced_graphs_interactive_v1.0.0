@@ -351,7 +351,7 @@ custom_likert <- function(x,
   
   if (wrap_label == TRUE && !is.null(max_label_length)) {
     x_lab_func <- function(x) str_wrap(x, width = max_label_length)
-  } else if (is.numeric(max_label_length) && max_label_length >= 3) {
+  } else if (max_label_length != as.numeric("inf") && max_label_length >= 33) {
     x_lab_func <- function(x) str_trunc(x, width = max_label_length)
   } else {
     x_lab_func <- function(x) x
@@ -735,7 +735,7 @@ custom_bars <- function(data,
   
   if (wrap_label == TRUE && !is.null(max_label_length)) {
     x_lab_func <- function(x) str_wrap(x, width = max_label_length)
-  } else if (is.numeric(max_label_length) && max_label_length >= 3) {
+  } else if (max_label_length != as.numeric("inf") && max_label_length >= 3) {
     x_lab_func <- function(x) str_trunc(x, width = max_label_length)
   } else {
     x_lab_func <- function(x) x
@@ -886,7 +886,7 @@ custom_pie <- function(data,
   if (wrap_label == TRUE && !is.null(max_label_length)) {
     # Use str_wrap as the shortening function
     x_lab_func <- function(x) str_wrap(x, width = max_label_length)
-  } else if (is.numeric(max_label_length) && max_label_length >= 3) {
+  } else if (max_label_length != as.numeric("inf") && max_label_length >= 3) {
     # Otherwise use str_trunc as the shortening function
     x_lab_func <- function(x) str_trunc(x, width = max_label_length)
   } else {
@@ -1004,7 +1004,7 @@ custom_stacked <- function(data,
                            max_bars = 20, 
                            max_colors = 20, 
                            wrap_labels = FALSE, 
-                           max_label_length = Inf, 
+                           max_label_length = as.numeric("inf"), 
                            digits = 2, 
                            sumfunc = "sum", 
                            legend_text=5, 
@@ -1028,6 +1028,8 @@ custom_stacked <- function(data,
   legend_text <- as.numeric(legend_text)
   legend_rows <- as.numeric(legend_rows)
   
+  wrap_labels = as.logical(wrap_labels)
+  
   x_title_size <- as.numeric(x_title_size)
   y_title_size <- as.numeric(y_title_size)
   
@@ -1049,7 +1051,7 @@ custom_stacked <- function(data,
   if (y_axis_logic == 'trunc')
     y_label = str_trunc(as_label(fill), max(c(y_title_length, 3)))
   
-  print(list(...))
+  
   
   # Returns max_bars evenly spaced bar labels
   bar_names <- eval_tidy(x, data = data) %>% unique()
@@ -1073,9 +1075,14 @@ custom_stacked <- function(data,
   
   print(wrap_labels)
   
-  label_func <- if (wrap_labels) str_wrap else str_trunc
-  
   max_label_length <- as.numeric(max_label_length)
+  
+  label_func <- if (wrap_labels || max_label_length == as.numeric("inf")) str_wrap else str_trunc
+  
+  if (max_label_length == as.numeric("inf"))
+    label_func <- function(x, width) x;
+  
+  print(list(...))
   
   # If they are grouped bar plots
   if (position == "dodge") {
