@@ -749,7 +749,7 @@ custom_bars <- function(data,
   
   # Pass the data to ggplot
   p <- list(data %>%
-    mutate(across(where(is.numeric), round, digits = digits)) %>%
+    mutate(across(where(is.numeric))) %>%
     arrange(!!x) %>%
     # Use x and y as out x and y
     ggplot(aes(x=!!x, y = !!y, fill = !!x)) +
