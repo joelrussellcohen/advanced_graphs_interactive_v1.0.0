@@ -886,7 +886,7 @@ custom_pie <- function(data,
   label_color <- if (any(is.na(categories))) c(viridis(length(categories)-1), "grey") else viridis(length(categories))
   
   # Compute whether text should be dark or light based off colours
-  text_color <- if_else(farver::decode_colour(label_color, "rgb", "hcl")[,"l"] > 50, "black", "white")
+  text_color <- ifelse(farver::decode_colour(label_color, "rgb", "hcl")[,"l"] > 50, "black", "white")
   
   categories_kept <- categories[n_spaces_indices_zeros_first(eval_tidy(y, data %>% arrange(!!x)), max_labels)]
   
@@ -910,7 +910,7 @@ custom_pie <- function(data,
            label = x_lab_func(replace_na(as.character(!!x), "NA")),      
            csum = rev(cumsum(rev(!!y))),
            pos = !!y/2 + lead(csum, 1),
-           pos = if_else(is.na(pos), !!y/2, pos)) %>%
+           pos = ifelse(is.na(pos), !!y/2, pos)) %>%
     # Remove the locations that aren't in the kept categories 
     # and those that won't show up as a slice
     filter(!!x %in% categories_kept & !!y != 0)
@@ -1124,7 +1124,7 @@ custom_stacked <- function(data,
     stack_colors <- data %>%
       group_by(!!x) %>%
       mutate(stack_colors = if (any(is.na(!!y))) c(turbo(length(!!y) - 1), "grey") else turbo(length(!!y)),
-             stack_text_colors = if_else(farver::decode_colour(stack_colors, "rgb", "hsl")[, "l"] > 50, "black", "white")
+             stack_text_colors = ifelse(farver::decode_colour(stack_colors, "rgb", "hsl")[, "l"] > 50, "black", "white")
       )
     # Add stack labels
       # Get the sizes for the individual stacks
@@ -1403,10 +1403,11 @@ custom_sumtab <- function(data, x, y, digits = 0, table_percents = FALSE, ...) {
     htmltools::HTML() 
 }
 
-build_barplot <- function(keep_unused = FALSE, include = "graph", ...) {
+build_barplot <- function(keep_unused = FALSE, include = "graph", remove_na = FALSE, ...) {
   args <- lapply(X = list(...), FUN = unlist)
   
-  keep_unused = as.logical(unlist(keep_unused))
+  keep_unused <- as.logical(unlist(keep_unused))
+  remove_na <- as.logical(unlist(remove_na))
   
   if (!exists("height", args))
     args[["count"]] <- TRUE
@@ -1422,6 +1423,8 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", ...) {
   x_label <- names_to_labels[x]
   field_names[['x']] <- args[['x']]
   args[['x']] <- sym(x_label)
+  
+  y <- ""
   
   grouping_fnc <- . %>%
     mutate(across(all_of(x), function(col) addNA(factor(col, options[[cur_column()]][['options_code']], options[[cur_column()]][['options_label']]), ifany = TRUE), .names = "{names_to_labels[.col]}")) %>%
@@ -1448,7 +1451,7 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", ...) {
     # Set the summmary function to take the sumfunc of height_field
     summarised_fnc <- . %>%
       summarize(!!sym(height_name) := if (n() == 0 || all(is.na(!!sym(height)))) 0 else match.fun(sumfunc)(!!sym(height), na.rm = TRUE)) %>%
-      mutate(!!sym(height_name) := if_else(is.na(!!sym(height_name)) | is.infinite(!!sym(height_name)), 0, !!sym(height_name))) %>%
+      mutate(!!sym(height_name) := ifelse(is.na(!!sym(height_name)) | is.infinite(!!sym(height_name)), 0, !!sym(height_name))) %>%
       ungroup()
   }
   
@@ -1479,6 +1482,11 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", ...) {
     args[['y']] <- sym(height_name)
   }
   
+  remove_na_optional <- . %>% mutate()
+  
+  if (remove_na)
+    remove_na_optional <- . %>% filter(!if_any(.cols = any_of(c(x, y)), .fns = is.na))
+  
   checkbox_group_x <- . %>% mutate()
   checkbox_group_y <- . %>% mutate()
   
@@ -1505,6 +1513,8 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", ...) {
     # (function(data) {print(options);return(data);}) %>%
     checkbox_group_x %>%
     checkbox_group_y %>%
+    remove_na_optional %>%
+    (function(data) {print(head(data));return(data);}) %>%
     grouping_fnc %>%
     summarised_fnc #%>%
     # (function(data) {print(data %>% select(c(last_col(2):last_col())));return(data);})
