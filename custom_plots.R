@@ -1382,7 +1382,7 @@ custom_sumtab <- function(data, x, y, digits = 0, table_percents = FALSE, ...) {
   }
   
   data %>%
-    mutate(!!x := as.character(!!x), across(where(is.numeric), .fns = scales::number, accuracy = digits)) %>%
+    mutate(!!x := as.character(!!x), across(where(is.numeric), .fns = round, digits = digits)) %>%
     rows_append(
       (.) %>%
         mutate(!!x := "Total") %>%
