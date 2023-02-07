@@ -630,7 +630,7 @@ function barplot_form(button) {
 			<label>Description<input type="text" name="description"></label>
 			<hr>
 			<div class="radio label-length">
-				<label>Bar Label Digits <input type="number" step="1" name="digits" value="2"></label>
+				<label>Bar Label Accuracy <input type="number" step="1" name="digits" value="1">(e.g 0.01)</label>
 				<hr><h3>How should option labels be handeled?</h3>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="true" checked><div class="radio-button"></div>Wrap</label>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>Truncate</label>

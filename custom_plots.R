@@ -1252,7 +1252,8 @@ custom_crosstab <- function(data,
                             title = "", 
                             table_percents = FALSE, 
                             percent_margin = NULL, 
-                            margin = NULL, 
+                            margin = NULL,
+                            digits = 0.01,
                             ...) {
   x <- as_label(enquo(x))
   y <- as_label(enquo(y))
@@ -1262,11 +1263,11 @@ custom_crosstab <- function(data,
   percent_margin <- as.numeric(percent_margin)
   table_percents <- as.logical(table_percents)
   
-  
+  digits <- as.numeric(digits)
 
   table <- xtabs(paste0("\`", fill, "\`~\`", x,"\`+\`",y, "\`"), data = data)
   
-  out <- add_totals(table)
+  out <- add_totals(table) %>% apply(c(1,2), scales::number, accuracy = digits)
   
   if (percent_margin == 3 && table_percents)
     out <- add_totals(prop.table(table)) %>%
@@ -1390,12 +1391,13 @@ custom_sumtab <- function(data, x, y, digits = 0, table_percents = FALSE, ...) {
   }
   
   data %>%
-    mutate(!!x := as.character(!!x), across(where(is.numeric), .fns = round, digits = digits)) %>%
+    mutate(!!x := as.character(!!x), across(where(is.numeric))) %>%
     rows_append(
       (.) %>%
         mutate(!!x := "Total") %>%
         group_by(!!x)%>%
         summarize(across(.fns = sum))) %>%
+        mutate(across(where(is.numeric), .fns = scales::number, accuracy = digits)) %>%
     kable() %>%
     # Output as html
     htmltools::HTML() 
