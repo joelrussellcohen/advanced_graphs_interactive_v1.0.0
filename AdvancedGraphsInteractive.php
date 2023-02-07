@@ -15,6 +15,7 @@ use Logging;
 use RCView;
 use Form;
 use Piping;
+use Event;
 
 class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 {
