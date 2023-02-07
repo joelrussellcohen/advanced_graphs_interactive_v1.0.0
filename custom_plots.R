@@ -31,6 +31,9 @@ library(rlang)
 # Used to create html images
 library(htmltools)
 
+# Used for number formatting in graphs
+library(scales)
+
 # side_by_side
 # Author: Joel Cohen
 # Description:
@@ -690,7 +693,7 @@ custom_bars <- function(data,
                               size = label_size)
     # If percent is FALSE plot the labels as is
     else
-      bar_labels <- geom_text(aes(label = replace(!!y, (1:length(!!y))[-n_spaced_indices(length(!!y), max_bars)], "")), vjust = -0.5, size = label_size)
+      bar_labels <- geom_text(aes(label = replace(scales::number(!!y, accuracy = digits, big.mark = ","), (1:length(!!y))[-n_spaced_indices(length(!!y), max_bars)], "")), vjust = -0.5, size = label_size)
   # If label2 is passed and there are fewer than max_bars
   else if (n_bars <= max_bars)
     # If percent is TRUE
@@ -931,7 +934,7 @@ custom_pie <- function(data,
     # Add labels to slices (amounts)
     xlab(y_label) +
     ylab('') +
-    geom_text(aes(label = replace(round(!!y, digits), !!y == 0, "")),
+    geom_text(aes(label = replace(scales::number(!!y, accuracy = digits, big.mark = ","), !!y == 0, "")),
               position = position_stack(vjust = 0.5),
               color = text_color,
               size = x_axis_text_size/2) +
@@ -1089,7 +1092,7 @@ custom_stacked <- function(data,
     # Set the size of the bar text based on the number of bars
     bar_text <-  max(1, 8 -7*x_bars*y_bars/(50))
     # Create a geom for the bar labels
-    bar_labels <- geom_text(aes(x = !!x, y = !!fill, label = replace(round(!!fill, digits), !!fill == 0, "")),
+    bar_labels <- geom_text(aes(x = !!x, y = !!fill, label = replace(scales::number(!!fill, accuracy = digits, big.mark = ","), !!fill == 0, "")),
                             position = (position_dodge(width = 0.9)), size = bar_text*2, vjust = -0.2)
     # Make the stack_labels blank
     stack_labels <- geom_blank()
@@ -1098,7 +1101,7 @@ custom_stacked <- function(data,
     # Set the size of the bar text based on the number of bars
     bar_text <- max(1, 8 - 7*x_bars/(50))
     # Create a geom for the bar labels
-    bar_labels <- geom_text(aes(x = !!x, y = !!fill, fill = NULL, label = replace(round(label, digits), label == 0, "")),
+    bar_labels <- geom_text(aes(x = !!x, y = !!fill, fill = NULL, label = replace(scales::number(label, accuracy = digits, big.mark = ","), label == 0, "")),
               data = data %>%
                 group_by(!!x) %>%
                 summarize(
@@ -1121,7 +1124,7 @@ custom_stacked <- function(data,
       # Set the size for the text based off the bar size
     stack_text <- 1 + (bar_text-1)*stack_size/max(stack_size)
       # Create a geom of labels
-    stack_labels <- geom_text(aes(x = !!x, y = !!fill, label = replace(round(!!fill, digits), !!fill == 0, "")),
+    stack_labels <- geom_text(aes(x = !!x, y = !!fill, label = replace(scales::number(!!fill, accuracy = digits, big.mark = ","), !!fill == 0, "")),
               position = (position_stack(vjust = 0.5)), color = stack_colors[["stack_text_colors"]], size = stack_text*2)
   }
   
