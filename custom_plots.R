@@ -635,6 +635,7 @@ custom_bars <- function(data,
                         x_axis_text_size = 20,
                         y_axis_text_size = 20,
                         palette = viridis(10),
+                        label_size = 10,
                         ...) {
   # enquo the passed parameters to be used in aes
   x <- enquo(x)
@@ -651,6 +652,8 @@ custom_bars <- function(data,
   
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
+  
+  label_size <- as.numeric(label_size)
 
   x_label = ''
   y_label = ''
@@ -682,7 +685,7 @@ custom_bars <- function(data,
   n_bars <- nrow(data)
   
   # Set the size of the label text based on the number of bars
-  label_size <- if (n_bars > 10) 6 else 10
+  # label_size <- if (n_bars > 10) 6 else 10
   
   # If label2 isn't passed or there are more than max_bars
   if (rlang::quo_is_null(label2))
@@ -839,6 +842,7 @@ custom_pie <- function(data,
                        x_axis_text_size = 20,
                        y_axis_text_size = 20,
                        palette = viridis(10),
+                       label_size = 10,
                        ...) {
   # Enquo the x and y variables
   x <- enquo(x)
@@ -854,6 +858,8 @@ custom_pie <- function(data,
   
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
+  
+  label_size <- as.numeric(label_size)
   
   x_label = ''
   y_label = ''
@@ -937,7 +943,7 @@ custom_pie <- function(data,
     geom_text(aes(label = replace(scales::number(!!y, accuracy = digits, big.mark = ","), !!y == 0, "")),
               position = position_stack(vjust = 0.5),
               color = text_color,
-              size = x_axis_text_size/2) +
+              size = label_size/2) +
     guides(fill=guide_legend(title.position= "top", title.hjust = 0.5, nrow = legend_rows)) +
     # Add labels to slices
     #scale_y_continuous(breaks = label_pos$pos, labels = label_pos$label)+
@@ -1022,6 +1028,7 @@ custom_stacked <- function(data,
                            x_axis_text_size = 20,
                            y_axis_text_size = 20,
                            palette = viridis(10),
+                           label_size = 10,
                            ...) {
   # Enquo our passed parameters so they can be used in aes
   x <- enquo(x)
@@ -1038,6 +1045,8 @@ custom_stacked <- function(data,
   
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
+  
+  label_size <- as.numeric(label_size)
   
   x_label = ''
   y_label = ''
@@ -1085,12 +1094,11 @@ custom_stacked <- function(data,
   if (max_label_length == as.numeric("inf"))
     label_func <- function(x, width) x;
   
-  print(list(...))
   
   # If they are grouped bar plots
   if (position == "dodge") {
     # Set the size of the bar text based on the number of bars
-    bar_text <-  max(1, 8 -7*x_bars*y_bars/(50))
+    bar_text <-  label_size # max(1, 8 -7*x_bars*y_bars/(50))
     # Create a geom for the bar labels
     bar_labels <- geom_text(aes(x = !!x, y = !!fill, label = replace(scales::number(!!fill, accuracy = digits, big.mark = ","), !!fill == 0, "")),
                             position = (position_dodge(width = 0.9)), size = bar_text*2, vjust = -0.2)
@@ -1099,7 +1107,7 @@ custom_stacked <- function(data,
   # Otherwise if they are stacked bar plots
   } else {
     # Set the size of the bar text based on the number of bars
-    bar_text <- max(1, 8 - 7*x_bars/(50))
+    bar_text <- label_size # max(1, 8 - 7*x_bars/(50))
     # Create a geom for the bar labels
     bar_labels <- geom_text(aes(x = !!x, y = !!fill, fill = NULL, label = replace(scales::number(label, accuracy = digits, big.mark = ","), label == 0, "")),
               data = data %>%
