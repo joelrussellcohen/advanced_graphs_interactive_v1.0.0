@@ -1258,7 +1258,7 @@ custom_crosstab <- function(data,
 
   table <- xtabs(paste0("\`", fill, "\`~\`", x,"\`+\`",y, "\`"), data = data)
   
-  out <- add_totals(table %>% apply(c(1,2), scales::number))
+  out <- add_totals(table)
   
   if (percent_margin == 3 && table_percents)
     out <- add_totals(prop.table(table)) %>%
