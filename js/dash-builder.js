@@ -649,7 +649,7 @@ function barplot_form(button) {
 								</tr>
 								<tr>
 									<td>123.456</td>
-									<td>123.06</td>
+									<td>123.46</td>
 									<td>123.6</td>
 									<td>1</td>
 									<td>120</td>
