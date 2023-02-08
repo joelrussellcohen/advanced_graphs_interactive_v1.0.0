@@ -485,6 +485,11 @@
   .cross-tbl-container th {
     padding-left: 3px;
     padding-right: 3px;
+    white-space: nowrap;
+  }
+
+  .cross-tbl-container td {
+    white-space: nowrap;
   }
   
   .total-column tbody td:last-child {
@@ -540,7 +545,13 @@
   .sum-tbl-container th {
     padding-left: 3px;
     padding-right: 3px;
+    white-space: nowrap;
   }
+
+  .sum-tbl-container td {
+    white-space: nowrap;
+  }
+
   .sum-tbl-container tbody td:last-child {
     color: #e90000;
     border-left: 1px solid;
