@@ -634,7 +634,7 @@ function barplot_form(button) {
 				<div style="display: flex; gap: 16px;">
 					<label>Bar Label Accuracy <input type="number" step="1" name="digits" value="1"></label>
 						<details>
-						<summary>Accuracy Details</summary>
+						<summary>Accuracy Example</summary>
 							<table class="explanation-table">
 								<tr>
 									<th></th>
@@ -643,14 +643,14 @@ function barplot_form(button) {
 								<tr>
 									<th>Example Number</th>
 									<th>0.01</th>
-									<th>0.6</th>
+									<th>0.1</th>
 									<th>1</th>
 									<th>10</th>
 								</tr>
 								<tr>
 									<td>123.456</td>
 									<td>123.46</td>
-									<td>123.6</td>
+									<td>123.5</td>
 									<td>123</td>
 									<td>120</td>
 								</tr>
@@ -680,7 +680,7 @@ function barplot_form(button) {
 			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none"><span class="checkmark"></span></label>
 			<br><label>Legend text size<input type="number" step="1" name="legend_text" value="25"></input></label>
 			<br><label>How many rows in the legend <input type="number" step="1" name="legend_rows" value="1"></input>(in case legend spills off image)</label>
-			<br><label>Size of "amount" labels<input type="number" step="1" name="label_size" value="10"></input></label>
+			<br><label>Size of figures on bars<input type="number" step="1" name="label_size" value="10"></input></label>
 			<button class="open-color-picker" type="button">Choose Palette</button>
 			<div class="color-picker-modal">
 				<div class="color-picker-window">
