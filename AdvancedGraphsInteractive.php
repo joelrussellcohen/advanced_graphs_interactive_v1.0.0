@@ -26,6 +26,7 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	public $instruments_dictionary;
 	public $repeat_instruments;
 	public $repeats_dictionary;
+	public $report_parameters;
 
 	public $query_result;
 	
@@ -58,6 +59,10 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		
 		$this->report = $this->get_report($pid, $report_id, $live_filters, $user_id = $user_id, "array");
 		
+		$q = $this->query("select * from redcap_reports where report_id = $report_id");
+		$this->report_parameters = $q->fetch_assoc();
+
+
 		$Proj = new Project($pid);
 
 		$this->instruments = array();
@@ -741,6 +746,9 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	function checkbox_groups() {
 		if (!isset($this->data_dictionary) || !isset($this->report_fields) || !isset($this->repeats_dictionary))
 			return false;
+
+		if ($this->report_parameters['combine_checkbox_values'] != '0')
+			return array();
 
 		// Create an array that groups fields by repeating instruments
 		$checkbox_fields = array();
