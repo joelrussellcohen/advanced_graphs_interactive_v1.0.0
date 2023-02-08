@@ -25,7 +25,7 @@ $module->loadJS("leaflet.markercluster.freezable.js", "mapdependencies/leaflet-m
 $module->loadJS("leaflet.markercluster.layersupport.js", "mapdependencies/leaflet-markercluster-1.0.5");
 $module->loadCSS("advanced-graphs.css");
 
-echo "<center><h1>$dash_title</h1></center><div id=\"advanced_graphs\"><h2>Loading your dashboard...</h1><h2>Please Wait</h2></div>";
+echo "<center id=\"advanced_graphs_title\"><h1>$dash_title</h1></center><div id=\"advanced_graphs\"><h2>Loading your dashboard...</h1><h2>Please Wait</h2></div>";
 $dashboard = $module->getDashboards($pid, $dash_id);
 
 require_once APP_PATH_DOCROOT . 'ProjectGeneral/footer.php';
@@ -43,6 +43,7 @@ $original_params = json_encode($query);
     var report_object = <?php echo $dashboard['body'];?>;
     var live_filters = <?php echo $dashboard['live_filters'];?>;
     var pid = <?php echo $pid;?>;
+    var dash_id = <?php echo $dash_id;?>;
     var report_id = "<?php echo $dashboard['report_id'];?>";
     var refferer_parameters = <?php echo $original_params;?>;
     // Urls to other pages
@@ -52,4 +53,5 @@ $original_params = json_encode($query);
     var view_dash_url = "<?php echo  $module->getUrl("view_dash.php");?>";
     console.log(report_object);
     generate_graphs();
+    $('#advanced_graphs_title').before(`<button style="float: right;" class="report_btn jqbuttonmed ui-button ui-corner-all ui-widget" onclick="window.location.href = '${edit_dash_url}&pid=${pid}&amp;dash_id=${dash_id}&amp;addedit=1';" style="font-size:12px;"><i class="fas fa-pencil-alt fs10"></i> Edit Report</button>`);
 </script>
