@@ -788,7 +788,7 @@ custom_bars <- function(data,
          legend.text = element_text(size = legend_text)
     )  +
     # Increase the top of the y-axis so labels don't spill off the plot
-    scale_y_continuous(expand = expansion(c(0,0.2))) +
+    scale_y_continuous(expand = expansion(c(0,0.2)), labels = scales::comma) +
     # Add the previously created x axis labels
     bar_labels)
   
@@ -1168,7 +1168,7 @@ custom_stacked <- function(data,
       scale_fill_manual(values = colorRampPalette(palette)(y_bars), drop = TRUE, na.value = "grey") +
     # Only include labels for max_bars bars
     scale_x_discrete(breaks = replace(as.character(bar_names), !(bar_names %in% bar_breaks), ""), labels = function(x) suppressWarnings(label_func(x, width = max_label_length))) +
-    scale_y_continuous(expand = expansion(c(0, 0.25))) +
+    scale_y_continuous(expand = expansion(c(0, 0.25)), labels = scales::comma) +
     # Add a title to the plot
     #ggtitle(title) +
     # Remove the title from the guide
