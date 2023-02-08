@@ -565,14 +565,14 @@ build_scatter <- function(x, y, title="", ...) {
            & substr(text_validation_type_or_show_slider_number, 1, 4) == "date") %>%
     # Select the field name
     transmute(field_name,
-              try_format = case_when(text_validation_type_or_show_slider_number == "date_dmy" ~ "%d-%m-%Y",
-                                     text_validation_type_or_show_slider_number == "date_mdy"~ "%m-%d-%Y",
+              try_format = case_when(text_validation_type_or_show_slider_number == "date_dmy" ~ "%Y-%m-%d",
+                                     text_validation_type_or_show_slider_number == "date_mdy"~ "%Y-%m-%d",
                                      text_validation_type_or_show_slider_number == "date_ymd"~ "%Y-%m-%d",
-                                     text_validation_type_or_show_slider_number == "datetime_dmy"~ "%d-%m-%Y %H:%M",
-                                     text_validation_type_or_show_slider_number == "datetime_mdy"~ "%m-%d-%Y %H:%M",
+                                     text_validation_type_or_show_slider_number == "datetime_dmy"~ "%Y-%m-%d %H:%M",
+                                     text_validation_type_or_show_slider_number == "datetime_mdy"~ "%Y-%m-%d %H:%M",
                                      text_validation_type_or_show_slider_number == "datetime_ymd"~ "%Y-%m-%d %H:%M",
-                                     text_validation_type_or_show_slider_number == "datetime_seconds_dmy"~ "%d-%m-%Y %H:%M:%S",
-                                     text_validation_type_or_show_slider_number == "datetime_seconds_mdy"~ "%m-%d-%Y %H:%M:%S",
+                                     text_validation_type_or_show_slider_number == "datetime_seconds_dmy"~ "%Y-%m-%d %H:%M:%S",
+                                     text_validation_type_or_show_slider_number == "datetime_seconds_mdy"~ "%Y-%m-%d %H:%M:%S",
                                      text_validation_type_or_show_slider_number == "datetime_seconds_ymd"~ "%Y-%m-%d %H:%M:%S"))
   args[['data']] <- report_data %>%
     mutate(
