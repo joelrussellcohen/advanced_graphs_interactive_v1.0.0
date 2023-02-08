@@ -59,8 +59,15 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		
 		$this->report = $this->get_report($pid, $report_id, $live_filters, $user_id = $user_id, "array");
 		
-		$q = $this->query("select * from redcap_reports where report_id = $report_id");
-		$this->report_parameters = $q->fetch_assoc();
+		$this->report_parameters = array();
+
+		$this->report_parameters['combine_checkbox_values'] = "0";
+
+		if ($report_id != "0" && $report_id != "ALL") {
+			$q = $this->query("select * from redcap_reports where report_id = $report_id");
+			$this->report_parameters = $q->fetch_assoc();
+		}
+		
 
 
 		$Proj = new Project($pid);
