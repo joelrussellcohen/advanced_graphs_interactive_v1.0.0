@@ -65,13 +65,13 @@ repeat_instruments <- read.csv(repeat_instruments_path, header = TRUE, sep = ","
 
 
 # Remove HTML if there is any  
-html_labels <- stripHTML(data_dictionary[data_dictionary$field_name %in% names(report_data), "field_label"])
+html_labels <- stripHTML(data_dictionary[["field_label"]])
 
 # # Remove any entries created which hold only whitespace
 # html_labels <- html_labels[which(nchar(trimws(html_labels, whitespace = "[ \t\r\n\xA0\f]")) != 0)]
 
 # Fix duplicate label names
-data_dictionary[data_dictionary$field_name %in% names(report_data), "field_label"] <- vctrs::vec_as_names(html_labels, repair = "unique", quiet = TRUE)
+data_dictionary[["field_label"]] <- vctrs::vec_as_names(html_labels, repair = "unique", quiet = TRUE)
 
 # Create a list of options to map factors
 options <- parse_categories(data_dictionary)
