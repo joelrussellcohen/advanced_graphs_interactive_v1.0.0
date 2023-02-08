@@ -557,6 +557,56 @@
     border-color: black;
   }
 
+  .explanation-table{
+    border: none;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .explanation-table th {
+    border: 2px;
+    border-color: #2196F3;
+    border-style: solid;
+    padding: 5px;
+  }
+
+  .explanation-table td {
+    border: 2px;
+    border-color: #2196F3;
+    border-style: solid;
+    padding: 5px;
+  }
+
+  .explanation-table tr:nth-child(1) th:nth-child(1) {
+    border: none;
+  }
+
+  .explanation-table tr:nth-child(n+2) th:nth-child(n+2) {
+    border: none;
+    border-bottom: 1px;
+    border-bottom-color: #2196F3;
+    border-bottom-style: solid;
+  }
+
+  .explanation-table tr:nth-child(n+2) td:nth-child(n+2) {
+    border: none;
+    border-bottom: 2px;
+    border-bottom-color: #2196F3;
+    border-bottom-style: solid;
+  }
+
+  .explanation-table tr:nth-child(n+1) th:nth-child(5) {
+    border-right:2px;
+    border-color: #2196F3;
+    border-right-style: solid;
+  }
+
+  .explanation-table tr:nth-child(n+1) td:nth-child(5) {
+    border-right:2px;
+    border-color: #2196F3;
+    border-right-style: solid;
+  }
+
   /* CSS From help for instruction dropdowns */
 
   .instructions {

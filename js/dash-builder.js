@@ -574,6 +574,7 @@ function barplot_form(button) {
 								</select>
 							</label>
 							<br><label class="container keep-unused">Keep Unused Options (option pairs for crosstabs) <input type="checkbox" name="keep_unused" value="true" checked><span class="checkmark"></span></label>
+							<br><label class="container remove-na">Remove NA<input type="checkbox" name="remove_na" value="true"><span class="checkmark"></span></label>
 							<div class="table-options">
 								<div class="radio">
 									<h2>Include...</h2>
@@ -630,7 +631,32 @@ function barplot_form(button) {
 			<label>Description<input type="text" name="description"></label>
 			<hr>
 			<div class="radio label-length">
-				<label>Bar Label Accuracy <input type="number" step="1" name="digits" value="1">(e.g 0.01 for 2 decimal places, 100 for nearest 100th, etc...)</label>
+				<div style="display: flex; gap: 16px;">
+					<label>Bar Label Accuracy <input type="number" step="1" name="digits" value="1"></label>
+						<details>
+						<summary>Accuracy Details</summary>
+							<table class="explanation-table">
+								<tr>
+									<th></th>
+									<th colspan="4">Precision</th>
+								</tr>
+								<tr>
+									<th>Example Number</th>
+									<th>0.01</th>
+									<th>0.6</th>
+									<th>1</th>
+									<th>10</th>
+								</tr>
+								<tr>
+									<td>123.456</td>
+									<td>123.06</td>
+									<td>123.6</td>
+									<td>1</td>
+									<td>120</td>
+								</tr>
+							</table>
+						</details>
+				</div>
 				<hr><h3>How should option labels be handeled?</h3>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="true" checked><div class="radio-button"></div>Wrap</label>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>Truncate</label>
@@ -2022,6 +2048,10 @@ function load_form(graph) {
 
 	// Check all of the checkboxes that are meant to be included
 	form.find("input[type=checkbox]").each(function() {
+		// The checkbox is unchecked
+		$(this).prop('checked', false).change();
+
+		// Unless the name appears in the form data and the value is in the name
 		if ($(this).attr('name') in form_data)
 			$(this).prop('checked', form_data[$(this).attr('name')].includes($(this).val())).change();
 	});
