@@ -525,7 +525,7 @@
     color: black;
   }
   
-  .sum-tbl-container tbody tr:last-child td:last-child {
+  .sum-tbl-total tbody tr:last-child td:last-child {
     font-weight: bold;
     color: #e90000;
   }
@@ -558,7 +558,7 @@
     border-color: black;
   }
 
-  .sum-tbl-container tbody tr:last-child td:first-child {
+  .sum-tbl-total tbody tr:last-child td:first-child {
     font-weight: bold;
     color: black;
   }

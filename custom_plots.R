@@ -98,10 +98,14 @@ crosstab_div <- function(table, title = "", ...) {
   )
 }
 
-sumtab_div <- function(table, title = "", ...) {
+sumtab_div <- function(table, title = "", table_percents = FALSE, ...) {
+  table_percents <- as.logical(table_percents)
+  classes <- if(table_percents) "sum-tbl-container" else "sum-tbl-container sum-tbl-total" 
   paste0(
-    "<div class=\"sum-tbl-container\">
-    <h5>", title, "</h5>",
+    "<div class=\"",
+	classes,
+	"\">
+	<h5>", title, "</h5>",
     table,
     "</div>"
   )
@@ -1320,6 +1324,9 @@ table_to_dataframe <- function(table) {
 
   first_col <- setNames(data.frame(rownames(out)), names(dimnames(table))[[1]])
 
+  print(first_col)
+  
+
   # Let the output be the first column on the left with the other columns on the right
   out <- cbind(first_col, out)
   
@@ -1387,7 +1394,7 @@ custom_sumtab <- function(data, x, y, digits = 0, table_percents = FALSE, ...) {
         transmute(!!x := !!x, !!sym(paste0("Percent of ", as_label(y))) := !!y) %>%
         kable() %>%
         # Output as html
-        htmltools::HTML() )
+        htmltools::HTML())
   }
   
   data %>%
