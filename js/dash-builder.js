@@ -670,14 +670,16 @@ function barplot_form(button) {
 			  <label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
 			  <label class="radio-label"><input class="radio-state label-as-is" name="x_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
 			  <br><label class="x_title_length">Max x-axis characters<input type="number" step="1" name="x_title_length" value="80"></label>
+			  <br><label>Size of x-axis labels<input type="number" step="1" name="x_axis_text_size" value="20"></input></label>
 			  <hr><h3>How should y-axis be handeled?</h3>
 			  <label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
 			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
 			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
 			  <label class="radio-label"><input class="radio-state label-as-is" name="y_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
 			  <br><label class="y_title_length">Max y-axis characters<input type="number" step="1" name="y_title_length" value="80"></label>
+			  <br><label>Size of y-axis labels<input type="number" step="1" name="y_axis_text_size" value="20"></input></label>
 		  	</div>
-			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none"><span class="checkmark"></span></label>
+			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none" checked><span class="checkmark"></span></label>
 			<br><label>Legend text size<input type="number" step="1" name="legend_text" value="25"></input></label>
 			<br><label>How many rows in the legend <input type="number" step="1" name="legend_rows" value="1"></input>(in case legend spills off image)</label>
 			<br><label>Size of figures on bars<input type="number" step="1" name="label_size" value="10"></input></label>
@@ -986,7 +988,11 @@ function barplot_form(button) {
 			return new_form.find('.y-checked').prop('checked', false);
 
 		new_form.find('.y-field').change();
-	}); 
+	});
+	
+	new_form.find('.cross-tab input').change(function () {
+		new_form.find('input[name=show_legend]').prop('checked', !$(this).prop('checked')).change();
+	});
 
 	new_form.change(function () {
 		// If either the x-field or the height is not selected, we cannont preview

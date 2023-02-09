@@ -314,6 +314,9 @@ custom_likert <- function(x,
   x_title_size <- as.numeric(x_title_size)
   y_title_size <- as.numeric(y_title_size)
   
+   x_axis_text_size <- as.numeric(x_axis_text_size)
+  y_axis_text_size <- as.numeric(y_axis_text_size)
+  
   x_label = ''
   y_label = ''
   
@@ -657,6 +660,9 @@ custom_bars <- function(data,
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
   
+  x_axis_text_size <- as.numeric(x_axis_text_size)
+  y_axis_text_size <- as.numeric(y_axis_text_size)
+  
   label_size <- as.numeric(label_size)
 
   x_label = ''
@@ -863,6 +869,9 @@ custom_pie <- function(data,
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
   
+  x_axis_text_size <- as.numeric(x_axis_text_size)
+  y_axis_text_size <- as.numeric(y_axis_text_size)
+  
   label_size <- as.numeric(label_size)
   
   x_label = ''
@@ -955,6 +964,8 @@ custom_pie <- function(data,
     # Add title
     #ggtitle(title) +
     theme(
+	# Make background white
+	  panel.background = element_blank(),
       # Remove ticks
       axis.ticks = element_blank(),
       axis.text = element_blank(),
@@ -1049,6 +1060,9 @@ custom_stacked <- function(data,
   
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
+  
+  x_axis_text_size <- as.numeric(x_axis_text_size)
+  y_axis_text_size <- as.numeric(y_axis_text_size)
   
   label_size <- as.numeric(label_size)
   
