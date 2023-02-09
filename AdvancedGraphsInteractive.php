@@ -51,13 +51,40 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		$this->module_css_path = str_replace("\\","/",$this->getModulePath())."css/";
 		$this->module_path = str_replace("\\","/",$this->getModulePath());
     }
+	
+	function extract_options($select_choices_or_calculations) {
+		$options = array();
+		
+		foreach(explode("|", $select_choices_or_calculations) as $option) {
+			$option_split = explode(",", $option, 2);
+			$options[trim($option_split[0])] = trim($option_split[1]);
+		}
+		
+		return $options;
+	}
 
 	function initialize_report($pid, $user_id, $report_id, $live_filters) {
 		$this->data_dictionary = MetaData::getDataDictionary("array", false, array(), array(), false, false, null, $pid);
 		
 		$this->report_fields = $this->get_accessible_fields($pid, $user_id, $report_id);
 		
-		$this->report = $this->get_report($pid, $report_id, $live_filters, $user_id = $user_id, "array");
+		$returnFieldsForFlatArrayData = array();
+		
+		foreach($this->report_fields as $field_name) {
+			$field = $this->data_dictionary[$field_name];
+			if ($field['field_type'] != 'checkbox') {
+				$returnFieldsForFlatArrayData[] = $field_name;
+				continue;
+			}
+				
+			$field_numbers = array_keys($this->extract_options($field['select_choices_or_calculations']));
+			
+			foreach ($field_numbers as $field_number) {
+				$returnFieldsForFlatArrayData[] = "{$field_name}___{$field_number}";
+			}
+		}
+		
+		$this->report = $this->get_report($pid, $report_id, $live_filters, $user_id = $user_id, "array", $returnFieldsForFlatArrayData);
 		
 		$this->report_parameters = array();
 
@@ -490,7 +517,7 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 
 	}
 
-	function get_report($pid, $report_id, $live_filters, $user_id=null, $format="csvraw") {
+	function get_report($pid, $report_id, $live_filters, $user_id=null, $format="csvraw", $returnFieldsForFlatArrayData = array()) {
 		$hashRecordID = true;
 		$removeIdentifierFields = true;
 		$removeUnvalidatedTextFields = true;
@@ -522,8 +549,7 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		// Build live filter logic from parameters
 		list ($liveFilterLogic, $liveFilterGroupId, $liveFilterEventId) = self::buildReportDynamicFilterLogicReferrer($report_id, $live_filters);
 
-		$as_array = ($format == "array") ?  $this->report_fields : array();
-	
+		// $as_array = array();
 		// Retrieve report from redcap
 		// $content = REDCap::getReport($report_id, $format, false, false);
 		
@@ -531,7 +557,7 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 										false, false, $removeIdentifierFields, $hashRecordID, $removeUnvalidatedTextFields,
 										$removeNotesFields, $removeDateFields, false, false, array(), 
 										array(), false, false, 
-										false, true, true, $liveFilterLogic, $liveFilterGroupId, $liveFilterEventId, true, ",", '', $as_array);
+										false, true, true, $liveFilterLogic, $liveFilterGroupId, $liveFilterEventId, true, ",", '', $returnFieldsForFlatArrayData);
 	
 										
 		return $content;
@@ -765,9 +791,25 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 			$field = $this->data_dictionary[$field_name];
 
 			$type_is_checkbox = $field['field_type'] == 'checkbox';
+			
+			$checkbox_empty = true;
+			
+			foreach($this->report as $record_num => $record) {
+				if (!$checkbox_empty)
+					break;
+				
+				$each_checkbox = preg_grep("/{$field_name}___[0-9]+\\b/", array_keys($record));
+				
+				foreach($each_checkbox as $checkbox) {
+					if ($record[$checkbox] == "1") {
+						$checkbox_empty = false;
+						break;
+					}
+				}
+			}
 
-			// If the field is checkbox add it to the corresponding instrument
-			if ($type_is_checkbox) {
+			// If the field is checkbox and the field is not empty add it to the corresponding instrument
+			if ($type_is_checkbox && !$checkbox_empty) {
 				// Match it to the appopriate instrument.
 				if (in_array($field['form_name'], array_keys($this->repeats_dictionary))) {
 					$checkbox_fields[$field['form_name']]['fields'][] = $field_name;

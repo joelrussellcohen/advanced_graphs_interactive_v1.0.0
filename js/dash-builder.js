@@ -682,7 +682,7 @@ function barplot_form(button) {
 			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none" checked><span class="checkmark"></span></label>
 			<br><label>Legend text size<input type="number" step="1" name="legend_text" value="25"></input></label>
 			<br><label>How many rows in the legend <input type="number" step="1" name="legend_rows" value="1"></input>(in case legend spills off image)</label>
-			<br><label>Size of figures on bars<input type="number" step="1" name="label_size" value="10"></input></label>
+			<br><label>Size of figures on bars/slices<input type="number" step="1" name="label_size" value="10"></input></label>
 			<button class="open-color-picker" type="button">Choose Palette</button>
 			<div class="color-picker-modal">
 				<div class="color-picker-window">
