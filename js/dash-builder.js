@@ -173,17 +173,20 @@ function likert_form(button) {
 				<hr><h3>How should x-axis labels be handeled?</h3>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="true" checked><div class="radio-button"></div>Wrap</label>
 				<label class="radio-label"><input class="radio-state" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>Truncate</label>
-				<label class="radio-label"><input class="radio-state label-as-is" name="wrap_label" type="radio" value="true"><div class="radio-button"></div>As-is</label>
+				<label class="radio-label"><input class="radio-state label-as-is" name="wrap_label" type="radio" value="false"><div class="radio-button"></div>As-is</label>
 				<br><label class="label-length-label"><span class="trunc-wrap">Wrap</span> after <input type="number" class="max_label_length" step="1" name="max_label_length" value="30"></input> characters</label>
 		  	</div>
 			<div class="radio axis-logic">
-			  <hr><h3>How should y-axis be handeled?</h3>
-			  <label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
-			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
-			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
-			  <label class="radio-label"><input class="radio-state label-as-is" name="y_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
-			  <br><label class="y_title_length">Max y-axis characters<input type="number" step="1" name="y_title_length" value="80"></label>
-		  	</div>
+			  <div class="y-axis-logic">
+			  	<hr><h3>How should y-axis be handeled?</h3>
+			  	<label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
+			  	<label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
+			  	<label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
+			  	<label class="radio-label"><input class="radio-state label-as-is" name="y_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
+			  	<br><label class="y_title_length">Max y-axis characters<input type="number" step="1" name="y_title_length" value="80"></label>
+		  	  </div>
+			  <div></div>
+			</div>
 			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none"><span class="checkmark"></span></label>
 			<br><label>Legend text size<input type="number" step="1" name="legend_text" value="14"></input></label>
 			<br><label>How many rows in the legend <input type="number" step="1" name="legend_rows" value="1"></input>(in case legend spills off image)</label>
@@ -366,14 +369,33 @@ function scatter_form(button) {
 							<br><label>Instrument<span class="required">*</span><select class="instrument-selector  name="instrument">${instruments}</select></label><br>
 							<label>"X" field<span class="required">*</span><select class="x-field field-selector" name="x"></select></label>
 							<label>"Y" field<span class="required">*</span><select class="y-field field-selector" name="y"></select></label>
-							<label class="container line">Line?<input type="checkbox" name="line" value="true"><span class="checkmark"></span></label>
 						</div>
-						<div class="form-right"></div>`;
-
+						<div class="form-right">
+							<label class="container line">Line?<input type="checkbox" name="line" value="true"><span class="checkmark"></span></label>
+							<div class="line-options">
+								<label>Line thickness<input type="number" value="2" step="0.1" name="line_thickness"></label>
+								<br><label>Line Color: <input type="color" value="#032CFC" name="line_color"></label>
+							</div>
+							<label class="container nodes">Nodes?<input type="checkbox" name="nodes" value="true"><span class="checkmark"></span></label>
+							<div class="shape-options">
+								<label>Node size: <input type="number" name="dot_size" value="6" step="1"></label>
+								<br><label>Node shape:
+										<select name="node_shape">
+											<option value="19">&#x25CF;</option>
+											<option value="15">&#x25A0;</option>
+											<option value="17">&#x25B2;</option>
+											<option value="1">&#x25CB;</option>
+											<option value="0">&#x25A1;</option>
+											<option value="2">&#x25B3;</option>
+										</select>
+									</label>
+								<br><label>Node Color: <input type="color" value="#03a5fc" name="shape_color"></label>
+							</div>
+						</div>`;
+						
 	let other_options = 
 			`
 			<label>Description<input type="text" name="description"></label>
-			<br><label>Dot size<input type="number" name="dot_size" value="6" step="1"></label>
 			<div class="radio axis-logic">
 				<hr><h3>How should x-axis be handeled?</h3>
 				<label>x-axis title size <input type="number" name="x_title_size" value="30" step="1"></label><br>
@@ -392,6 +414,9 @@ function scatter_form(button) {
 
 	// Create a new form with default buttons
 	let new_form = create_new_form(button, main_options, other_options);
+	
+	new_form.find('.line-options').hide();
+	new_form.find('.shape-options').hide();
 
 	function update_options() {
 		// Let the selected instrument be the currently selected one
@@ -461,6 +486,22 @@ function scatter_form(button) {
 	// When the instrument changes
 	new_form.find('.instrument-selector').change(function () {
 		update_options();
+	});
+	
+	// When the line checkbox changes show or hide line-options
+	new_form.find('input[name=line]').change(function() {
+		if ($(this).prop('checked'))
+			return new_form.find('.line-options').show();
+		
+		new_form.find('.line-options').hide();
+	});
+	
+	// When the nodes checkbox changes show or hide shape-options
+	new_form.find('input[name=nodes]').change(function() {
+		if ($(this).prop('checked'))
+			return new_form.find('.shape-options').show();
+		
+		new_form.find('.shape-options').hide();
 	});
 
 	// When a field gets selected
@@ -621,6 +662,14 @@ function barplot_form(button) {
 									</div>
 							</div>
 						</div>
+						<div class="x-others">
+							<h3>Other responses for "X"</h3>
+							<div class="x-others-check"></div>
+						</div>
+						<div class="y-others">
+							<h3>Other responses for "Y"</h3>
+							<div class="y-others-check"></div>
+						</div>
 						<input class="is-count" type="checkbox" name="count" value="true" hidden></input>
 						<input class="x-checked" type="checkbox" name="checkbox_fields" value="x" hidden></input>
 						<input class="y-checked" type="checkbox" name="checkbox_fields" value="y" hidden></input>
@@ -664,21 +713,25 @@ function barplot_form(button) {
 				<br><label class="label-length-label"><span class="trunc-wrap">Wrap</span> after <input type="number" class="max_label_length" step="1" name="max_label_length" value="30"></input> characters</label>
 		  	</div>
 			<div class="radio axis-logic">
-			  <hr><h3>How should x-axis be handeled?</h3>
-			  <label>x-axis title size <input type="number" name="x_title_size" value="30" step="1"></label><br>
-			  <label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
-			  <label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
-			  <label class="radio-label"><input class="radio-state label-as-is" name="x_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
-			  <br><label class="x_title_length">Max x-axis characters<input type="number" step="1" name="x_title_length" value="80"></label>
-			  <br><label>Size of x-axis labels<input type="number" step="1" name="x_axis_text_size" value="20"></input></label>
-			  <hr><h3>How should y-axis be handeled?</h3>
-			  <label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
-			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
-			  <label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
-			  <label class="radio-label"><input class="radio-state label-as-is" name="y_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
-			  <br><label class="y_title_length">Max y-axis characters<input type="number" step="1" name="y_title_length" value="80"></label>
-			  <br><label>Size of y-axis labels<input type="number" step="1" name="y_axis_text_size" value="20"></input></label>
-		  	</div>
+			  <div class="x-axis-logic">
+			  	<hr><h3>How should x-axis be handeled?</h3>
+			  	<label>x-axis title size <input type="number" name="x_title_size" value="30" step="1"></label><br>
+			  	<label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
+			  	<label class="radio-label"><input class="radio-state" name="x_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
+			  	<label class="radio-label"><input class="radio-state label-as-is" name="x_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
+			  	<br><label class="x_title_length">Max x-axis characters<input type="number" step="1" name="x_title_length" value="80"></label>
+			  	<br><label>Size of x-axis labels (or pie chart labels)<input type="number" step="1" name="x_axis_text_size" value="20"></input></label>
+			  </div>
+			  <div class="y-axis-logic">
+			  	<hr><h3>How should y-axis be handeled?</h3>
+			  	<label>y-axis title size <input type="number" name="y_title_size" value="30" step="1"></label><br>
+			  	<label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="wrap" checked><div class="radio-button"></div>Wrap</label>
+			  	<label class="radio-label"><input class="radio-state" name="y_axis_logic" type="radio" value="trunc"><div class="radio-button"></div>Truncate</label>
+			  	<label class="radio-label"><input class="radio-state label-as-is" name="y_axis_logic" type="radio" value="none"><div class="radio-button"></div>None</label>
+			  	<br><label class="y_title_length">Max y-axis characters<input type="number" step="1" name="y_title_length" value="80"></label>
+			  	<br><label>Size of y-axis labels<input type="number" step="1" name="y_axis_text_size" value="20"></input></label>
+		  	  </div>
+			</div>
 			<br><label class="container" style="display: inline;">Hide legend<input type="checkbox"  name="show_legend" value="none" checked><span class="checkmark"></span></label>
 			<br><label>Legend text size<input type="number" step="1" name="legend_text" value="25"></input></label>
 			<br><label>How many rows in the legend <input type="number" step="1" name="legend_rows" value="1"></input>(in case legend spills off image)</label>
@@ -949,7 +1002,53 @@ function barplot_form(button) {
 	// 		console.log("one2");
 	// 	}
 
+	// Get other fields
+	new_form.find('.x-field').change(function() {
+		let x_field = $(this).val();
 
+		new_form.find('.x-others-check').empty();
+		let empty = true;
+
+		for (const field_key in data_dictionary) {
+			const field = data_dictionary[field_key];
+			if (!report_fields.includes(field['field_name']) || !field['branching_logic'].includes(x_field))
+				continue;
+			
+			empty = false;
+			new_form.find('.x-others-check').append(`<label class="container">${field['field_label']}<input type="checkbox" name="other_x" value="${field['field_name']}"><div class="checkmark"></div></label>`)
+		}
+
+		new_form.find('.x-others').hide();
+
+		if (!empty)
+			new_form.find('.x-others').show();
+	});
+
+	new_form.find('.y-field').change(function() {
+		if (!new_form.find('input[name=crosstab]').prop('checked')) {
+			new_form.find('.y-others').hide();
+			return;
+		}
+
+		let y_field = $(this).val();
+
+		new_form.find('.y-others-check').empty();
+		let empty = true;
+
+		for (const field_key in data_dictionary) {
+			const field = data_dictionary[field_key];
+			if (!report_fields.includes(field['field_name']) || !field['branching_logic'].includes(y_field))
+				continue;
+			
+			empty = false;
+			new_form.find('.y-others-check').append(`<label class="container">${field['field_label']}<input type="checkbox" name="other_y" value="${field['field_name']}"><div class="checkmark"></div></label>`)
+		}
+
+		new_form.find('.y-others').hide();
+
+		if (!empty)
+			new_form.find('.y-others').show();
+	});
 		
 	// })
 	new_form.change(function () {
@@ -992,6 +1091,14 @@ function barplot_form(button) {
 	
 	new_form.find('.cross-tab input').change(function () {
 		new_form.find('input[name=show_legend]').prop('checked', !$(this).prop('checked')).change();
+	});
+
+	new_form.find('.cross-tab input').change(function () {
+		if ($(this).prop('checked'))
+			return new_form.find('.y-field').change();
+			
+		new_form.find('.y-others').hide();
+		new_form.find('.y-others-check').empty();
 	});
 
 	new_form.change(function () {
@@ -1548,7 +1655,7 @@ function label_length_logic(form) {
 	form.find('.label-length').change(function () {
 		// Get the current selected radio button's value
 		let selected = $(this).find("input[name='wrap_label']:checked");
-
+		console.log(selected.val());
 		// If there is no value, the selected input is As-is
 		if (selected.val() === "false" && selected.hasClass("label-as-is")) {
 			// Set the value to the max_label_length to Infinity

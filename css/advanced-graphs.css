@@ -588,6 +588,18 @@
     padding: 5px;
   }
 
+  .other-tbl-container table {
+    position: sticky;
+    border: 1px solid;
+    width: 100%;
+  }
+  
+  .other-tbl-container th {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  
+
   .explanation-table tr:nth-child(1) th:nth-child(1) {
     border: none;
   }
@@ -650,4 +662,16 @@
 		outline: none;
 	}
 
+.line-options {
+	border: 1px solid black;
+}
+
+.shape-options {
+	border: 1px solid black;
+}
  
+
+.axis-logic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
