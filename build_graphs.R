@@ -2,6 +2,7 @@ options(warn = -1)
 
 library(jsonlite) # TODO: add dependency
 library(XML) # TODO: add dependency
+library(tibble)
 
 # Get information for which graphs to build, 
 # where to get data and where to store the files from input file
@@ -79,6 +80,32 @@ options <- parse_categories(data_dictionary)
 # Create list of labels
 # This is used to extract the text labels from the field names
 names_to_labels <- data_dictionary$field_label
+
+# Get other fields based on branching logic
+other_fields <- data_dictionary %>%
+  filter(
+    # Choose only fields in the report
+    field_name %in% names(report_data)
+    # Remove fields whos branching logic is empty
+    & !is.null(branching_logic)
+    & branching_logic != ''
+    # Only include fields whose field type is text
+    & field_type == "text"
+  ) %>%
+  # Create a list mapping fields to the fields whos branching
+  # logic they depend on
+  transmute(
+    if_field = lapply(str_extract_all(branching_logic, "\\[.*?\\]"), gsub, pattern = "\\[|\\]|\\([0-9]+\\)", replacement = ""),
+    field_name
+  ) %>%
+  unnest(col = if_field) %>%
+  group_by(if_field) %>%
+  summarise(field_name = list(field_name)) %>%
+  filter(field_name %in% names(report_data)) %>%
+  deframe()
+
+# print(other_fields)
+
 names(names_to_labels) <- data_dictionary$field_name
 
 for (graph in input_data$graphs) {

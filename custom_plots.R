@@ -111,15 +111,14 @@ sumtab_div <- function(table, title = "", table_percents = FALSE, ...) {
   )
 }
 
-print_other_table <- function(data, field_name, title = "") {
-  cat("<div class=\"other-tbl-container\">")
-  cat("<h5>", title, "</h5>")
-  print(data %>% 
-          group_by(across(all_of(field_name))) %>%
-          summarise() %>%
-          na.omit() %>%
-          kable(col.names = c(names_to_labels[field_name]), align = "c"))
-  cat("</div>")
+print_other_table <- function(other_table, other_title, ...) {
+  paste0(
+  "<div class=\"other-tbl-container\">", 
+    "<h5>", 
+      other_title, 
+    "</h5>",
+    other_table,
+  "</div>")
 } 
 
 # n_spaced_indices
@@ -287,7 +286,7 @@ n_spaces_indices_zeros_first <- function(data, n) {
 #     A likert plot
 custom_likert <- function(x, 
                           title="", 
-                          wrap_label = TRUE, 
+                          wrap_label = FALSE, 
                           max_label_length = 30, 
                           label_text = 3,
                           show_legend = "bottom",
@@ -361,7 +360,7 @@ custom_likert <- function(x,
   
   if (wrap_label == TRUE && !is.null(max_label_length)) {
     x_lab_func <- function(x) str_wrap(x, width = max_label_length)
-  } else if (max_label_length != as.numeric("inf") && max_label_length >= 33) {
+  } else if (max_label_length != as.numeric("inf") && max_label_length >= 3) {
     x_lab_func <- function(x) str_trunc(x, width = max_label_length)
   } else {
     x_lab_func <- function(x) x
@@ -420,11 +419,11 @@ build_likert <- function(...) {
   
   options <- parse_options(args[["options"]])
   
-  print(options)
+  # print(options)
   
   fields <- args[["fields"]]
   
-  print(fields)
+  # print(fields)
   
   na_fnc <- . %>% mutate()
   
@@ -486,7 +485,6 @@ build_likert <- function(...) {
 custom_scatter <- function(data, 
                            x, 
                            y, 
-                           line = FALSE, 
                            x_axis_logic = "wrap", 
                            y_axis_logic = "wrap", 
                            x_title_size = 10, 
@@ -495,13 +493,17 @@ custom_scatter <- function(data,
                            y_title_length = 40,
                            x_axis_text_size = 20,
                            y_axis_text_size = 20,
+						   line = FALSE,
+						   line_thickness = 1,
+						   line_color = "#03a5fc",
+						   nodes = FALSE,
                            dot_size = 6,
+						   node_shape = 21,
+						   shape_color = "#03a5fc",
                            ...) {
   # Enquo the x and y columns
   x <- enquo(x)
   y <- enquo(y)
-  
-  line <- as.logical(line)
   
   x_title_size <- as.numeric(x_title_size)
   y_title_size <- as.numeric(y_title_size)
@@ -509,7 +511,13 @@ custom_scatter <- function(data,
   x_title_length <- as.numeric(x_title_length)
   y_title_length <- as.numeric(y_title_length)
   
-  dot_size = as.numeric(dot_size)
+  line <- as.logical(line)
+  line_thickness <- as.numeric(line_thickness)
+  
+  
+  nodes <- as.logical(nodes)
+  dot_size <- as.numeric(dot_size)
+  node_shape <- as.numeric(node_shape)
   
   x_label = ''
   y_label = ''
@@ -527,7 +535,7 @@ custom_scatter <- function(data,
     y_label = str_trunc(as_label(y), max(c(y_title_length, 3)))
   
   # Pass the data to ggplot
-  data %>%
+  p <- data %>%
     ggplot(aes(x = !!x, y = !!y)) +
     theme(
       axis.title.x = element_text(size=x_title_size),
@@ -536,13 +544,27 @@ custom_scatter <- function(data,
       axis.text.y = element_text(size=y_axis_text_size)
     ) +
     xlab(x_label) +
-    ylab(y_label) +
-      if (line == TRUE)
+    ylab(y_label)
+	
+	
+    if (line == TRUE)
         # If line is true add a line
-        geom_line(colour = "blue")
-      else
+        p <- p + geom_line(color = line_color, size = line_thickness)
+    
+	if (nodes == TRUE)
         # Otherwise add points
-        geom_point(colour = "blue", shape = 19, size = dot_size)
+        p <- p + geom_point(color = shape_color, shape = node_shape, size = dot_size, stroke = 2)
+		
+	if (!line && !nodes)
+		p <- p + geom_point(color = "blue", shape = 19, size = dot_size)
+
+  if (is.numeric(data[[as_label(x)]]))
+    p <- p + scale_x_continuous(labels = scales::comma)
+
+  if (is.numeric(data[[as_label(y)]]))
+    p <- p + scale_y_continuous(labels = scales::comma)
+		
+	return(p)
 }
 
 build_scatter <- function(x, y, title="", ...) {
@@ -556,12 +578,12 @@ build_scatter <- function(x, y, title="", ...) {
   x_label <- names_to_labels[[x]]
   y_label <- names_to_labels[[y]]
   
-  print(x_label)
+  # print(x_label)
   
   args[['x']] <- sym(x_label)
   args[['y']] <- sym(y_label)
   
-  print(y_label)
+  # print(y_label)
 
   # print(report_data)
   # Get date fields
@@ -891,17 +913,21 @@ custom_pie <- function(data,
   
   # Get the levels for the bars
   categories <- eval_tidy(x, data %>% arrange(!!x))
-  
   #Get the unique categories
   unique_categories <- unique(categories)
   
   # Compute the label colours
   label_color <- if (any(is.na(categories))) c(viridis(length(categories)-1), "grey") else viridis(length(categories))
   
+  label_colors <- if (any(is.na(levels(categories)))) c(colorRampPalette(palette)(length(categories)  - 1), "grey") else colorRampPalette(palette)(length(categories))
+
+  print(label_colors)
+
   # Compute whether text should be dark or light based off colours
-  text_color <- ifelse(farver::decode_colour(label_color, "rgb", "hcl")[,"l"] > 50, "black", "white")
+  text_color <- ifelse(farver::decode_colour(label_colors, "rgb", "hcl")[,"l"] > 50, "black", "white")
   
   categories_kept <- categories[n_spaces_indices_zeros_first(eval_tidy(y, data %>% arrange(!!x)), max_labels)]
+
   
   # Logic for determining label shortening
   # If wrap_label is TRUE and max_label_length is set
@@ -919,7 +945,7 @@ custom_pie <- function(data,
   # Compute the label positions
   label_pos <- data %>% 
     arrange(!!x) %>%
-    mutate(text_color = text_color, 
+    mutate(text_color = text_color,
            label = x_lab_func(replace_na(as.character(!!x), "NA")),      
            csum = rev(cumsum(rev(!!y))),
            pos = !!y/2 + lead(csum, 1),
@@ -933,6 +959,7 @@ custom_pie <- function(data,
                               nudge_x = 1,
                               size = x_axis_text_size/2,
                               color = label_pos$text_color,
+                              segment.color = 'grey50',
                               max.overlaps = Inf,
                               show.legend = FALSE,
                               force=1000,
@@ -948,7 +975,8 @@ custom_pie <- function(data,
     # Convert to pie
     coord_polar(theta = "y", clip = "off") +
     # Add "Turbo" viridis colours
-      scale_fill_manual(values = colorRampPalette(palette)(length(unique(categories))), drop = TRUE, na.value = "grey") +
+      scale_fill_manual(values = label_colors, drop = TRUE, na.value = "grey") +
+      # scale_color_manual(values = label_colors) + 
     # scale_fill_viridis(discrete = TRUE, option = "D", na.value = "grey", labels = x_lab_func) +
     # Add labels to slices (amounts)
     xlab(y_label) +
@@ -1103,7 +1131,7 @@ custom_stacked <- function(data,
   x_size = 8
   legend_size = 7
   
-  print(wrap_labels)
+  # print(wrap_labels)
   
   max_label_length <- as.numeric(max_label_length)
   
@@ -1267,7 +1295,6 @@ custom_crosstab <- function(data,
                             x, 
                             y, 
                             fill, 
-                            title = "", 
                             table_percents = FALSE, 
                             percent_margin = NULL, 
                             margin = NULL,
@@ -1318,7 +1345,7 @@ custom_crosstab <- function(data,
     
     # return(table_to_kable(out, x, y, margin)) #%>%
              #add_header_above(setNames(c(span_length), paste0("Percent of ", fill, " by ", by))))
-    print("test")
+    # print("test")
     
     output_data <- table_to_dataframe(out)
     align = c("l", rep("c", times = ncol(out)))
@@ -1338,7 +1365,7 @@ table_to_dataframe <- function(table) {
 
   first_col <- setNames(data.frame(rownames(out)), names(dimnames(table))[[1]])
 
-  print(first_col)
+  # print(first_col)
   
 
   # Let the output be the first column on the left with the other columns on the right
@@ -1424,11 +1451,12 @@ custom_sumtab <- function(data, x, y, digits = 0, table_percents = FALSE, ...) {
     htmltools::HTML() 
 }
 
-build_barplot <- function(keep_unused = FALSE, include = "graph", remove_na = FALSE, ...) {
+build_barplot <- function(keep_unused = FALSE, include = "graph", remove_na = FALSE, other_table = TRUE, ...) {
   args <- lapply(X = list(...), FUN = unlist)
   
   keep_unused <- as.logical(unlist(keep_unused))
   remove_na <- as.logical(unlist(remove_na))
+  other_table <- as.logical(unlist(other_table))
   
   if (!exists("height", args))
     args[["count"]] <- TRUE
@@ -1535,7 +1563,7 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", remove_na = FA
     checkbox_group_x %>%
     checkbox_group_y %>%
     remove_na_optional %>%
-    (function(data) {print(head(data));return(data);}) %>%
+    # (function(data) {print(head(data));return(data);}) %>%
     grouping_fnc %>%
     summarised_fnc #%>%
     # (function(data) {print(data %>% select(c(last_col(2):last_col())));return(data);})
@@ -1551,6 +1579,32 @@ build_barplot <- function(keep_unused = FALSE, include = "graph", remove_na = FA
   if (!include_graph)
     p <- ""
   
+  if (other_table) {
+    if (exists('other_x', args)) {
+      for (other_field in args[['other_x']]) {
+        args['other_table'] <- report_data %>% 
+          group_by(across(all_of(other_field))) %>%
+          summarise() %>%
+          na.omit() %>%
+          kable(col.names = c(names_to_labels[other_field]), align = "c")
+        args['other_title'] <- paste0(names_to_labels[[other_field]], " responses")
+        p <- paste0(p, do.call(print_other_table, args))
+      }
+    }
+    if (exists('other_y', args)) {
+      for (other_field in args[['other_y']]) {
+        args['other_table'] <- report_data %>% 
+          group_by(across(all_of(other_field))) %>%
+          summarise() %>%
+          na.omit() %>%
+          kable(col.names = c(names_to_labels[other_field]), align = "c")
+        args['other_title'] <- paste0(names_to_labels[[other_field]], " responses")
+        p <- paste0(p, do.call(print_other_table, args))
+      }
+    }
+  }
+
+
   # If the table argument is present NOTE: "table" arg is deprecated.
   if (include_table || exists("table", args)) {
     
@@ -1702,7 +1756,7 @@ build_map <- function(cluster_by, ...) {
   
     args[["type"]] <- names_to_labels[[args[["type"]]]]
     
-    print(args[["type"]])
+    # print(args[["type"]])
   }
   
   if (cluster_by == "location")
@@ -1720,7 +1774,7 @@ build_map <- function(cluster_by, ...) {
     grouping_fn %>%
     summary_fn
   
-  print(args[['data']])
+  # print(args[['data']])
   
   # args[['type']] <- NULL
   
