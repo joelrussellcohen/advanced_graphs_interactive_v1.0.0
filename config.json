@@ -104,5 +104,13 @@
 			]
 		}
 	 ],
-   "project-settings": []
+   "project-settings": [
+		{
+			"key": "likert-keywords",
+			"name": "Additional Likert Keywords:",
+			"required": false,
+			"type": "text",
+			"repeatable": true
+		}
+   ]
 }

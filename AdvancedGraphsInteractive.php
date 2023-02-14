@@ -589,6 +589,14 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		// it will be considered a likert category
 		$key_likert_words = array("not useful", "not at all useful", "difficult", "none of my needs", "strongly disagree", "somewhat disagree", "completely disagree", "quite dissatisfied", "very dissatisfied", "Extremely dissatisfied", "poor", "never", "worse", "severely ill", "inutil", "infatil", "completamente inutil", "completamente infatil", "dificil", "ninguna de mis necesidades", "totalmente en desacuerdo", "parcialemnte en desacuerdo", "completamente en desacuerdo", "muy insatisfecho(a)", "totalmente insatisfecho(a)", "nunca", "peor", "gravemente enfermo");
 		
+		$project_likert_keywords = $this->getProjectSetting("likert-keywords");
+
+		if (!empty($project_likert_keywords)) {
+			if (count($project_likert_keywords) == 1 && $project_likert_keywords[0] == "")
+				unset($project_likert_keywords[0]);
+			$key_likert_words = array_merge($key_likert_words, $project_likert_keywords);
+		}
+
 		// Create an array that groups fields by repeating instruments
 		$likert_fields = array();
 
