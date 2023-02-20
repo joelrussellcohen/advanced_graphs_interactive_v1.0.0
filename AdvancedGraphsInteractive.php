@@ -517,12 +517,26 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 
 	}
 
+	function getReportName($report_id) {
+		if ($report_id == 0 || $report_id == "ALL")
+			return "ALL";
+
+		$q = $this->query("select title from redcap_reports where report_id = ?", array($report_id));
+		
+		if (!$q)
+			return null;
+		
+		$row = $q->fetch_assoc();
+
+		return $row['title'];
+	}
+
 	function get_report($pid, $report_id, $live_filters, $user_id=null, $format="csvraw", $returnFieldsForFlatArrayData = array()) {
-		$hashRecordID = true;
-		$removeIdentifierFields = true;
-		$removeUnvalidatedTextFields = true;
-		$removeNotesFields = true;
-		$removeDateFields = true;
+		$hashRecordID = false;
+		$removeIdentifierFields = false;
+		$removeUnvalidatedTextFields = false;
+		$removeNotesFields = false;
+		$removeDateFields = false;
 
 		if ($report_id == 0)
 			$report_id = "ALL";
