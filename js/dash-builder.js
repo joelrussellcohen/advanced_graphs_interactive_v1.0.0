@@ -1411,7 +1411,7 @@ function map_form(button) {
 		if (!category_fields.length)
 			return;
 
-		new_form.find('.map-type').append(`<optgroup label="None"><option>None</option></optgroup>`);
+		new_form.find('.map-type').append(`<optgroup label="None"><option value="">None</option></optgroup>`);
 		new_form.find('.map-type').append(`<optgroup class="categories" label="Categories"></optgroup>`);
 
 

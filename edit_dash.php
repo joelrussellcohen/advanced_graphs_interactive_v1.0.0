@@ -51,6 +51,9 @@ $module->loadJS("leaflet.markercluster.freezable.js", "mapdependencies/leaflet-m
 $module->loadJS("leaflet.markercluster.layersupport.js", "mapdependencies/leaflet-markercluster-1.0.5");
 $module->loadCSS("advanced-graphs.css");
 $title = $report_id ? "<h1>Advanced Graphs</h1>" : "<h1>New Advanced Graphs Dashboards must be run from the context of a report</h1>";
+
+$report_name = $module->getReportName($report_id);
+echo "<h3>Associated report: $report_name</h3>";
 echo "<div id=\"advanced_graphs\">$title</div>";
 
 require_once APP_PATH_DOCROOT . 'ProjectGeneral/footer.php';

@@ -25,8 +25,11 @@ $module->loadJS("leaflet.markercluster.freezable.js", "mapdependencies/leaflet-m
 $module->loadJS("leaflet.markercluster.layersupport.js", "mapdependencies/leaflet-markercluster-1.0.5");
 $module->loadCSS("advanced-graphs.css");
 
-echo "<center id=\"advanced_graphs_title\"><h1>$dash_title</h1></center><div id=\"advanced_graphs\"><h2>Loading your dashboard...</h1><h2>Please Wait</h2></div>";
 $dashboard = $module->getDashboards($pid, $dash_id);
+
+$report_name = $module->getReportName($dashboard['report_id']);
+echo "<h3>Associated report: $report_name</h3>";
+echo "<center id=\"advanced_graphs_title\"><h1>$dash_title</h1></center><div id=\"advanced_graphs\"><h2>Loading your dashboard...</h1><h2>Please Wait</h2></div>";
 
 require_once APP_PATH_DOCROOT . 'ProjectGeneral/footer.php';
 
