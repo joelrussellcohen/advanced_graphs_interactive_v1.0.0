@@ -412,7 +412,7 @@ parse_categories <- function(data) {
         options_code = options[,1],
         # option labels
         # Name this by the options_code and fix duplicate names
-        options_label = stripHTML(mapply(function(x,y) y, options[,1], vctrs::vec_as_names(options[,2], repair = "unique", quiet = TRUE)))
+        options_label = stripHTML(mapply(function(x,y) y, options[,1], make_unique_labels(options[,2])))
       )
     },
     data$field_name, 
