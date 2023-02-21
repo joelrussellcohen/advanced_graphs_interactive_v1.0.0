@@ -39,7 +39,6 @@ $module->loadJS("leaflet.markercluster.layersupport.js", "mapdependencies/leafle
 $module->loadCSS("advanced-graphs.css");
 
 $report_name = $module->getReportName($dashboard['report_id']);
-echo "<h3>Associated report: $report_name</h3>";
 echo "<center><h1>$dash_title</h1></center><div id=\"advanced_graphs\"><h2>Loading your dashboard...</h1><h2>Please Wait</h2></div>";
 
 
