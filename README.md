@@ -11,19 +11,17 @@ This REDCap module displays additional advanced graphs from a report in an easy 
 - Export API for each project to use the module
 
 
-## Easy Installation
-- Obtain this module from the Consortium [REDCap Repo](https://redcap.vanderbilt.edu/consortium/modules/index.php) from the control center.
-
 
 ## Manual Installation
 - Clone this repo into `<redcap-root>/modules`.
 ```
-git clone https://github.com/victormeb/Advanced-Graphs-v4.0.0.git
+git clone https://github.com/joelrussellcohen/advanced_graphs_interactive_v1.0.0.git
 ```
 - Go to **Control Center > External Modules** and enable Advanced Graphs.
 - Configure Advanced Graphs:
-    - Find the RScript path. In Rstudio, thiscan be found under *tools > global options > R version*
+    - Find the RScript path. In Rstudio, thi scan be found from within RStudio under *tools > global options > R version*
     - Find the pandoc path. In R this can be found using ```rmarkdown::find_pandoc()```
+    - Run the install_packages.R script in the library you will be using.
 - To activate this module for a particular project, go to the project home page, click on the **External Modules** link, and then enable Advanced Graphs for that project. Then, activate an API key for this project. Go to **Control Center > External Modules** and add the API key and its corresponding project.
 
 
@@ -47,10 +45,6 @@ It is recommended to use all features in reports to get adequate graphs. In part
 Since graphs are generated automatically, their number depends on the number of fields considered in the report. it is recommended to **limit the number of fields** in a report in order to prevent an overflow of graphs. 
 
 In certain particular situations when a graph cannot be displayed or cannot be displayed properly (when no graph can be displayed; when there are too many categories to display the graph properly; for example), appropriate messages are shown.
-
-## Live filters
-
-Advanced Graphs takes into consideration live filters selected within the report, except when a filter is selected but the record id field is not included in the report.
 
 ## Limitations
 
