@@ -175,40 +175,20 @@ export function getCheckboxReport(report, checkbox_field) {
     if (!isCheckboxField(checkbox_field)) {
         return report;
     }
-
-    var checkbox_fields = Object.keys(report[0]).filter(function (field) {
-        // The field matches regex `checkbox_field_name___[0-9]+\b`
-        return field.match(new RegExp('^' + checkbox_field.field_name + '___[0-9]+\\b'));
-    });
-
+    
     var longer_report = report.flatMap(function (row) {
         var new_rows = [];
 
-        for (var i = 0; i < checkbox_fields.length; i++) {
-            // Get the numerical portion of the checkbox field name
-            var checkbox_field_name = checkbox_fields[i];
-            var checkbox_field_name_number = checkbox_field_name.split('___')[1];
-
-            // Get the checkbox field value
-            var checkbox_field_value = row[checkbox_field_name];
-
-            // If the checkbox field is checked, add a new row to the report
-            if (checkbox_field_value === '1') {
+        for(var key in row[checkbox_field.field_name])
+        {
+            if(row[checkbox_field.field_name][key] == '1')
+            {
                 var new_row = Object.assign({}, row);
-
-                // Remove all the checkbox fields from the new row
-                for (var j = 0; j < checkbox_fields.length; j++) {
-                    delete new_row[checkbox_fields[j]];
-                }
-
-                // Add the checkbox field value to the new row
-                new_row[checkbox_field_name] = checkbox_field_name_number;
-
-                // Add the new row to the new rows
+                new_row[checkbox_field.field_name] = key;
                 new_rows.push(new_row);
             }
         }
-
+        
         return new_rows;
     });
 

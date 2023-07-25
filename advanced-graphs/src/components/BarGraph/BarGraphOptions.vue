@@ -159,7 +159,7 @@
 
             const y_title_size = this.parameters.y_title_size ? Number(this.parameters.y_title_size) : 15;
             const y_label_size = this.parameters.y_label_size ? Number(this.parameters.y_label_size) : 10;
-            const y_label_limit = this.parameters.y_label_limit ? Number(this.parameters.y_label_limit) : null;
+            const y_label_limit = this.parameters.y_label_limit ? Number(this.parameters.y_label_limit) : 'none';
             const y_label_length = this.parameters.y_label_length ? Number(this.parameters.y_label_length) : Math.max(...barHeights.map(d => d.value.toString().length));
 
             // Get the y tick format
@@ -212,7 +212,7 @@
         },
         methods: {
             updateParameters() {
-                console.log('updateParameters', this.show_legend);
+                console.log('updateParameters', this.show_legend);                
                 this.$emit("updateParameters", {
                 ...this.parameters,
                 x_title_size: this.x_title_size,

@@ -99,6 +99,26 @@
         "matrix_ranking": "",
         "field_annotation": ""
     },
+    "reason": {
+        "field_name": "reason",
+        "form_name": "transfers",
+        "section_header": "",
+        "field_type": "checkbox",
+        "field_label": "Reason",
+        "select_choices_or_calculations": "1, Reason 1 | 2, Reason 2 | 3, Reason 3 | 4, Reason 4 | 5, Reason 5 | 6, Reason 6",
+        "field_note": "",
+        "text_validation_type_or_show_slider_number": "",
+        "text_validation_min": "",
+        "text_validation_max": "",
+        "identifier": "",
+        "branching_logic": "",
+        "required_field": "",
+        "custom_alignment": "",
+        "question_number": "",
+        "matrix_group_name": "",
+        "matrix_ranking": "",
+        "field_annotation": ""
+    },
     "days_since_start": {
         "field_name": "days_since_start",
         "form_name": "transfers",

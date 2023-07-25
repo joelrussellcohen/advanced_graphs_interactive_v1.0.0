@@ -86,14 +86,16 @@ export default {
             this.$refs.graphContainer.appendChild(this.graph);
         },
         getGraph(parameters) {
+            
+            var theField = this.data_dictionary[parameters.categorical_field];
             // Get the choices for the category
-            var choices = parseChoicesOrCalculations(this.data_dictionary[parameters.categorical_field]);
+            var choices = parseChoicesOrCalculations(theField);
 
-            var this_report = this.report;
+            var this_report = this.report;            
 
             // If the category is a checkbox field, get a checkbox field report
-            if (isCheckboxField(parameters.categorical_field)) {
-                this_report = getCheckboxReport(parameters.categorical_field);
+            if (isCheckboxField(theField)) {
+                this_report = getCheckboxReport(this_report, theField);
             }
 
             // Get a dataframe that only has entries for the instrument specified by the instrument parameter
@@ -291,7 +293,7 @@ export default {
                         // legend
                     ],
                     marginLeft: parameters.left_margin ? parameters.left_margin : 80,
-                    marginBottom: bottom_margin
+                    marginBottom: bottom_margin ? bottom_margin : 20
                 });
 
                 return graph;
