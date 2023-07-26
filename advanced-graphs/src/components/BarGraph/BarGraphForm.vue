@@ -29,9 +29,9 @@
                   <radio-component
                       v-model="formData.graph_type"
                       :name="'graph_type'"
-                      :values="['bar', 'pie']"
+                      :values="['bar', 'pie', 'donut']"
                       :defaultValue="'bar'"
-                      :labels="[module.tt('bar_bar'), module.tt('bar_bar_pie')]"
+                      :labels="[module.tt('bar_bar'), module.tt('bar_bar_pie'), module.tt('bar_donut')]"
                   ></radio-component>
               </helpful-parameter>
               <!-- Categorical Field -->
@@ -190,7 +190,7 @@
         }
 
         // console.log('isFormReady', true);
-        // Return true if there are enough selected parameters to create a bar or pie graph
+        // Return true if there are enough selected parameters to create a bar or pie or donut graph
         return true;
       },
       availableInstruments() {
