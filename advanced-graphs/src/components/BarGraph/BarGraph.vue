@@ -237,7 +237,7 @@ export default {
                 });
 
                 // Create y axis title
-                const yAxisTitle = Plot.axisY({
+                const yAxisTitle = Plot.axisY({ 
                     label: y_title,
                     labelAnchor: 'center',
                     labelOffset: y_title_offset,
