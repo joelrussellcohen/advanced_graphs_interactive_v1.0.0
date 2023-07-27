@@ -331,43 +331,23 @@ export default {
             // Square marker
             //const squarePath = "M -5 -5 L 5 -5 L 5 5 L -5 5 Z";
 
-            // Triangle marker
-            //const trianglePath = "M 0 -5 L 5 5 L -5 5 Z";
-
-            let dotPlot = Plot.dot(data, {
+            // Dots & line markers
+            let circlePlot = Plot.dot(data, {
                 x: "x",
                 y: "y",
                 r: parameters.scatter_dot_size,
                 fill: colorScale(parameters.scatter_dot_color*10)
             });
 
-            let squarePlot = Plot.vector(data, {
+            let circleLinePlot = 
+                Plot.line(data, {
                 x: "x",
                 y: "y",
-                //x2: "x" ,
-                //y2: "y"
                 r: parameters.scatter_dot_size+1,
-                length: parameters.scatter_dot_size+1,
-                //d: trianglePath, //squarePath,
-                shape: "spike", //square,
-                anchor: "start",
-
-                fill: colorScale(parameters.scatter_dot_color*10)
-            });
-            let squarePlot2 = Plot.vector(data, {
-                x: "x",
-                y: "y",
-                //x2: "x" ,
-                //y2: "y"
-                r: parameters.scatter_dot_size+1,
-                length: parameters.scatter_dot_size+1,
-                rotate: 180,
-                //d: trianglePath, //squarePath,
-                shape: "spike", //square,
-                anchor: "start",
-
-                fill: colorScale(parameters.scatter_dot_color*10)
-            });
+                sort: "x", // explicitly sort by ascending values of x
+                marker: "none",
+                stroke: colorScale(parameters.scatter_dot_color*10),
+            })
 
             let trianglePlot = Plot.vector(data, {
                 x: "x",
@@ -376,15 +356,26 @@ export default {
                 //y2: "y"
                 r: parameters.scatter_dot_size+1,
                 length: parameters.scatter_dot_size+1,
-                //d: trianglePath, //squarePath,
                 shape: "spike", //square,
                 anchor: "start",
-
                 fill: colorScale(parameters.scatter_dot_color*10)
             });
+
+            let triangleDownPlot = Plot.vector(data, {
+                x: "x",
+                y: "y",
+                //x2: "x" ,
+                //y2: "y"
+                r: parameters.scatter_dot_size+1,
+                length: parameters.scatter_dot_size+1,
+                rotate: 180,
+                shape: "spike", //square,
+                anchor: "start",
+                fill: colorScale(parameters.scatter_dot_color*10)
+            });
+
             console.log("yAxisLabels")
             console.log(yAxisLabels)
-
 
             //calc min and max of x axis
             let minx = Math.min(...xValues);
@@ -423,13 +414,19 @@ export default {
             }
 
             graph = Plot.plot({
-                marks: [ (parameters.marker_type == "circle")? dotPlot :
-                    (parameters.marker_type == "square")?squarePlot:squarePlot,
-                    (parameters.marker_type == "square")?squarePlot2:trianglePlot,
-                            yAxisTitle,
-                            yAxisLabels,
-                            xAxisTitle,
-                            xAxisLabels,
+                marks: [
+                    // Plots several marks; the Plot.ruleY is an empty plot just to fill when 
+                    // condition is not true
+                    (parameters.scatter_type == "dots & lines")?circleLinePlot:Plot.ruleY([0]),
+ 
+                    (parameters.marker_type == "circle")?circlePlot:Plot.ruleY([0]),
+                    (parameters.marker_type == "square")?triangleDownPlot:Plot.ruleY([0]),
+                    (parameters.marker_type == "square")?trianglePlot:Plot.ruleY([0]),
+                    (parameters.marker_type == "triangle")?trianglePlot:Plot.ruleY([0]),
+                    yAxisTitle,
+                    yAxisLabels,
+                    xAxisTitle,
+                    xAxisLabels,
                 ],
                     marginBottom: bottom_margin,
                     marginLeft: parameters.left_margin ? parameters.left_margin : 80,
