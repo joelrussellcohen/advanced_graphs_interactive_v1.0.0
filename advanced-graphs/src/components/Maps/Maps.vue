@@ -81,6 +81,13 @@ export default {
             this.$refs.graphContainer.innerHTML = '';
             this.getGraph.bind(this)();
         },
+        getMinLongitude(){
+            const processedData = this.processData();
+            //const longitude_min = Math.min(processedData)
+            const longitude_min = Math.min(processedData[row => row.identifier]);
+            //const longitude_min = Math.min(20,180)
+            return longitude_min
+        },
         getGraph() {
             const processedData = this.processData();
 
@@ -92,8 +99,31 @@ export default {
             }
 
             // Create the map
+            // The following 4 lines were added with AI help!
+            // Extract the minimum & max longitude & latitude from the processedData array
+            const longitude_min = Math.min(...processedData.map(row => row.longitude));
+            const longitude_max = Math.max(...processedData.map(row => row.longitude));
+            const latitude_min = Math.min(...processedData.map(row => row.latitude));
+            const latitude_max = Math.max(...processedData.map(row => row.latitude));
+            
+            const longitude_center = (longitude_max + longitude_min) / 2;
+            const latitude_center = (latitude_max + latitude_min) / 2;
+
+            console.log('Minimum Longitude:', longitude_min);
+            console.log('Minimum Latitude:', latitude_min);
+ 
+            console.log('Centre Latitude:', latitude_center);
+            console.log('Centre Longitude:', longitude_center);
+
+            // zoom scale: 0 is the whole globe, then each integer more zooms double than previous
+            // Here, take integer of full circle divided by coordinates span in log 2 scale, plus 1
+            const longitude_span = Math.floor(Math.log2(360/(longitude_max - longitude_min))) + 1;
+            const latitude_span = Math.floor(Math.log2(360/(latitude_max - latitude_min))) + 1;
+            const zoom_in = Math.max(longitude_span, latitude_span) - 1;
+            console.log('zoom in long:', zoom_in);
+ 
             this.graph = L.map(mapDiv, {
-            }).setView([48.5, -123.7], 8);
+            }).setView([latitude_center, longitude_center], zoom_in);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(this.graph);
@@ -251,8 +281,6 @@ export default {
                     flattenedData.push(row);
                 });
             });
-
-            
             return flattenedData;
         }
     }
