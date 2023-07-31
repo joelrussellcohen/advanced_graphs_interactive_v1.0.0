@@ -102,18 +102,18 @@ export default {
             const longitude_center = (longitude_max + longitude_min) / 2;
             const latitude_center = (latitude_max + latitude_min) / 2;
 
-            console.log('Minimum Longitude:', longitude_min);
-            console.log('Minimum Latitude:', latitude_min);
+            //console.log('Minimum Longitude:', longitude_min);
+            //console.log('Minimum Latitude:', latitude_min);
  
-            console.log('Centre Latitude:', latitude_center);
-            console.log('Centre Longitude:', longitude_center);
+            //console.log('Centre Latitude:', latitude_center);
+            //console.log('Centre Longitude:', longitude_center);
 
             // zoom scale: 0 is the whole globe, then each integer more zooms double than previous
             // Here, take integer of full circle divided by coordinates span in log 2 scale, plus 1
             const longitude_span = Math.floor(Math.log2(360/(longitude_max - longitude_min))) + 1;
             const latitude_span = Math.floor(Math.log2(360/(latitude_max - latitude_min))) + 1;
             const zoom_in = Math.max(longitude_span, latitude_span) - 1;
-            console.log('zoom in long:', zoom_in);
+            //console.log('zoom in long:', zoom_in);
  
             this.graph = L.map(mapDiv, {
             }).setView([latitude_center, longitude_center], zoom_in);
@@ -239,7 +239,7 @@ export default {
             const longitude = coordinateFields.longitude.field_name;
             const latitude = coordinateFields.latitude.field_name;
 
-            console.log('coordinateFields', coordinateFields);
+            //console.log('coordinateFields', coordinateFields);
 
             aggregationParameters.push(d => d[longitude]);
             aggregationParameters.push(d => d[latitude]);
