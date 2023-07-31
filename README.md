@@ -49,13 +49,15 @@ and add graphs (see below).
 
 A dashboard can be set as a **Public** dashboard.
 
+![](./img/new_graph.png)
+
 ### Add a Graph or Table
 
 The type of graphs or tables that can be displayed are selected automatically from the **type of fields** included in the report. 
 
 With few clicks, you can easily **add graphs or tables** to the dashboard, which is organized as a 
-**matrix of visualization elements**. If needed, you add a row to the dashboard. 
-You select the type of graph, the instrument and the fields you want to plot from the available list of fields.
+**matrix of visualization elements**. If needed, you can add a row to the dashboard. 
+You can select the type of graph, the instrument and the fields you want to plot from the available list of fields.
 
 Fields considered by this module are **categorical** (radio buttons, dropdown lists, checkboxes or yes/no fields), 
 **numeric**, **dates**, **calculated fields** and **plain text fields**. By selecting the type of graph you want to plot,
@@ -67,6 +69,8 @@ and possibly a couple more specific self-explained options related to the type o
 
 When you have added all the graphs and tables you want to include in your dashboard, simply save it. One option after saving 
 would be to see the dashboard, if you want to do so.
+
+![](./img/add_graph.png)
 
 ### Graphs or Tables customization
 
@@ -82,10 +86,14 @@ This work is done by simply using buttons and slide controls. Options available 
 You may need to interact several times adjusting some elements for a graph and preview them again to see the results; 
 then you can do more adjustments, until you get the results you need.
 
+![](./img/customize_graph.png)
+
 ### Display Dashboards
 
 To display any of the dashboards already created, you can click the **Advanced Graphs Dashboards** link under 
 the External Modules section. You can **display, open the public link** (if selected previously), **edit or delete** each dashboard.
+
+![](./img/advanced_graphs_dashboard.png)
 
 ### Events and Repeated events/instruments 
 

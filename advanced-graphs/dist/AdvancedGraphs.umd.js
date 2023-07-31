@@ -31580,30 +31580,30 @@ const PaletteSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pa
 const BarGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphFormvue_type_script_lang_js, [['render',BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render],['__scopeId',"data-v-82bbfd68"]])
 
 /* harmony default export */ var BarGraphForm = (BarGraphForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=template&id=4dea2533&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=template&id=3a18fb7d&scoped=true
 
-const BarGraphvue_type_template_id_4dea2533_scoped_true_withScopeId = n => (_pushScopeId("data-v-4dea2533"), n = n(), _popScopeId(), n);
-const BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_1 = {
+const BarGraphvue_type_template_id_3a18fb7d_scoped_true_withScopeId = n => (_pushScopeId("data-v-3a18fb7d"), n = n(), _popScopeId(), n);
+const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_2 = {
+const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_3 = {
+const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_4 = {
+const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function BarGraphvue_type_template_id_4dea2533_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_3, null, 512), createBaseVNode("div", BarGraphvue_type_template_id_4dea2533_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function BarGraphvue_type_template_id_3a18fb7d_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_3, null, 512), createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=template&id=4dea2533&scoped=true
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=template&id=3a18fb7d&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/d3-array/src/ascending.js
 function ascending(a, b) {
@@ -64096,10 +64096,10 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
 });
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=4dea2533&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=3a18fb7d&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=4dea2533&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=3a18fb7d&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue
 
@@ -64109,7 +64109,7 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
 ;
 
 
-const BarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphvue_type_script_lang_js, [['render',BarGraphvue_type_template_id_4dea2533_scoped_true_render],['__scopeId',"data-v-4dea2533"]])
+const BarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphvue_type_script_lang_js, [['render',BarGraphvue_type_template_id_3a18fb7d_scoped_true_render],['__scopeId',"data-v-3a18fb7d"]])
 
 /* harmony default export */ var BarGraph = (BarGraph_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphForm.vue?vue&type=template&id=3584a69a&scoped=true
