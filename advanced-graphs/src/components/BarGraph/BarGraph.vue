@@ -59,7 +59,7 @@ export default {
             if (this.parameters.graph_type == 'bar') {
                 this.moreOptionsComponent = markRaw(BarGraphOptions);
             } 
-            else if (this.parameters.graph_type == 'pie') {
+            else if (this.parameters.graph_type == 'pie' || this.parameters.graph_type == 'donut') {
                 this.moreOptionsComponent = markRaw(PieGraphOptions);
             }
             // wait until the moreOptionsComponent updates the parameters before updating the graph
@@ -297,19 +297,20 @@ export default {
                 });
 
                 return graph;
-            } else if (parameters.graph_type == 'pie') {
+            } else if (parameters.graph_type == 'pie' || parameters.graph_type == 'donut') {
                 const label_spacing = parameters.label_spacing ? Number(parameters.label_spacing) : 0.1;
                 const label_size = parameters.label_size ? Number(parameters.label_size) : 10;
                 const value_size = parameters.value_size ? Number(parameters.value_size) : 10;
                 const value_precision = parameters.value_precision ? parameters.value_precision : '1';
                 const seperation_force = parameters.seperation_force ? Number(parameters.seperation_force) : 28;
+                const inner = parameters.graph_type == 'donut' ? 100 : 0;
                 const seperation_strength = parameters.seperation_strength ? Number(parameters.seperation_strength) : 1.1;
                 const seperation_iterations = parameters.seperation_iterations ? Number(parameters.seperation_iterations) : 50;
                 // Create a pie chart
                 graph = this.PieChart(barHeights, {
                     width: 640,
                     height: 480,
-                    innerRadius: 0,
+                    innerRadius: inner,
                     outerRadius: Math.min(640, 400) / 2,
                     title: d => x_tick_format(d.key) + '\n' + d.value,
                     value: d => d.value,

@@ -57,9 +57,25 @@
                         :values="['drop', 'replace']"
                         :defaultValue="'drop'"
                         :labels="[module.tt('scatter_drop'), module.tt('scatter_replace')]"
-                    ></radio-component>
-                <input type="number" v-if="formData.na_numeric === 'replace'" v-model="formData.na_numeric_value" />
+                    ></radio-component> 
               </helpful-parameter>
+              <!-- Dots or Lines -->
+              <helpful-parameter
+                  v-if="formData.numeric_field !== null 
+                    && typeof formData.numeric_field === 'string'
+                    && formData.is_count != true"
+                    :label-text="module.tt('scatter_type')"
+                    :help-text="module.tt('scatter_type_help')"
+              >
+                  <radio-component
+                        v-model="formData.scatter_type"
+                        :name="'scatter_type'"
+                        :values="['dots', 'dots & lines']"
+                        :defaultValue="'dots'"
+                        :labels="[module.tt('scatter_dots'), module.tt('scatter_dots_lines')]"
+                  ></radio-component>
+              </helpful-parameter>
+
                <!-- Palette -->
               <helpful-parameter
                   :label-text="module.tt('palette')"
@@ -121,11 +137,6 @@
         // console.log('isFormReady', instrument_selected, graph_type_selected, categorical_field_selected, numeric_field_selected, na_category_selected, 'unused', unused_categories_selected, 'agg', aggregation_function_selected);
         // If any of the required fields are not selected, return false
         if (!instrument_selected || !numeric_field_selected || !numeric_field_y_selected ) {
-          return false;
-        }
-
-        // If na_numeric is replace, but no value is provided, return false
-        if (this.formData.na_numeric === 'replace' && !this.formData.na_numeric_value) {
           return false;
         }
 

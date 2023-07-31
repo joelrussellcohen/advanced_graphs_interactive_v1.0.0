@@ -558,7 +558,7 @@ module.exports =
   check(typeof self == 'object' && self) ||
   check(typeof __webpack_require__.g == 'object' && __webpack_require__.g) ||
   // eslint-disable-next-line no-new-func -- fallback
-  (function () { return this; })() || Function('return this')();
+  (function () { return this; })() || this || Function('return this')();
 
 
 /***/ }),
@@ -1201,10 +1201,10 @@ var store = __webpack_require__(5465);
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.29.1',
+  version: '3.30.2',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2014-2023 Denis Pushkarev (zloirock.ru)',
-  license: 'https://github.com/zloirock/core-js/blob/v3.29.1/LICENSE',
+  license: 'https://github.com/zloirock/core-js/blob/v3.30.2/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
 
@@ -1217,13 +1217,18 @@ var store = __webpack_require__(5465);
 /* eslint-disable es/no-symbol -- required for testing */
 var V8_VERSION = __webpack_require__(7392);
 var fails = __webpack_require__(7293);
+var global = __webpack_require__(7854);
+
+var $String = global.String;
 
 // eslint-disable-next-line es/no-object-getownpropertysymbols -- required for testing
 module.exports = !!Object.getOwnPropertySymbols && !fails(function () {
   var symbol = Symbol();
   // Chrome 38 Symbol has incorrect toString conversion
   // `get-own-property-symbols` polyfill symbols converted to object are not Symbol instances
-  return !String(symbol) || !(Object(symbol) instanceof Symbol) ||
+  // nb: Do not call `String` directly to avoid this being optimized out to `symbol+''` which will,
+  // of course, fail.
+  return !$String(symbol) || !(Object(symbol) instanceof Symbol) ||
     // Chrome 38-40 symbols are not inherited from DOM collections prototypes to instances
     !Symbol.sham && V8_VERSION && V8_VERSION < 41;
 });
@@ -41170,6 +41175,7 @@ class Voronoi {
   }
   _init() {
     const {delaunay: {points, hull, triangles}, vectors} = this;
+    let bx, by; // lazily computed barycenter of the hull
 
     // Compute circumcenters.
     const circumcenters = this.circumcenters = this._circumcenters.subarray(0, triangles.length / 3 * 2);
@@ -41191,17 +41197,15 @@ class Voronoi {
       const ab = (dx * ey - dy * ex) * 2;
 
       if (Math.abs(ab) < 1e-9) {
-        // degenerate case (collinear diagram)
-        // almost equal points (degenerate triangle)
-        // the circumcenter is at the infinity, in a
-        // direction that is:
-        // 1. orthogonal to the halfedge.
-        let a = 1e9;
-        // 2. points away from the center; since the list of triangles starts
-        // in the center, the first point of the first triangle
-        // will be our reference
-        const r = triangles[0] * 2;
-        a *= Math.sign((points[r] - x1) * ey - (points[r + 1] - y1) * ex);
+        // For a degenerate triangle, the circumcenter is at the infinity, in a
+        // direction orthogonal to the halfedge and away from the “center” of
+        // the diagram <bx, by>, defined as the hull’s barycenter.
+        if (bx === undefined) {
+          bx = by = 0;
+          for (const i of hull) bx += points[i * 2], by += points[i * 2 + 1];
+          bx /= hull.length, by /= hull.length;
+        }
+        const a = 1e9 * Math.sign((bx - x1) * ey - (by - y1) * ex);
         x = (x1 + x3) / 2 - a * ey;
         y = (y1 + y3) / 2 + a * ex;
       } else {
@@ -65757,22 +65761,22 @@ const StackedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default *
 const GroupedBarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphvue_type_script_lang_js, [['render',GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_render],['__scopeId',"data-v-c70955f8"]])
 
 /* harmony default export */ var GroupedBarGraph = (GroupedBarGraph_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraphForm.vue?vue&type=template&id=654a2964&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraphForm.vue?vue&type=template&id=1ce9b7da&scoped=true
 
-const LikertGraphFormvue_type_template_id_654a2964_scoped_true_withScopeId = n => (_pushScopeId("data-v-654a2964"), n = n(), _popScopeId(), n);
-const LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_1 = {
+const LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_withScopeId = n => (_pushScopeId("data-v-1ce9b7da"), n = n(), _popScopeId(), n);
+const LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_1 = {
   key: 0
 };
-const LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_2 = {
+const LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_2 = {
   class: "AG-two-panes"
 };
-const LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_3 = {
+const LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_3 = {
   class: "AG-pane-left"
 };
-const LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_4 = {
+const LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_4 = {
   class: "AG-pane-right"
 };
-function LikertGraphFormvue_type_template_id_654a2964_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_instrument_selector = resolveComponent("instrument-selector");
   const _component_helpful_parameter = resolveComponent("helpful-parameter");
   const _component_likert_choices_selector = resolveComponent("likert-choices-selector");
@@ -65783,7 +65787,7 @@ function LikertGraphFormvue_type_template_id_654a2964_scoped_true_render(_ctx, _
     modelValue: $data.formData.instrument,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.formData.instrument = $event),
     availableInstruments: $options.availableInstruments
-  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_1, [createBaseVNode("div", LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_2, [createBaseVNode("div", LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_1, [createBaseVNode("div", LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_2, [createBaseVNode("div", LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('title'),
     "help-text": $options.module.tt('title_help')
   }, {
@@ -65824,7 +65828,7 @@ function LikertGraphFormvue_type_template_id_654a2964_scoped_true_render(_ctx, _
       labels: [$options.module.tt('likert_keep'), $options.module.tt('likert_drop')]
     }, null, 8, ["modelValue", "labels"])]),
     _: 1
-  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", LikertGraphFormvue_type_template_id_654a2964_scoped_true_hoisted_4, [$data.formData.likert_choices ? (openBlock(), createBlock(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_hoisted_4, [$data.formData.likert_choices ? (openBlock(), createBlock(_component_helpful_parameter, {
     key: 0,
     "label-text": $options.module.tt('likert_category_checkbox'),
     "help-text": $options.module.tt('likert_category_checkbox_help')
@@ -65846,7 +65850,7 @@ function LikertGraphFormvue_type_template_id_654a2964_scoped_true_render(_ctx, _
     _: 1
   }, 8, ["label-text", "help-text"])])])])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue?vue&type=template&id=654a2964&scoped=true
+;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue?vue&type=template&id=1ce9b7da&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertChoicesSelector.vue?vue&type=template&id=f03bfc2a
 
@@ -66025,7 +66029,7 @@ const LikertCategoryCheckbox_exports_ = /*#__PURE__*/(0,exportHelper/* default *
       formData: this.cellData || {
         palette_brewer: ["green", "yellow", "red"]
       },
-      likert_key_words: ["not useful", "not at all useful", "difficult", "none of my needs", "strongly disagree", "somewhat disagree", "completely disagree", "quite dissatisfied", "very dissatisfied", "Extremely dissatisfied", "poor", "never", "worse", "severely ill", "inutil", "infatil", "completamente inutil", "completamente infatil", "dificil", "ninguna de mis necesidades", "totalmente en desacuerdo", "parcialemnte en desacuerdo", "completamente en desacuerdo", "muy insatisfecho(a)", "totalmente insatisfecho(a)", "nunca", "peor", "gravemente enfermo"]
+      likert_key_words: ["not useful", "not at all useful", "difficult", "none of my needs", "strongly disagree", "somewhat disagree", "completely disagree", "quite dissatisfied", "very dissatisfied", "Extremely dissatisfied", "poor", "never", "worse", "severely ill", "inutil", "infantil", "completamente inutil", "completamente infantil", "dificil", "ninguna de mis necesidades", "totalmente en desacuerdo", "parcialemnte en desacuerdo", "completamente en desacuerdo", "muy insatisfecho(a)", "totalmente insatisfecho(a)", "nunca", "peor", "gravemente enfermo"]
     };
   },
   computed: {
@@ -66164,10 +66168,10 @@ const LikertCategoryCheckbox_exports_ = /*#__PURE__*/(0,exportHelper/* default *
 });
 ;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraphForm.vue?vue&type=style&index=0&id=654a2964&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraphForm.vue?vue&type=style&index=0&id=1ce9b7da&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue?vue&type=style&index=0&id=654a2964&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue?vue&type=style&index=0&id=1ce9b7da&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Likert/LikertGraphForm.vue
 
@@ -66177,7 +66181,7 @@ const LikertCategoryCheckbox_exports_ = /*#__PURE__*/(0,exportHelper/* default *
 ;
 
 
-const LikertGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(LikertGraphFormvue_type_script_lang_js, [['render',LikertGraphFormvue_type_template_id_654a2964_scoped_true_render],['__scopeId',"data-v-654a2964"]])
+const LikertGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(LikertGraphFormvue_type_script_lang_js, [['render',LikertGraphFormvue_type_template_id_1ce9b7da_scoped_true_render],['__scopeId',"data-v-1ce9b7da"]])
 
 /* harmony default export */ var LikertGraphForm = (LikertGraphForm_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraph.vue?vue&type=template&id=261fa47e&scoped=true
