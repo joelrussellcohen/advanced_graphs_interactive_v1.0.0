@@ -81,13 +81,6 @@ export default {
             this.$refs.graphContainer.innerHTML = '';
             this.getGraph.bind(this)();
         },
-        getMinLongitude(){
-            const processedData = this.processData();
-            //const longitude_min = Math.min(processedData)
-            const longitude_min = Math.min(processedData[row => row.identifier]);
-            //const longitude_min = Math.min(20,180)
-            return longitude_min
-        },
         getGraph() {
             const processedData = this.processData();
 
