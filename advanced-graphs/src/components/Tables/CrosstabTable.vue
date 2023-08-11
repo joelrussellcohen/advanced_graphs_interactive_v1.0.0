@@ -152,7 +152,7 @@
                 rows = new Set(Object.keys(choices_one));
             }
 
-            var columnTotals = Array.from(columns).map(function (column) {
+           var columnTotals = Array.from(columns).map(function (column) {
                 var total = 0;
                 for (const row of rows) {
                     if (countsNested.has(row) && countsNested.get(row).has(column)) {
@@ -183,6 +183,7 @@
 
             var totalColumn = {};
 
+            // Update the loops for creating tableData and calculating rowTotal and columnTotal
             // For each row in the rows set
             for (const row of rows) {
                 // For each column in the columns set
@@ -193,16 +194,20 @@
 
                     // If the row and column are not in the nested counts
                     if (countsNested.has(row) && countsNested.get(row).has(column)) {
-                        tableData[row][column] = {value: countsNested.get(row).get(column), rowPercent: countsNested.get(row).get(column) / rowTotals[Array.from(rows).indexOf(row)], columnPercent: countsNested.get(row).get(column) / columnTotals[Array.from(columns).indexOf(column)], totalPercent: countsNested.get(row).get(column) / total};
-                        rowTotal += countsNested.get(row).get(column);
+                const value = countsNested.get(row).get(column);
+                const valueFormatted = value.toLocaleString(); // Format the value with commas
+//                tableData[row][column] = { value: valueFormatted, ... }; // Include the formatted value in the object
+                        tableData[row][column] = {value: valueFormatted, rowPercent: value / rowTotals[Array.from(rows).indexOf(row)], columnPercent: value / columnTotals[Array.from(columns).indexOf(column)], totalPercent: value / total};  // Include the formatted value in the object
+//                        rowTotal += countsNested.get(row).get(column);
+                rowTotal += value;
                         continue;
                     }
 
                     // Add the row and column to the nested counts with a value of 0
-                    tableData[row][column] = {value: 0, rowPercent: 0, columnPercent: 0, totalPercent: 0};
+                    tableData[row][column] = {value: '0', rowPercent: 0, columnPercent: 0, totalPercent: 0}; // Format '0' as '0' with commas
                 }
 
-                totalColumn[row] = {value: rowTotal, rowPercent: 1, columnPercent: rowTotal / total, totalPercent: rowTotal / total};
+                totalColumn[row] = {value: rowTotal.toLocaleString(), rowPercent: 1, columnPercent: rowTotal / total, totalPercent: rowTotal / total};
             }
 
             var totalRow = {};
@@ -214,7 +219,7 @@
                         columnTotal += countsNested.get(row).get(column);
                     }
                 }
-                totalRow[column] = {value: columnTotal, rowPercent: columnTotal / total, columnPercent: 1, totalPercent: columnTotal / total};
+                totalRow[column] = {value: columnTotal.toLocaleString(), rowPercent: columnTotal / total, columnPercent: 1, totalPercent: columnTotal / total};
             }
 
             // tableData['Total']['Total'] = {value: total, rowPercent: 1, columnPercent: 1, totalPercent: 1};
@@ -238,7 +243,7 @@
                 attributeType: attributeType,
                 totalRow: totalRow,
                 totalColumn: totalColumn,
-                grandTotal: total,
+                grandTotal: total.toLocaleString(),
                 choices_one: choices_one,
                 choices_two: choices_two,
             }

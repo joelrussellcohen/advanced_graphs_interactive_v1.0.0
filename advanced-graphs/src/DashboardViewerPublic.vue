@@ -1,11 +1,14 @@
 <template>
+  <div style="margin-left: 20px;">
     <div>
       <h1>Dashboard Viewer Public</h1>
     </div>
-  </template>
+  </div>  
+</template>
+# comment
   
-  <script>
-  export default {
-    name: "DashboardViewerPublic",
-  };
-  </script>
+<script>
+ export default {
+   name: "DashboardViewerPublic",
+ };
+</script>

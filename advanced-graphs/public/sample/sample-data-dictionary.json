@@ -1098,5 +1098,25 @@
         "matrix_group_name": "",
         "matrix_ranking": "",
         "field_annotation": ""
+    },
+    "new_resume": {
+        "field_name": "new_resume",
+        "form_name": "transfers",
+        "section_header": "",
+        "field_type": "radio",
+        "field_label": "Are you applying to start a new research study, or revise or resume the review or conduct of an existing study?",
+        "select_choices_or_calculations": "1, to start a new study|2, to resume an existing study|3, to revise an existing study|4, I know the REB study number",
+        "field_note": "",
+        "text_validation_type_or_show_slider_number": "",
+        "text_validation_min": "",
+        "text_validation_max": "",
+        "identifier": "",
+        "branching_logic": "",
+        "required_field": "y",
+        "custom_alignment": "LV",
+        "question_number": "",
+        "matrix_group_name": "",
+        "matrix_ranking": "",
+        "field_annotation": "@HIDECHOICE='4'"
     }
 }

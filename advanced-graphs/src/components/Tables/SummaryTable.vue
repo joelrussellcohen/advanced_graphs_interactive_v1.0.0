@@ -85,6 +85,7 @@
             // Flatten the counts and add a percents column by dividing the count by the sum of the counts
             var countsArray = Array.from(counts, ([category, count]) => ({ category: choices[category], count, percent: count / d3.sum(Array.from(counts, ([, count]) => count)) }));
 
+
             // If there are choices that are not in the report and unused categories is set to keep add them to the counts array
             if (this.parameters.unused_categories == 'keep') {
                 for (var choice in choices) {
@@ -97,7 +98,11 @@
             // Add a total row to the counts array that takes the sum of the counts
             countsArray.push({ category: this.module.tt("table_total"), count: d3.sum(countsArray, d => d.count), percent: 1 });
 
-
+            // Format at the end of calculations the counts or aggreate values 
+            // to use commas as the thousands separator
+            countsArray.forEach(item => {
+                item.count = item.count.toLocaleString(); // Add formatted count as a new property
+            });
 
             return {
                 tableData: countsArray,

@@ -19001,7 +19001,7 @@ __webpack_require__.d(d3_src_namespaceObject, {
   "gray": function() { return gray; },
   "greatest": function() { return greatest; },
   "greatestIndex": function() { return greatestIndex; },
-  "group": function() { return group_group; },
+  "group": function() { return group; },
   "groupSort": function() { return groupSort; },
   "groups": function() { return groups; },
   "hcl": function() { return hcl; },
@@ -30552,22 +30552,22 @@ function GraphTypeSelectorvue_type_template_id_4991acf4_scoped_true_render(_ctx,
 const GraphTypeSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GraphTypeSelectorvue_type_script_lang_js, [['render',GraphTypeSelectorvue_type_template_id_4991acf4_scoped_true_render],['__scopeId',"data-v-4991acf4"]])
 
 /* harmony default export */ var GraphTypeSelector = (GraphTypeSelector_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraphForm.vue?vue&type=template&id=82bbfd68&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraphForm.vue?vue&type=template&id=5d0fdc88&scoped=true
 
-const BarGraphFormvue_type_template_id_82bbfd68_scoped_true_withScopeId = n => (_pushScopeId("data-v-82bbfd68"), n = n(), _popScopeId(), n);
-const BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_1 = {
+const BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_withScopeId = n => (_pushScopeId("data-v-5d0fdc88"), n = n(), _popScopeId(), n);
+const BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_1 = {
   key: 0
 };
-const BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_2 = {
+const BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_2 = {
   class: "AG-two-panes"
 };
-const BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_3 = {
+const BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_3 = {
   class: "AG-pane-left"
 };
-const BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_4 = {
+const BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_4 = {
   class: "AG-pane-right"
 };
-function BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_instrument_selector = resolveComponent("instrument-selector");
   const _component_helpful_parameter = resolveComponent("helpful-parameter");
   const _component_radio_component = resolveComponent("radio-component");
@@ -30578,7 +30578,7 @@ function BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render(_ctx, _cac
     modelValue: $data.formData.instrument,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.formData.instrument = $event),
     availableInstruments: $options.availableInstruments
-  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_2, [createBaseVNode("div", BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_2, [createBaseVNode("div", BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('title'),
     "help-text": $options.module.tt('title_help')
   }, {
@@ -30604,9 +30604,9 @@ function BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render(_ctx, _cac
       modelValue: $data.formData.graph_type,
       "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => $data.formData.graph_type = $event),
       name: 'graph_type',
-      values: ['bar', 'pie'],
+      values: ['bar', 'pie', 'donut'],
       defaultValue: 'bar',
-      labels: [$options.module.tt('bar_bar'), $options.module.tt('bar_bar_pie')]
+      labels: [$options.module.tt('bar_bar'), $options.module.tt('bar_bar_pie'), $options.module.tt('bar_donut')]
     }, null, 8, ["modelValue", "labels"])]),
     _: 1
   }, 8, ["label-text", "help-text"]), runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
@@ -30645,7 +30645,7 @@ function BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render(_ctx, _cac
       labels: [$options.module.tt('bar_keep'), $options.module.tt('bar_drop')]
     }, null, 8, ["modelValue", "labels"])]),
     _: 1
-  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", BarGraphFormvue_type_template_id_82bbfd68_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('bar_numeric_field'),
     "help-text": $options.module.tt('bar_numeric_field_help')
   }, {
@@ -30698,7 +30698,7 @@ function BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render(_ctx, _cac
     _: 1
   }, 8, ["label-text", "help-text"])])])])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue?vue&type=template&id=82bbfd68&scoped=true
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue?vue&type=template&id=5d0fdc88&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/HelpfulParameter.vue?vue&type=template&id=180c88b2&scoped=true
 
@@ -31511,7 +31511,7 @@ const PaletteSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pa
       }
 
       // console.log('isFormReady', true);
-      // Return true if there are enough selected parameters to create a bar or pie graph
+      // Return true if there are enough selected parameters to create a bar or pie or donut graph
       return true;
     },
     availableInstruments() {
@@ -31564,10 +31564,10 @@ const PaletteSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pa
 });
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraphForm.vue?vue&type=style&index=0&id=82bbfd68&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraphForm.vue?vue&type=style&index=0&id=5d0fdc88&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue?vue&type=style&index=0&id=82bbfd68&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue?vue&type=style&index=0&id=5d0fdc88&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraphForm.vue
 
@@ -31577,33 +31577,33 @@ const PaletteSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pa
 ;
 
 
-const BarGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphFormvue_type_script_lang_js, [['render',BarGraphFormvue_type_template_id_82bbfd68_scoped_true_render],['__scopeId',"data-v-82bbfd68"]])
+const BarGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphFormvue_type_script_lang_js, [['render',BarGraphFormvue_type_template_id_5d0fdc88_scoped_true_render],['__scopeId',"data-v-5d0fdc88"]])
 
 /* harmony default export */ var BarGraphForm = (BarGraphForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=template&id=3a18fb7d&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=template&id=0297d0c5&scoped=true
 
-const BarGraphvue_type_template_id_3a18fb7d_scoped_true_withScopeId = n => (_pushScopeId("data-v-3a18fb7d"), n = n(), _popScopeId(), n);
-const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_1 = {
+const BarGraphvue_type_template_id_0297d0c5_scoped_true_withScopeId = n => (_pushScopeId("data-v-0297d0c5"), n = n(), _popScopeId(), n);
+const BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_2 = {
+const BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_3 = {
+const BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_4 = {
+const BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function BarGraphvue_type_template_id_3a18fb7d_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_3, null, 512), createBaseVNode("div", BarGraphvue_type_template_id_3a18fb7d_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function BarGraphvue_type_template_id_0297d0c5_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_1, [createBaseVNode("div", BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_3, null, 512), createBaseVNode("div", BarGraphvue_type_template_id_0297d0c5_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=template&id=3a18fb7d&scoped=true
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=template&id=0297d0c5&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/d3-array/src/ascending.js
 function ascending(a, b) {
@@ -32028,7 +32028,7 @@ function fcumsum(values, valueof) {
 
 ;// CONCATENATED MODULE: ./node_modules/internmap/src/index.js
 class InternMap extends Map {
-  constructor(entries, key = src_keyof) {
+  constructor(entries, key = keyof) {
     super();
     Object.defineProperties(this, {_intern: {value: new Map()}, _key: {value: key}});
     if (entries != null) for (const [key, value] of entries) this.set(key, value);
@@ -32048,7 +32048,7 @@ class InternMap extends Map {
 }
 
 class InternSet extends Set {
-  constructor(values, key = src_keyof) {
+  constructor(values, key = keyof) {
     super();
     Object.defineProperties(this, {_intern: {value: new Map()}, _key: {value: key}});
     if (values != null) for (const value of values) this.add(value);
@@ -32085,7 +32085,7 @@ function intern_delete({_intern, _key}, value) {
   return value;
 }
 
-function src_keyof(value) {
+function keyof(value) {
   return value !== null && typeof value === "object" ? value.valueOf() : value;
 }
 
@@ -32098,7 +32098,7 @@ function identity_identity(x) {
 
 
 
-function group_group(values, ...keys) {
+function group(values, ...keys) {
   return nest(values, identity_identity, identity_identity, keys);
 }
 
@@ -32215,7 +32215,7 @@ function sort_ascendingDefined(a, b) {
 function groupSort(values, reduce, key) {
   return (reduce.length !== 2
     ? sort_sort(rollup(values, reduce, key), (([ak, av], [bk, bv]) => ascending(av, bv) || ascending(ak, bk)))
-    : sort_sort(group_group(values, key), (([ak, av], [bk, bv]) => reduce(av, bv) || ascending(ak, bk))))
+    : sort_sort(group(values, key), (([ak, av], [bk, bv]) => reduce(av, bv) || ascending(ak, bk))))
     .map(([key]) => key);
 }
 
@@ -55984,7 +55984,7 @@ function floater(f) {
 }
 
 const field = (name) => (d) => d[name];
-const indexOf = {transform: options_range};
+const options_indexOf = {transform: options_range};
 const options_identity = {transform: (d) => d};
 const options_zero = () => 0;
 const options_one = () => 1;
@@ -56500,24 +56500,24 @@ function formatAuto(locale = "en-US") {
 // TODO When Plot supports a top-level locale option, this should be removed
 // because it lacks context to know which locale to use; formatAuto should be
 // used instead whenever possible.
-const format_formatDefault = formatAuto();
+const formatDefault = formatAuto();
 
 ;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/defined.js
 
 
-function defined_defined(x) {
+function defined(x) {
   return x != null && !Number.isNaN(x);
 }
 
 function defined_ascendingDefined(a, b) {
-  return +defined_defined(b) - +defined_defined(a) || ascending(a, b);
+  return +defined(b) - +defined(a) || ascending(a, b);
 }
 
 function descendingDefined(a, b) {
-  return +defined_defined(b) - +defined_defined(a) || descending(a, b);
+  return +defined(b) - +defined(a) || descending(a, b);
 }
 
-function defined_nonempty(x) {
+function nonempty(x) {
   return x != null && `${x}` !== "";
 }
 
@@ -56664,7 +56664,7 @@ function groupY(outputs = {x: "count"}, options = {}) {
 }
 
 // Group on {z, fill, stroke}, then on x and y.
-function transforms_group_group(outputs = {fill: "count"}, options = {}) {
+function group_group(outputs = {fill: "count"}, options = {}) {
   let {x, y} = options;
   [x, y] = maybeTuple(x, y);
   if (x == null) throw new Error("missing channel: x");
@@ -59127,7 +59127,7 @@ function styles(
 function applyTitle(selection, L) {
   if (L)
     selection
-      .filter((i) => defined_nonempty(L[i]))
+      .filter((i) => nonempty(L[i]))
       .append("title")
       .call(applyText, L);
 }
@@ -59142,7 +59142,7 @@ function applyTitleGroup(selection, L) {
 }
 
 function applyText(selection, T) {
-  if (T) selection.text((i) => format_formatDefault(T[i]));
+  if (T) selection.text((i) => formatDefault(T[i]));
 }
 
 function applyTextGroup(selection, T) {
@@ -59218,7 +59218,7 @@ function groupAesthetics({
 function style_groupZ(I, Z, z) {
   const G = group(I, (i) => Z[i]);
   if (z === undefined && G.size > I.length >> 1) {
-    warn(
+    warnings_warn(
       `Warning: the implicit z channel has high cardinality. This may occur when the fill or stroke channel is associated with quantitative data rather than ordinal or categorical data. You can suppress this warning by setting the z option explicitly; if this data represents a single series, set z to null.`
     );
   }
@@ -59247,7 +59247,7 @@ function* groupIndex(I, position, {z}, channels) {
       // group. Yield the current group and start a new one.
       if (Ag === undefined) {
         if (Gg) yield Gg;
-        (Ag = A.map((c) => keyof(c[i]))), (Gg = [i]);
+        (Ag = A.map((c) => options_keyof(c[i]))), (Gg = [i]);
         continue;
       }
 
@@ -59256,10 +59256,10 @@ function* groupIndex(I, position, {z}, channels) {
       // and start a new group of the current index.
       Gg.push(i);
       for (let j = 0; j < A.length; ++j) {
-        const k = keyof(A[j][i]);
+        const k = options_keyof(A[j][i]);
         if (k !== Ag[j]) {
           yield Gg;
-          (Ag = A.map((c) => keyof(c[i]))), (Gg = [i]);
+          (Ag = A.map((c) => options_keyof(c[i]))), (Gg = [i]);
           continue out;
         }
       }
@@ -59652,7 +59652,7 @@ class Mark {
   }
   filter(index, channels, values) {
     for (const name in channels) {
-      const {filter = defined_defined} = channels[name];
+      const {filter = defined} = channels[name];
       if (filter !== null) {
         const value = values[name];
         index = index.filter((i) => filter(value[i]));
@@ -59988,7 +59988,7 @@ class text_Text extends Mark {
     const {
       x,
       y,
-      text = isIterable(data) && isTextual(data) ? options_identity : indexOf,
+      text = isIterable(data) && isTextual(data) ? options_identity : options_indexOf,
       frameAnchor,
       textAnchor = /right$/i.test(frameAnchor) ? "end" : /left$/i.test(frameAnchor) ? "start" : "middle",
       lineAnchor = /^top/i.test(frameAnchor) ? "top" : /^bottom/i.test(frameAnchor) ? "bottom" : "middle",
@@ -60012,7 +60012,7 @@ class text_Text extends Mark {
         y: {value: y, scale: "y", optional: true},
         fontSize: {value: vfontSize, optional: true},
         rotate: {value: numberChannel(vrotate), optional: true},
-        text: {value: text, filter: defined_nonempty, optional: true}
+        text: {value: text, filter: nonempty, optional: true}
       },
       options,
       text_defaults
@@ -60082,7 +60082,7 @@ function applyMultilineText(selection, mark, T, TL) {
   if (!T) return;
   const {lineAnchor, lineHeight, textOverflow, splitLines, clipLine} = mark;
   selection.each(function (i) {
-    const lines = splitLines(format_formatDefault(T[i]) ?? "").map(clipLine);
+    const lines = splitLines(formatDefault(T[i]) ?? "").map(clipLine);
     const n = lines.length;
     const y = lineAnchor === "top" ? 0.71 : lineAnchor === "bottom" ? 1 - n : (164 - n * 100) / 200;
     if (n > 1) {
@@ -61220,7 +61220,7 @@ function inferTickFormat(scale, ticks, tickFormat) {
   return scale.tickFormat
     ? scale.tickFormat(isIterable(ticks) ? null : ticks, tickFormat)
     : tickFormat === undefined
-    ? format_formatDefault
+    ? formatDefault
     : typeof tickFormat === "string"
     ? (isTemporal(scale.domain()) ? utcFormat : defaultLocale_format)(tickFormat)
     : options_constant(tickFormat);
@@ -61381,7 +61381,7 @@ function stack_stack(x, y = options_one, ky, {offset, order, reverse}, options) 
       const Y2 = setY2(new Float64Array(n));
       const facetstacks = [];
       for (const facet of facets) {
-        const stacks = X ? Array.from(group_group(facet, (i) => X[i]).values()) : [facet];
+        const stacks = X ? Array.from(group(facet, (i) => X[i]).values()) : [facet];
         if (O) applyOrder(stacks, O);
         for (const stack of stacks) {
           let yn = 0,
@@ -61753,11 +61753,11 @@ class BarY extends AbstractBar {
   }
 }
 
-function barX(data, options = {y: indexOf, x2: options_identity}) {
+function barX(data, options = {y: options_indexOf, x2: options_identity}) {
   return new BarX(data, maybeStackX(maybeIntervalX(maybeIdentityX(options))));
 }
 
-function barY(data, options = {x: indexOf, y2: options_identity}) {
+function barY(data, options = {x: options_indexOf, y2: options_identity}) {
   return new BarY(data, maybeStackY(maybeIntervalY(maybeIdentityY(options))));
 }
 
@@ -63694,7 +63694,7 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
     try {
       if (this.parameters.graph_type == 'bar') {
         this.moreOptionsComponent = markRaw(BarGraphOptions);
-      } else if (this.parameters.graph_type == 'pie') {
+      } else if (this.parameters.graph_type == 'pie' || this.parameters.graph_type == 'donut') {
         this.moreOptionsComponent = markRaw(PieGraphOptions);
       }
       // wait until the moreOptionsComponent updates the parameters before updating the graph
@@ -63922,19 +63922,20 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
           marginBottom: bottom_margin ? bottom_margin : 20
         });
         return graph;
-      } else if (parameters.graph_type == 'pie') {
+      } else if (parameters.graph_type == 'pie' || parameters.graph_type == 'donut') {
         const label_spacing = parameters.label_spacing ? Number(parameters.label_spacing) : 0.1;
         const label_size = parameters.label_size ? Number(parameters.label_size) : 10;
         const value_size = parameters.value_size ? Number(parameters.value_size) : 10;
         const value_precision = parameters.value_precision ? parameters.value_precision : '1';
         const seperation_force = parameters.seperation_force ? Number(parameters.seperation_force) : 28;
+        const inner = parameters.graph_type == 'donut' ? 100 : 0;
         const seperation_strength = parameters.seperation_strength ? Number(parameters.seperation_strength) : 1.1;
         const seperation_iterations = parameters.seperation_iterations ? Number(parameters.seperation_iterations) : 50;
         // Create a pie chart
         graph = this.PieChart(barHeights, {
           width: 640,
           height: 480,
-          innerRadius: 0,
+          innerRadius: inner,
           outerRadius: Math.min(640, 400) / 2,
           title: d => x_tick_format(d.key) + '\n' + d.value,
           value: d => d.value,
@@ -64096,10 +64097,10 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
 });
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=3a18fb7d&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=0297d0c5&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=3a18fb7d&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue?vue&type=style&index=0&id=0297d0c5&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/BarGraph/BarGraph.vue
 
@@ -64109,7 +64110,7 @@ const PieGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Pi
 ;
 
 
-const BarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphvue_type_script_lang_js, [['render',BarGraphvue_type_template_id_3a18fb7d_scoped_true_render],['__scopeId',"data-v-3a18fb7d"]])
+const BarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(BarGraphvue_type_script_lang_js, [['render',BarGraphvue_type_template_id_0297d0c5_scoped_true_render],['__scopeId',"data-v-0297d0c5"]])
 
 /* harmony default export */ var BarGraph = (BarGraph_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphForm.vue?vue&type=template&id=3584a69a&scoped=true
@@ -66625,22 +66626,22 @@ const LikertGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 const LikertGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(LikertGraphvue_type_script_lang_js, [['render',LikertGraphvue_type_template_id_261fa47e_scoped_true_render],['__scopeId',"data-v-261fa47e"]])
 
 /* harmony default export */ var LikertGraph = (LikertGraph_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=f27940ec&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=431e45d2&scoped=true
 
-const ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_withScopeId = n => (_pushScopeId("data-v-f27940ec"), n = n(), _popScopeId(), n);
-const ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_1 = {
+const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_withScopeId = n => (_pushScopeId("data-v-431e45d2"), n = n(), _popScopeId(), n);
+const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_1 = {
   key: 0
 };
-const ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_2 = {
+const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_2 = {
   class: "AG-two-panes"
 };
-const ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_3 = {
+const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_3 = {
   class: "AG-pane-left"
 };
-const ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_4 = {
+const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_4 = {
   class: "AG-pane-right"
 };
-function ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_instrument_selector = resolveComponent("instrument-selector");
   const _component_helpful_parameter = resolveComponent("helpful-parameter");
   const _component_scatter_field_selector = resolveComponent("scatter-field-selector");
@@ -66650,7 +66651,7 @@ function ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render(_ctx, _
     modelValue: $data.formData.instrument,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.formData.instrument = $event),
     availableInstruments: $options.availableInstruments
-  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_2, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_2, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('title'),
     "help-text": $options.module.tt('title_help')
   }, {
@@ -66678,7 +66679,7 @@ function ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render(_ctx, _
       fields: $options.report_fields_by_repeat_instrument[$data.formData.instrument].fields
     }, null, 8, ["modelValue", "fields"])]),
     _: 1
-  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('scatter_field_y'),
     "help-text": $options.module.tt('scatter_field_help')
   }, {
@@ -66700,11 +66701,21 @@ function ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render(_ctx, _
       values: ['drop', 'replace'],
       defaultValue: 'drop',
       labels: [$options.module.tt('scatter_drop'), $options.module.tt('scatter_replace')]
-    }, null, 8, ["modelValue", "labels"]), $data.formData.na_numeric === 'replace' ? withDirectives((openBlock(), createElementBlock("input", {
-      key: 0,
-      type: "number",
-      "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $data.formData.na_numeric_value = $event)
-    }, null, 512)), [[vModelText, $data.formData.na_numeric_value]]) : createCommentVNode("", true)]),
+    }, null, 8, ["modelValue", "labels"])]),
+    _: 1
+  }, 8, ["label-text", "help-text"])) : createCommentVNode("", true), $data.formData.numeric_field !== null && typeof $data.formData.numeric_field === 'string' && $data.formData.is_count != true ? (openBlock(), createBlock(_component_helpful_parameter, {
+    key: 1,
+    "label-text": $options.module.tt('scatter_type'),
+    "help-text": $options.module.tt('scatter_type_help')
+  }, {
+    default: withCtx(() => [runtime_core_esm_bundler_createVNode(_component_radio_component, {
+      modelValue: $data.formData.scatter_type,
+      "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $data.formData.scatter_type = $event),
+      name: 'scatter_type',
+      values: ['dots', 'dots & lines'],
+      defaultValue: 'dots',
+      labels: [$options.module.tt('scatter_dots'), $options.module.tt('scatter_dots_lines')]
+    }, null, 8, ["modelValue", "labels"])]),
     _: 1
   }, 8, ["label-text", "help-text"])) : createCommentVNode("", true), runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('palette'),
@@ -66717,7 +66728,7 @@ function ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render(_ctx, _
     _: 1
   }, 8, ["label-text", "help-text"])])])])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=f27940ec&scoped=true
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=431e45d2&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterFieldSelector.vue?vue&type=template&id=09712275&scoped=true
 
@@ -66856,11 +66867,6 @@ const ScatterFieldSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.
         return false;
       }
 
-      // If na_numeric is replace, but no value is provided, return false
-      if (this.formData.na_numeric === 'replace' && !this.formData.na_numeric_value) {
-        return false;
-      }
-
       // If numeric field is selected, but no aggregation function is selected, return false
       // if (numeric_field_selected && typeof this.formData.numeric_field === 'string' && this.formData.is_count != true && !aggregation_function_selected) {
       //   return false;
@@ -66920,10 +66926,10 @@ const ScatterFieldSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.
 });
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=f27940ec&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=431e45d2&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=f27940ec&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=431e45d2&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue
 
@@ -66933,33 +66939,33 @@ const ScatterFieldSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.
 ;
 
 
-const ScatterPlotForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotFormvue_type_script_lang_js, [['render',ScatterPlotFormvue_type_template_id_f27940ec_scoped_true_render],['__scopeId',"data-v-f27940ec"]])
+const ScatterPlotForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotFormvue_type_script_lang_js, [['render',ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render],['__scopeId',"data-v-431e45d2"]])
 
 /* harmony default export */ var ScatterPlotForm = (ScatterPlotForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=9ccbd29c&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=3157d5c9&scoped=true
 
-const ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_withScopeId = n => (_pushScopeId("data-v-9ccbd29c"), n = n(), _popScopeId(), n);
-const ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_1 = {
+const ScatterPlotvue_type_template_id_3157d5c9_scoped_true_withScopeId = n => (_pushScopeId("data-v-3157d5c9"), n = n(), _popScopeId(), n);
+const ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_2 = {
+const ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_3 = {
+const ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_4 = {
+const ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_3, null, 512), createBaseVNode("div", ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function ScatterPlotvue_type_template_id_3157d5c9_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_3, null, 512), createBaseVNode("div", ScatterPlotvue_type_template_id_3157d5c9_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=9ccbd29c&scoped=true
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=3157d5c9&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/marks/dot.js
 
@@ -67112,6 +67118,286 @@ function dot_circle(data, options) {
 
 function hexagon(data, options) {
   return dot(data, {...options, symbol: "hexagon"});
+}
+
+;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/curve.js
+
+
+const curves = new Map([
+  ["basis", curve_basis],
+  ["basis-closed", curve_basisClosed],
+  ["basis-open", basisOpen],
+  ["bundle", bundle],
+  ["bump-x", bumpX],
+  ["bump-y", bumpY],
+  ["cardinal", cardinal],
+  ["cardinal-closed", cardinalClosed],
+  ["cardinal-open", cardinalOpen],
+  ["catmull-rom", catmullRom],
+  ["catmull-rom-closed", catmullRomClosed],
+  ["catmull-rom-open", catmullRomOpen],
+  ["linear", curve_linear],
+  ["linear-closed", linearClosed],
+  ["monotone-x", monotoneX],
+  ["monotone-y", monotoneY],
+  ["natural", natural],
+  ["step", step],
+  ["step-after", stepAfter],
+  ["step-before", stepBefore]
+]);
+
+function maybeCurve(curve = curve_linear, tension) {
+  if (typeof curve === "function") return curve; // custom curve
+  const c = curves.get(`${curve}`.toLowerCase());
+  if (!c) throw new Error(`unknown curve: ${curve}`);
+  if (tension !== undefined) {
+    if ("beta" in c) {
+      return c.beta(tension);
+    } else if ("tension" in c) {
+      return c.tension(tension);
+    } else if ("alpha" in c) {
+      return c.alpha(tension);
+    }
+  }
+  return c;
+}
+
+// For the “auto” curve, return a symbol instead of a curve implementation;
+// we’ll use d3.geoPath to render if there’s a projection.
+function maybeCurveAuto(curve = curveAuto, tension) {
+  return typeof curve !== "function" && `${curve}`.toLowerCase() === "auto" ? curveAuto : maybeCurve(curve, tension);
+}
+
+// This is a special built-in curve that will use d3.geoPath when there is a
+// projection, and the linear curve when there is not. You can explicitly
+// opt-out of d3.geoPath and instead use d3.line with the "linear" curve.
+function curveAuto(context) {
+  return curve_linear(context);
+}
+
+;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/marker.js
+
+
+function markers(mark, {marker, markerStart = marker, markerMid = marker, markerEnd = marker} = {}) {
+  mark.markerStart = maybeMarker(markerStart);
+  mark.markerMid = maybeMarker(markerMid);
+  mark.markerEnd = maybeMarker(markerEnd);
+}
+
+function maybeMarker(marker) {
+  if (marker == null || marker === false) return null;
+  if (marker === true) return markerCircleFill;
+  if (typeof marker === "function") return marker;
+  switch (`${marker}`.toLowerCase()) {
+    case "none":
+      return null;
+    case "arrow":
+      return markerArrow;
+    case "dot":
+      return markerDot;
+    case "circle":
+    case "circle-fill":
+      return markerCircleFill;
+    case "circle-stroke":
+      return markerCircleStroke;
+  }
+  throw new Error(`invalid marker: ${marker}`);
+}
+
+function markerArrow(color, context) {
+  return context_create("svg:marker", context)
+    .attr("viewBox", "-5 -5 10 10")
+    .attr("markerWidth", 6.67)
+    .attr("markerHeight", 6.67)
+    .attr("orient", "auto")
+    .attr("fill", "none")
+    .attr("stroke", color)
+    .attr("stroke-width", 1.5)
+    .attr("stroke-linecap", "round")
+    .attr("stroke-linejoin", "round")
+    .call((marker) => marker.append("path").attr("d", "M-1.5,-3l3,3l-3,3"))
+    .node();
+}
+
+function markerDot(color, context) {
+  return context_create("svg:marker", context)
+    .attr("viewBox", "-5 -5 10 10")
+    .attr("markerWidth", 6.67)
+    .attr("markerHeight", 6.67)
+    .attr("fill", color)
+    .attr("stroke", "none")
+    .call((marker) => marker.append("circle").attr("r", 2.5))
+    .node();
+}
+
+function markerCircleFill(color, context) {
+  return context_create("svg:marker", context)
+    .attr("viewBox", "-5 -5 10 10")
+    .attr("markerWidth", 6.67)
+    .attr("markerHeight", 6.67)
+    .attr("fill", color)
+    .attr("stroke", "white")
+    .attr("stroke-width", 1.5)
+    .call((marker) => marker.append("circle").attr("r", 3))
+    .node();
+}
+
+function markerCircleStroke(color, context) {
+  return context_create("svg:marker", context)
+    .attr("viewBox", "-5 -5 10 10")
+    .attr("markerWidth", 6.67)
+    .attr("markerHeight", 6.67)
+    .attr("fill", "white")
+    .attr("stroke", color)
+    .attr("stroke-width", 1.5)
+    .call((marker) => marker.append("circle").attr("r", 3))
+    .node();
+}
+
+let nextMarkerId = 0;
+
+function applyMarkers(path, mark, {stroke: S}, context) {
+  return applyMarkersColor(path, mark, S && ((i) => S[i]), context);
+}
+
+function applyGroupedMarkers(path, mark, {stroke: S}, context) {
+  return applyMarkersColor(path, mark, S && (([i]) => S[i]), context);
+}
+
+function applyMarkersColor(path, {markerStart, markerMid, markerEnd, stroke}, strokeof = () => stroke, context) {
+  const iriByMarkerColor = new Map();
+
+  function applyMarker(marker) {
+    return function (i) {
+      const color = strokeof(i);
+      let iriByColor = iriByMarkerColor.get(marker);
+      if (!iriByColor) iriByMarkerColor.set(marker, (iriByColor = new Map()));
+      let iri = iriByColor.get(color);
+      if (!iri) {
+        const node = this.parentNode.insertBefore(marker(color, context), this);
+        const id = `plot-marker-${++nextMarkerId}`;
+        node.setAttribute("id", id);
+        iriByColor.set(color, (iri = `url(#${id})`));
+      }
+      return iri;
+    };
+  }
+
+  if (markerStart) path.attr("marker-start", applyMarker(markerStart));
+  if (markerMid) path.attr("marker-mid", applyMarker(markerMid));
+  if (markerEnd) path.attr("marker-end", applyMarker(markerEnd));
+}
+
+;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/marks/line.js
+
+
+
+
+
+
+
+
+
+const line_defaults = {
+  ariaLabel: "line",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.5,
+  strokeLinecap: "round",
+  strokeLinejoin: "round",
+  strokeMiterlimit: 1
+};
+
+class Line extends Mark {
+  constructor(data, options = {}) {
+    const {x, y, z, curve, tension} = options;
+    super(
+      data,
+      {
+        x: {value: x, scale: "x"},
+        y: {value: y, scale: "y"},
+        z: {value: maybeZ(options), optional: true}
+      },
+      options,
+      line_defaults
+    );
+    this.z = z;
+    this.curve = maybeCurveAuto(curve, tension);
+    markers(this, options);
+  }
+  filter(index) {
+    return index;
+  }
+  project(channels, values, context) {
+    // For the auto curve, projection is handled at render.
+    if (this.curve !== curveAuto) {
+      super.project(channels, values, context);
+    }
+  }
+  render(index, scales, channels, dimensions, context) {
+    const {x: X, y: Y} = channels;
+    const {curve} = this;
+    return context_create("svg:g", context)
+      .call(applyIndirectStyles, this, dimensions, context)
+      .call(applyTransform, this, scales)
+      .call((g) =>
+        g
+          .selectAll()
+          .data(groupIndex(index, [X, Y], this, channels))
+          .enter()
+          .append("path")
+          .call(applyDirectStyles, this)
+          .call(applyGroupedChannelStyles, this, channels)
+          .call(applyGroupedMarkers, this, channels, context)
+          .attr(
+            "d",
+            curve === curveAuto && context.projection
+              ? sphereLine(context.projection, X, Y)
+              : src_line()
+                  .curve(curve)
+                  .defined((i) => i >= 0)
+                  .x((i) => X[i])
+                  .y((i) => Y[i])
+          )
+      )
+      .node();
+  }
+}
+
+function sphereLine(projection, X, Y) {
+  const path = src_path(projection);
+  X = options_coerceNumbers(X);
+  Y = options_coerceNumbers(Y);
+  return (I) => {
+    let line = [];
+    const lines = [line];
+    for (const i of I) {
+      // Check for undefined value; see groupIndex.
+      if (i === -1) {
+        line = [];
+        lines.push(line);
+      } else {
+        line.push([X[i], Y[i]]);
+      }
+    }
+    return path({type: "MultiLineString", coordinates: lines});
+  };
+}
+
+function line_line(data, options = {}) {
+  let {x, y, ...remainingOptions} = options;
+  [x, y] = options_maybeTuple(x, y);
+  return new Line(data, {...remainingOptions, x, y});
+}
+
+function lineX(data, options = {}) {
+  const {x = identity, y = indexOf, ...remainingOptions} = options;
+  return new Line(data, maybeDenseIntervalY({...remainingOptions, x, y}));
+}
+
+function lineY(data, options = {}) {
+  const {x = indexOf, y = identity, ...remainingOptions} = options;
+  return new Line(data, maybeDenseIntervalX({...remainingOptions, x, y}));
 }
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotOptions.vue?vue&type=template&id=877c0ece&scoped=true
@@ -67814,41 +68100,21 @@ function sortValuesByDate(xValues, yValues) {
       // Square marker
       //const squarePath = "M -5 -5 L 5 -5 L 5 5 L -5 5 Z";
 
-      // Triangle marker
-      //const trianglePath = "M 0 -5 L 5 5 L -5 5 Z";
-
-      let dotPlot = dot(data, {
+      // Dots & line markers
+      let circlePlot = dot(data, {
         x: "x",
         y: "y",
         r: parameters.scatter_dot_size,
         fill: colorScale(parameters.scatter_dot_color * 10)
       });
-      let squarePlot = vector(data, {
+      let circleLinePlot = line_line(data, {
         x: "x",
         y: "y",
-        //x2: "x" ,
-        //y2: "y"
         r: parameters.scatter_dot_size + 1,
-        length: parameters.scatter_dot_size + 1,
-        //d: trianglePath, //squarePath,
-        shape: "spike",
-        //square,
-        anchor: "start",
-        fill: colorScale(parameters.scatter_dot_color * 10)
-      });
-      let squarePlot2 = vector(data, {
-        x: "x",
-        y: "y",
-        //x2: "x" ,
-        //y2: "y"
-        r: parameters.scatter_dot_size + 1,
-        length: parameters.scatter_dot_size + 1,
-        rotate: 180,
-        //d: trianglePath, //squarePath,
-        shape: "spike",
-        //square,
-        anchor: "start",
-        fill: colorScale(parameters.scatter_dot_color * 10)
+        sort: "x",
+        // explicitly sort by ascending values of x
+        marker: "none",
+        stroke: colorScale(parameters.scatter_dot_color * 10)
       });
       let trianglePlot = vector(data, {
         x: "x",
@@ -67857,7 +68123,19 @@ function sortValuesByDate(xValues, yValues) {
         //y2: "y"
         r: parameters.scatter_dot_size + 1,
         length: parameters.scatter_dot_size + 1,
-        //d: trianglePath, //squarePath,
+        shape: "spike",
+        //square,
+        anchor: "start",
+        fill: colorScale(parameters.scatter_dot_color * 10)
+      });
+      let triangleDownPlot = vector(data, {
+        x: "x",
+        y: "y",
+        //x2: "x" ,
+        //y2: "y"
+        r: parameters.scatter_dot_size + 1,
+        length: parameters.scatter_dot_size + 1,
+        rotate: 180,
         shape: "spike",
         //square,
         anchor: "start",
@@ -67905,7 +68183,10 @@ function sortValuesByDate(xValues, yValues) {
         domainX = [minx, maxx];
       }
       graph = plot({
-        marks: [parameters.marker_type == "circle" ? dotPlot : parameters.marker_type == "square" ? squarePlot : squarePlot, parameters.marker_type == "square" ? squarePlot2 : trianglePlot, yAxisTitle, yAxisLabels, xAxisTitle, xAxisLabels],
+        marks: [
+        // Plots several marks; the Plot.ruleY is an empty plot just to fill when 
+        // condition is not true
+        parameters.scatter_type == "dots & lines" ? circleLinePlot : ruleY([0]), parameters.marker_type == "circle" ? circlePlot : ruleY([0]), parameters.marker_type == "square" ? triangleDownPlot : ruleY([0]), parameters.marker_type == "square" ? trianglePlot : ruleY([0]), parameters.marker_type == "triangle" ? trianglePlot : ruleY([0]), yAxisTitle, yAxisLabels, xAxisTitle, xAxisLabels],
         marginBottom: bottom_margin,
         marginLeft: parameters.left_margin ? parameters.left_margin : 80,
         x: {
@@ -67954,10 +68235,10 @@ function sortValuesByDate(xValues, yValues) {
 });
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=9ccbd29c&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=3157d5c9&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=9ccbd29c&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=3157d5c9&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue
 
@@ -67967,7 +68248,7 @@ function sortValuesByDate(xValues, yValues) {
 ;
 
 
-const ScatterPlot_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotvue_type_script_lang_js, [['render',ScatterPlotvue_type_template_id_9ccbd29c_scoped_true_render],['__scopeId',"data-v-9ccbd29c"]])
+const ScatterPlot_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotvue_type_script_lang_js, [['render',ScatterPlotvue_type_template_id_3157d5c9_scoped_true_render],['__scopeId',"data-v-3157d5c9"]])
 
 /* harmony default export */ var ScatterPlot = (ScatterPlot_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/TableComponent.vue?vue&type=template&id=63c8ea48&scoped=true
@@ -67995,32 +68276,32 @@ function TableComponentvue_type_template_id_63c8ea48_scoped_true_render(_ctx, _c
 }
 ;// CONCATENATED MODULE: ./src/components/Tables/TableComponent.vue?vue&type=template&id=63c8ea48&scoped=true
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=template&id=b048d7e0&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=template&id=17c2dc44&scoped=true
 
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_withScopeId = n => (_pushScopeId("data-v-b048d7e0"), n = n(), _popScopeId(), n);
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_1 = {
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_withScopeId = n => (_pushScopeId("data-v-17c2dc44"), n = n(), _popScopeId(), n);
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_1 = {
   class: "tableContainer"
 };
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_2 = {
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_2 = {
   class: "header"
 };
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_3 = {
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_3 = {
   key: 0
 };
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_4 = {
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_4 = {
   key: 1
 };
-const SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_5 = {
+const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_5 = {
   key: 2
 };
-function SummaryTablevue_type_template_id_b048d7e0_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_1, [createBaseVNode("table", null, [createBaseVNode("tr", SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_2, [createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.category), 1)]), createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.numeric), 1)])]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.tableData, (row, index) => {
+function SummaryTablevue_type_template_id_17c2dc44_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_1, [createBaseVNode("table", null, [createBaseVNode("tr", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_2, [createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.category), 1)]), createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.numeric), 1)])]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.tableData, (row, index) => {
     return openBlock(), createElementBlock("tr", {
       key: index
-    }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString(row['category']), 1)]), createBaseVNode("td", null, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_3, toDisplayString(row['count']), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_4, toDisplayString($data.d3.format(".0%")(row['percent'])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_b048d7e0_scoped_true_hoisted_5, toDisplayString(row['count']) + " (" + toDisplayString($data.d3.format(".0%")(row['percent'])) + ")", 1)) : createCommentVNode("", true)])]);
+    }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString(row['category']), 1)]), createBaseVNode("td", null, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_3, toDisplayString(row['count']), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_4, toDisplayString($data.d3.format(".0%")(row['percent'])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_5, toDisplayString(row['count']) + " (" + toDisplayString($data.d3.format(".0%")(row['percent'])) + ")", 1)) : createCommentVNode("", true)])]);
   }), 128))])]);
 }
-;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=template&id=b048d7e0&scoped=true
+;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=template&id=17c2dc44&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=script&lang=js
 
@@ -68111,6 +68392,13 @@ function SummaryTablevue_type_template_id_b048d7e0_scoped_true_render(_ctx, _cac
       count: sum_sum(countsArray, d => d.count),
       percent: 1
     });
+
+    // Format at the end of calculations the counts or aggreate values 
+    // to use commas as the thousands separator
+    countsArray.forEach(item => {
+      item.count = item.count.toLocaleString(); // Add formatted count as a new property
+    });
+
     return {
       tableData: countsArray,
       category: this.data_dictionary[this.parameters.categorical_field].field_label,
@@ -68122,10 +68410,10 @@ function SummaryTablevue_type_template_id_b048d7e0_scoped_true_render(_ctx, _cac
 });
 ;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=b048d7e0&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=17c2dc44&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=b048d7e0&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=17c2dc44&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue
 
@@ -68135,51 +68423,51 @@ function SummaryTablevue_type_template_id_b048d7e0_scoped_true_render(_ctx, _cac
 ;
 
 
-const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_b048d7e0_scoped_true_render],['__scopeId',"data-v-b048d7e0"]])
+const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_17c2dc44_scoped_true_render],['__scopeId',"data-v-17c2dc44"]])
 
 /* harmony default export */ var SummaryTable = (SummaryTable_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=c79a30ba&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=9d3a570e&scoped=true
 
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_withScopeId = n => (pushScopeId("data-v-c79a30ba"), n = n(), popScopeId(), n);
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_1 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_withScopeId = n => (pushScopeId("data-v-9d3a570e"), n = n(), popScopeId(), n);
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_1 = {
   class: "AG-cross-tab"
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_c79a30ba_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_3 = ["colspan"];
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_4 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_9d3a570e_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_3 = ["colspan"];
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_4 = {
   class: "header"
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_5 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_5 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_6 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_6 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_7 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_7 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_8 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_8 = {
   class: "column-total"
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_9 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_9 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_10 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_10 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_11 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_11 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_12 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_12 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_13 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_13 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_14 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_14 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_15 = {
+const CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_15 = {
   class: "grand-total"
 };
 const _hoisted_16 = {
@@ -68191,11 +68479,11 @@ const _hoisted_17 = {
 const _hoisted_18 = {
   key: 2
 };
-function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_2, createBaseVNode("th", {
+function CrosstabTablevue_type_template_id_9d3a570e_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_2, createBaseVNode("th", {
     class: "header",
     colspan: $data.column_categories.length
-  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
+  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       key: index
     }, toDisplayString($data.choices_two[category]), 1);
@@ -68205,16 +68493,16 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
     }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString($data.choices_one[row_categories]), 1)]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(row, (value, column) => {
       return openBlock(), createElementBlock("td", {
         key: column
-      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_5, toDisplayString(value.value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_7, toDisplayString(value.value) + " (" + toDisplayString($data.d3.format(".0%")(value[$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
+      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_5, toDisplayString(value.value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_7, toDisplayString(value.value) + " (" + toDisplayString($data.d3.format(".0%")(value[$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
   }), 128)), createBaseVNode("tr", null, [createBaseVNode("th", null, toDisplayString($options.module.tt('table_total')), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       class: "row-total",
       key: index
-    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_c79a30ba_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
+    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_9d3a570e_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
 }
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=c79a30ba&scoped=true
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=9d3a570e&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
 
@@ -68349,6 +68637,7 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
     }
     var totalColumn = {};
 
+    // Update the loops for creating tableData and calculating rowTotal and columnTotal
     // For each row in the rows set
     for (const row of rows) {
       // For each column in the columns set
@@ -68357,26 +68646,31 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
       for (const column of columns) {
         // If the row and column are not in the nested counts
         if (countsNested.has(row) && countsNested.get(row).has(column)) {
+          const value = countsNested.get(row).get(column);
+          const valueFormatted = value.toLocaleString(); // Format the value with commas
+          //                tableData[row][column] = { value: valueFormatted, ... }; // Include the formatted value in the object
           tableData[row][column] = {
-            value: countsNested.get(row).get(column),
-            rowPercent: countsNested.get(row).get(column) / rowTotals[Array.from(rows).indexOf(row)],
-            columnPercent: countsNested.get(row).get(column) / columnTotals[Array.from(columns).indexOf(column)],
-            totalPercent: countsNested.get(row).get(column) / total
-          };
-          rowTotal += countsNested.get(row).get(column);
+            value: valueFormatted,
+            rowPercent: value / rowTotals[Array.from(rows).indexOf(row)],
+            columnPercent: value / columnTotals[Array.from(columns).indexOf(column)],
+            totalPercent: value / total
+          }; // Include the formatted value in the object
+          //                        rowTotal += countsNested.get(row).get(column);
+          rowTotal += value;
           continue;
         }
 
         // Add the row and column to the nested counts with a value of 0
         tableData[row][column] = {
-          value: 0,
+          value: '0',
           rowPercent: 0,
           columnPercent: 0,
           totalPercent: 0
-        };
+        }; // Format '0' as '0' with commas
       }
+
       totalColumn[row] = {
-        value: rowTotal,
+        value: rowTotal.toLocaleString(),
         rowPercent: 1,
         columnPercent: rowTotal / total,
         totalPercent: rowTotal / total
@@ -68391,7 +68685,7 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
         }
       }
       totalRow[column] = {
-        value: columnTotal,
+        value: columnTotal.toLocaleString(),
         rowPercent: columnTotal / total,
         columnPercent: 1,
         totalPercent: columnTotal / total
@@ -68418,7 +68712,7 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
       attributeType: attributeType,
       totalRow: totalRow,
       totalColumn: totalColumn,
-      grandTotal: total,
+      grandTotal: total.toLocaleString(),
       choices_one: choices_one,
       choices_two: choices_two
     };
@@ -68426,10 +68720,10 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
 });
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=c79a30ba&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=9d3a570e&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=c79a30ba&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=9d3a570e&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue
 
@@ -68439,7 +68733,7 @@ function CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render(_ctx, _ca
 ;
 
 
-const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_c79a30ba_scoped_true_render],['__scopeId',"data-v-c79a30ba"]])
+const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_9d3a570e_scoped_true_render],['__scopeId',"data-v-9d3a570e"]])
 
 /* harmony default export */ var CrosstabTable = (CrosstabTable_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/TableComponent.vue?vue&type=script&lang=js
@@ -69097,30 +69391,30 @@ const CrosstabTableForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(
 const TableForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TableFormvue_type_script_lang_js, [['render',TableFormvue_type_template_id_7809ae16_scoped_true_render],['__scopeId',"data-v-7809ae16"]])
 
 /* harmony default export */ var TableForm = (TableForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=template&id=7b4f2637&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=template&id=26d0139e&scoped=true
 
-const Mapsvue_type_template_id_7b4f2637_scoped_true_withScopeId = n => (_pushScopeId("data-v-7b4f2637"), n = n(), _popScopeId(), n);
-const Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_1 = {
+const Mapsvue_type_template_id_26d0139e_scoped_true_withScopeId = n => (_pushScopeId("data-v-26d0139e"), n = n(), _popScopeId(), n);
+const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_2 = {
+const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_3 = {
+const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_4 = {
+const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function Mapsvue_type_template_id_7b4f2637_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_1, [createBaseVNode("div", Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_3, null, 512), createBaseVNode("div", Mapsvue_type_template_id_7b4f2637_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function Mapsvue_type_template_id_26d0139e_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_1, [createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_3, null, 512), createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=template&id=7b4f2637&scoped=true
+;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=template&id=26d0139e&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/leaflet/dist/leaflet-src.js
 var leaflet_src = __webpack_require__(5243);
@@ -69301,7 +69595,29 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
       }
 
       // Create the map
-      this.graph = leaflet_src.map(mapDiv, {}).setView([48.5, -123.7], 8);
+      // The following 4 lines were added with AI help!
+      // Extract the minimum & max longitude & latitude from the processedData array
+      const longitude_min = Math.min(...processedData.map(row => row.longitude));
+      const longitude_max = Math.max(...processedData.map(row => row.longitude));
+      const latitude_min = Math.min(...processedData.map(row => row.latitude));
+      const latitude_max = Math.max(...processedData.map(row => row.latitude));
+      const longitude_center = (longitude_max + longitude_min) / 2;
+      const latitude_center = (latitude_max + latitude_min) / 2;
+
+      //console.log('Minimum Longitude:', longitude_min);
+      //console.log('Minimum Latitude:', latitude_min);
+
+      //console.log('Centre Latitude:', latitude_center);
+      //console.log('Centre Longitude:', longitude_center);
+
+      // zoom scale: 0 is the whole globe, then each integer more zooms double than previous
+      // Here, take integer of full circle divided by coordinates span in log 2 scale, plus 1
+      const longitude_span = Math.floor(Math.log2(360 / (longitude_max - longitude_min))) + 1;
+      const latitude_span = Math.floor(Math.log2(360 / (latitude_max - latitude_min))) + 1;
+      const zoom_in = Math.max(longitude_span, latitude_span) - 1;
+      //console.log('zoom in long:', zoom_in);
+
+      this.graph = leaflet_src.map(mapDiv, {}).setView([latitude_center, longitude_center], zoom_in);
       leaflet_src.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(this.graph);
@@ -69406,7 +69722,9 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
       const coordinateFields = JSON.parse(this.parameters.coordinate_selector);
       const longitude = coordinateFields.longitude.field_name;
       const latitude = coordinateFields.latitude.field_name;
-      console.log('coordinateFields', coordinateFields);
+
+      //console.log('coordinateFields', coordinateFields);
+
       aggregationParameters.push(d => d[longitude]);
       aggregationParameters.push(d => d[latitude]);
       if (this.parameters.location_identifier) {
@@ -69440,10 +69758,10 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
 });
 ;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=style&index=0&id=7b4f2637&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=style&index=0&id=26d0139e&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=style&index=0&id=7b4f2637&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=style&index=0&id=26d0139e&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue
 
@@ -69453,7 +69771,7 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
 ;
 
 
-const Maps_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Mapsvue_type_script_lang_js, [['render',Mapsvue_type_template_id_7b4f2637_scoped_true_render],['__scopeId',"data-v-7b4f2637"]])
+const Maps_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Mapsvue_type_script_lang_js, [['render',Mapsvue_type_template_id_26d0139e_scoped_true_render],['__scopeId',"data-v-26d0139e"]])
 
 /* harmony default export */ var Maps = (Maps_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/MapsForm.vue?vue&type=template&id=8be67108&scoped=true
