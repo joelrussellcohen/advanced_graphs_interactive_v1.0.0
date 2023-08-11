@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="AG-viewer-title">
     <h1> {{ dashboard.title }}</h1>
   </div>
   <div class="AG-viewer-dashboard">
@@ -66,5 +66,10 @@
 .AG-viewer-col {
   min-width: 400px;
   margin-right: 1rem;
+  margin-left: 2rem;
+}
+
+.AG-viewer-title {
+  margin-left: 2rem;
 }
 </style>

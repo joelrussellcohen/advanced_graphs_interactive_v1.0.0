@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left: 20px;">
+  <div>
     <div>
       <h1>Dashboard Viewer Public</h1>
     </div>
