@@ -429,7 +429,17 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	public function getReportFieldsByRepeatInstrument($project_id, $report_id) {
 		$Proj = $this->getProject($project_id);
 		$data_dictionary = REDCap::getDataDictionary($project_id, "array");
-		$repeat_instruments = $Proj->getRepeatingForms();
+		// getRepeatingForms crashes for longitudinal as at some point in the call stack the project 
+		// must have only a single event
+		if(!REDCap::isLongitudinal())
+			$repeat_instruments = $Proj->getRepeatingForms();
+		else
+		{
+			$repeat_instruments = array();
+			$events = REDCap::getEventNames();
+			$is_longitudinal = true;
+		}
+
 		$report_fields =$this->getReportFields($project_id, $report_id);
 
 		$repeat_dictionary = array();
@@ -442,18 +452,44 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 
 		$repeat_dictionary[""] = array("form_name" => "", "label" => $this->tt('non_repeat_instrument_label'), "fields" => array());
 
+		// If the project is longitudinal we loop over the event id's, get the valid fields for the event, and 
+		// if the field is in the report we append the event and add the 
+		if($is_longitudinal)
+		{
+			$event_ids = array_keys($events);
+			foreach($event_ids as $event_id)
+			{
+				$valid_fields = REDCap::getValidFieldsByEvents($project_id, $event_id);
+				// Go through the valid fields for this event.
+				foreach($valid_fields as $valid_field)
+				{
+					// If a valid field is in the reports fields array add it.
+					if(in_array($valid_field, $report_fields))
+					{
+						$field = $data_dictionary[$valid_field];
+						if(!$field)
+							continue;
 
-		// get the fields for each repeating instrument
-		foreach ($report_fields as $field_name) {
-			$field = $data_dictionary[$field_name];
+						$field['field_label'] .= ' - ' . REDCap::getEventNames(false, false, $event_id);
+						$repeat_dictionary[""]['fields'][] = $field;
+					}
+				}
+			}			
+		}
+		else
+		{ 
+			// get the fields for each repeating instrument
+			foreach ($report_fields as $field_name) {
+				$field = $data_dictionary[$field_name];
 
-			if (!$field)
-				continue;
+				if (!$field)
+					continue;
 
-			if (in_array($field['form_name'], $repeat_instruments))
-				$repeat_dictionary[$field['form_name']]['fields'][] = $field;
-			else
-				$repeat_dictionary[""]['fields'][] = $field;
+				if (in_array($field['form_name'], $repeat_instruments))
+					$repeat_dictionary[$field['form_name']]['fields'][] = $field;
+				else
+					$repeat_dictionary[""]['fields'][] = $field;
+			}
 		}
 
 		if (!count($repeat_dictionary[""]['fields']))
