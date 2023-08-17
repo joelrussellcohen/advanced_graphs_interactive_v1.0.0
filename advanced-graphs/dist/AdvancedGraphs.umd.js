@@ -31174,7 +31174,7 @@ function getCheckboxReport(report, checkbox_field) {
   return longer_report;
 }
 function getFieldLabel(field) {
-  return field.field_label;
+  return field.field_label.replace(/(<([^>]+)>)/gi, "");
 }
 
 // A function that wraps a string given a max width

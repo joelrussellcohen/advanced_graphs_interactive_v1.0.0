@@ -196,7 +196,7 @@ export function getCheckboxReport(report, checkbox_field) {
 }
 
 export function getFieldLabel (field) {
-    return field.field_label;
+    return (field.field_label).replace(/(<([^>]+)>)/gi, "");
 }
 
 // A function that wraps a string given a max width
