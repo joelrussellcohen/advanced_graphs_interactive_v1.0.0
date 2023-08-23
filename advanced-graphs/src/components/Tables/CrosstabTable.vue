@@ -19,9 +19,9 @@
                     <p>{{ choices_one[row_categories] }}</p>
                 </td>
                 <td v-for="(value,column) in row" :key="column">
-                    <p v-if="percents_or_totals == 'totals'">{{ value.value }}</p>
-                    <p v-else-if="percents_or_totals == 'percents'">{{ d3.format(".0%")(value[attributeType]) }}</p>
-                    <p v-else-if="percents_or_totals == 'both'">{{ value.value }} ({{ d3.format(".0%")(value[attributeType]) }})</p>
+                    <p v-if="percents_or_totals == 'totals'">{{ value[1].value }}</p>
+                    <p v-else-if="percents_or_totals == 'percents'">{{ d3.format(".0%")(value[1][attributeType]) }}</p>
+                    <p v-else-if="percents_or_totals == 'both'">{{ value[1].value }} ({{ d3.format(".0%")(value[1][attributeType]) }})</p>
                 </td>
                 <!-- Total column -->
                 <td class="column-total">
@@ -119,7 +119,6 @@
 
             var countsNested = d3.rollup(filteredReport, v => v.length, d => d[this.parameters.categorical_field_one], d => d[this.parameters.categorical_field_two]);
 
-
             // If we are not using a numeric field, get the counts for each category
             if (!(this.parameters.is_count || this.parameters.numeric_field == '')) {
                 countsNested = d3.rollup(filteredReport, v => d3[this.parameters.aggregation_function](v, barHeightFunction), d => d[this.parameters.categorical_field_one], d => d[this.parameters.categorical_field_two]);
@@ -141,7 +140,6 @@
                     columns.add(column_id);
                 }
             }
-
 
             if (this.parameters.unused_categories_one == 'keep') {
                 columns = new Set(Object.keys(choices_two));
@@ -186,25 +184,30 @@
             // Update the loops for creating tableData and calculating rowTotal and columnTotal
             // For each row in the rows set
             for (const row of rows) {
-                // For each column in the columns set
-                tableData[row] = {};
+                // For each column in the columns set add new map. Using map to preserve the 
+                // column order or the values are shifted in the table
+                tableData[row] = new Map();
+
                 var rowTotal = 0;
                 for (const column of columns) {
 
 
                     // If the row and column are not in the nested counts
                     if (countsNested.has(row) && countsNested.get(row).has(column)) {
-                const value = countsNested.get(row).get(column);
-                const valueFormatted = value.toLocaleString(); // Format the value with commas
-//                tableData[row][column] = { value: valueFormatted, ... }; // Include the formatted value in the object
-                        tableData[row][column] = {value: valueFormatted, rowPercent: value / rowTotals[Array.from(rows).indexOf(row)], columnPercent: value / columnTotals[Array.from(columns).indexOf(column)], totalPercent: value / total};  // Include the formatted value in the object
-//                        rowTotal += countsNested.get(row).get(column);
-                rowTotal += value;
+                        const value = countsNested.get(row).get(column);
+                        const valueFormatted = value.toLocaleString(); // Format the value with commas
+                        tableData[row].set(column, {
+                            value: valueFormatted, 
+                            rowPercent: value / rowTotals[Array.from(rows).indexOf(row)], 
+                            columnPercent: value / columnTotals[Array.from(columns).indexOf(column)], 
+                            totalPercent: value / total
+                        });  // Include the formatted value in the object
+                        rowTotal += value;
                         continue;
                     }
 
                     // Add the row and column to the nested counts with a value of 0
-                    tableData[row][column] = {value: '0', rowPercent: 0, columnPercent: 0, totalPercent: 0}; // Format '0' as '0' with commas
+                    tableData[row].set(column, {value: '0', rowPercent: 0, columnPercent: 0, totalPercent: 0}); // Format '0' as '0' with commas
                 }
 
                 totalColumn[row] = {value: rowTotal.toLocaleString(), rowPercent: 1, columnPercent: rowTotal / total, totalPercent: rowTotal / total};
@@ -221,8 +224,6 @@
                 }
                 totalRow[column] = {value: columnTotal.toLocaleString(), rowPercent: columnTotal / total, columnPercent: 1, totalPercent: columnTotal / total};
             }
-
-            // tableData['Total']['Total'] = {value: total, rowPercent: 1, columnPercent: 1, totalPercent: 1};
 
             var row_column_or_table = this.parameters.row_column_or_table;
             var attributeType = 'totalPercent';
@@ -246,6 +247,11 @@
                 grandTotal: total.toLocaleString(),
                 choices_one: choices_one,
                 choices_two: choices_two,
+            }
+        },
+        methods: {
+            log(item) {
+            console.log(item)
             }
         },
     }
