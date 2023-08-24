@@ -31068,6 +31068,11 @@ function stripChoicesOrCalculations(choiceString) {
     var choice_or_calculation = choices_or_calculations_array[i].split(',');
     var choice_or_calculation_value = choice_or_calculation[0];
     var choice_or_calculation_label = choice_or_calculation[1];
+    if (choice_or_calculation.length > 2) {
+      for (var j = 2; j < choice_or_calculation.length; j++) {
+        choice_or_calculation_label += ',' + choice_or_calculation[j];
+      }
+    }
 
     // remove the leading and trailing spaces from the value and label
     choice_or_calculation_value = choice_or_calculation_value.trim();
