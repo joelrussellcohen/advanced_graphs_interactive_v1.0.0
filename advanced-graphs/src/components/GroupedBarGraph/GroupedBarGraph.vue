@@ -24,7 +24,7 @@ import * as d3 from 'd3';
 // import * as d3Force from 'd3-force';
 // import {PieChart} from "@d3/pie-chart";
 // import {map, flatMap} from "d3-array";
-import {parseChoicesOrCalculations, /*isCheckboxField, getCheckboxReport,*/ getFieldLabel, wrapString, truncateString} from '@/utils';
+import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString} from '@/utils';
 import GroupedBarGraphOptions from './GroupedBarGraphOptions.vue';
 import StackedBarGraphOptions from './StackedBarGraphOptions.vue';
 
@@ -94,13 +94,13 @@ export default {
             var this_report = this.report;
 
             // If the category is a checkbox field, get a checkbox field report
-            // if (isCheckboxField(parameters.categorical_field_one)) {
-            //     this_report = getCheckboxReport(parameters.categorical_field_one);
-            // }
+            if (isCheckboxField(this.data_dictionary[parameters.categorical_field_one])) {
+                this_report = getCheckboxReport(this_report, this.data_dictionary[parameters.categorical_field_one]);
+            }
 
-            // if (isCheckboxField(parameters.categorical_field_one)) {
-            //     this_report = getCheckboxReport(parameters.categorical_field_one);
-            // }
+            if (isCheckboxField(this.data_dictionary[parameters.categorical_field_two])) {
+                this_report = getCheckboxReport(this_report, this.data_dictionary[parameters.categorical_field_two]);
+            }
 
             // Get a dataframe that only has entries for the instrument specified by the instrument parameter
             var filteredReport = this_report.filter(function (d) { return d['redcap_repeat_instrument'] == parameters.instrument; });

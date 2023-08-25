@@ -64442,67 +64442,67 @@ function GroupedBarGraphFormvue_type_template_id_3584a69a_scoped_true_render(_ct
 const GroupedBarGraphForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphFormvue_type_script_lang_js, [['render',GroupedBarGraphFormvue_type_template_id_3584a69a_scoped_true_render],['__scopeId',"data-v-3584a69a"]])
 
 /* harmony default export */ var GroupedBarGraphForm = (GroupedBarGraphForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=template&id=c70955f8&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=template&id=59c47fa8&scoped=true
 
-const GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_withScopeId = n => (_pushScopeId("data-v-c70955f8"), n = n(), _popScopeId(), n);
-const GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_1 = {
+const GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_withScopeId = n => (_pushScopeId("data-v-59c47fa8"), n = n(), _popScopeId(), n);
+const GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_2 = {
+const GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_3 = {
+const GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_4 = {
+const GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_3, null, 512), createBaseVNode("div", GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_3, null, 512), createBaseVNode("div", GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=template&id=c70955f8&scoped=true
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=template&id=59c47fa8&scoped=true
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=3d674678&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=62e6eb2c&scoped=true
 
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_withScopeId = n => (_pushScopeId("data-v-3d674678"), n = n(), _popScopeId(), n);
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_1 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_withScopeId = n => (_pushScopeId("data-v-62e6eb2c"), n = n(), _popScopeId(), n);
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_1 = {
   class: "AG-bar-graph-options"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_2 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_2 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_3 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_3 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_4 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_4 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_5 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_5 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_6 = ["max"];
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_7 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_6 = ["max"];
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_7 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_8 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_8 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_9 = {
+const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_9 = {
   class: "AG-bar-graph-options-block"
 };
-function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_radio_component = resolveComponent("radio-component");
-  return openBlock(), createElementBlock("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_2, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_3, [createBaseVNode("label", null, [withDirectives(createBaseVNode("input", {
+  return openBlock(), createElementBlock("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_2, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_3, [createBaseVNode("label", null, [withDirectives(createBaseVNode("input", {
     ref: "show_legend",
     type: "checkbox",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.show_legend = $event),
     onChange: _cache[1] || (_cache[1] = (...args) => $options.updateParameters && $options.updateParameters(...args))
-  }, null, 544), [[vModelCheckbox, $data.show_legend]]), createTextVNode(" " + toDisplayString($options.module.tt("grouped_show_legend")), 1)])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_4, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_5, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_x_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bottom_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }, null, 544), [[vModelCheckbox, $data.show_legend]]), createTextVNode(" " + toDisplayString($options.module.tt("grouped_show_legend")), 1)])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_4, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_5, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_x_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bottom_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bottom_margin",
     type: "number",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $data.bottom_margin = $event),
@@ -64516,7 +64516,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
     max: $data.bottom_margin,
     "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $data.x_title_offset = $event),
     onInput: _cache[5] || (_cache[5] = (...args) => $options.updateParameters && $options.updateParameters(...args))
-  }, null, 40, GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_6), [[vModelText, $data.x_title_offset, void 0, {
+  }, null, 40, GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_6), [[vModelText, $data.x_title_offset, void 0, {
     number: true
   }]])]), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_x_title_size")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "x_title_size",
@@ -64593,7 +64593,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
     onInput: _cache[21] || (_cache[21] = (...args) => $options.updateParameters && $options.updateParameters(...args))
   }, null, 544), [[vModelText, $data.color_label_rotate, void 0, {
     number: true
-  }]])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_7, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_y_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_left_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }]])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_7, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_y_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_left_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bottom_margin",
     type: "number",
     "onUpdate:modelValue": _cache[22] || (_cache[22] = $event => $data.left_margin = $event),
@@ -64651,7 +64651,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
     onInput: _cache[34] || (_cache[34] = (...args) => $options.updateParameters && $options.updateParameters(...args))
   }, null, 544), [[vModelText, $data.y_rotate, void 0, {
     number: true
-  }]])])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_8, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_9, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_bar_labels")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bar_label_size")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }]])])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_8, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_9, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_bar_labels")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bar_label_size")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bar_label_size",
     type: "range",
     min: "0",
@@ -64672,7 +64672,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
     number: true
   }]])])])])]);
 }
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=3d674678&scoped=true
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=62e6eb2c&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=script&lang=js
 
@@ -64856,6 +64856,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
   methods: {
     updateParameters() {
       console.log('updateParameters', this.show_legend);
+      console.log('color label rotate from optons', this.color_label_rotate);
       this.$emit("updateParameters", {
         ...this.parameters,
         x_title_size: this.x_title_size,
@@ -64913,10 +64914,10 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
 });
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=3d674678&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=62e6eb2c&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=3d674678&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=62e6eb2c&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue
 
@@ -64926,7 +64927,7 @@ function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(
 ;
 
 
-const GroupedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphOptionsvue_type_script_lang_js, [['render',GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render],['__scopeId',"data-v-3d674678"]])
+const GroupedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphOptionsvue_type_script_lang_js, [['render',GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render],['__scopeId',"data-v-62e6eb2c"]])
 
 /* harmony default export */ var GroupedBarGraphOptions = (GroupedBarGraphOptions_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/StackedBarGraphOptions.vue?vue&type=template&id=abcb1f94&scoped=true
@@ -65420,13 +65421,12 @@ const StackedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default *
       var this_report = this.report;
 
       // If the category is a checkbox field, get a checkbox field report
-      // if (isCheckboxField(parameters.categorical_field_one)) {
-      //     this_report = getCheckboxReport(parameters.categorical_field_one);
-      // }
-
-      // if (isCheckboxField(parameters.categorical_field_one)) {
-      //     this_report = getCheckboxReport(parameters.categorical_field_one);
-      // }
+      if (isCheckboxField(this.data_dictionary[parameters.categorical_field_one])) {
+        this_report = getCheckboxReport(this_report, this.data_dictionary[parameters.categorical_field_one]);
+      }
+      if (isCheckboxField(this.data_dictionary[parameters.categorical_field_two])) {
+        this_report = getCheckboxReport(this_report, this.data_dictionary[parameters.categorical_field_two]);
+      }
 
       // Get a dataframe that only has entries for the instrument specified by the instrument parameter
       var filteredReport = this_report.filter(function (d) {
@@ -65747,10 +65747,10 @@ const StackedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default *
 });
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=style&index=0&id=c70955f8&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=style&index=0&id=59c47fa8&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=style&index=0&id=c70955f8&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=style&index=0&id=59c47fa8&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue
 
@@ -65760,7 +65760,7 @@ const StackedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default *
 ;
 
 
-const GroupedBarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphvue_type_script_lang_js, [['render',GroupedBarGraphvue_type_template_id_c70955f8_scoped_true_render],['__scopeId',"data-v-c70955f8"]])
+const GroupedBarGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphvue_type_script_lang_js, [['render',GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_render],['__scopeId',"data-v-59c47fa8"]])
 
 /* harmony default export */ var GroupedBarGraph = (GroupedBarGraph_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Likert/LikertGraphForm.vue?vue&type=template&id=1ce9b7da&scoped=true
@@ -68430,48 +68430,48 @@ function SummaryTablevue_type_template_id_250c69d8_scoped_true_render(_ctx, _cac
 const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_250c69d8_scoped_true_render],['__scopeId',"data-v-250c69d8"]])
 
 /* harmony default export */ var SummaryTable = (SummaryTable_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=b0c28b3e&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=124e416a&scoped=true
 
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_withScopeId = n => (pushScopeId("data-v-b0c28b3e"), n = n(), popScopeId(), n);
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_1 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_withScopeId = n => (pushScopeId("data-v-124e416a"), n = n(), popScopeId(), n);
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_1 = {
   class: "AG-cross-tab"
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_3 = ["colspan"];
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_4 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_124e416a_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_3 = ["colspan"];
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_4 = {
   class: "header"
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_5 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_5 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_6 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_6 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_7 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_7 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_8 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_8 = {
   class: "column-total"
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_9 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_9 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_10 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_10 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_11 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_11 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_12 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_12 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_13 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_13 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_14 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_14 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_15 = {
+const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_15 = {
   class: "grand-total"
 };
 const _hoisted_16 = {
@@ -68483,11 +68483,11 @@ const _hoisted_17 = {
 const _hoisted_18 = {
   key: 2
 };
-function CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_2, createBaseVNode("th", {
+function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_2, createBaseVNode("th", {
     class: "header",
     colspan: $data.column_categories.length
-  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
+  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       key: index
     }, toDisplayString($data.choices_two[category]), 1);
@@ -68497,16 +68497,16 @@ function CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render(_ctx, _ca
     }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString($data.choices_one[row_categories]), 1)]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(row, (value, column) => {
       return openBlock(), createElementBlock("td", {
         key: column
-      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_5, toDisplayString(value[1].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_7, toDisplayString(value[1].value) + " (" + toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
+      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_5, toDisplayString(value[1].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_7, toDisplayString(value[1].value) + " (" + toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
   }), 128)), createBaseVNode("tr", null, [createBaseVNode("th", null, toDisplayString($options.module.tt('table_total')), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       class: "row-total",
       key: index
-    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
+    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
 }
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=b0c28b3e&scoped=true
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=124e416a&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
 
@@ -68529,13 +68529,13 @@ function CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render(_ctx, _ca
     var this_report = this.report;
 
     // If the first category is a checkbox field, get a checkbox field report
-    if (isCheckboxField(this.parameters.categorical_field_one)) {
-      this_report = getCheckboxReport(this.parameters.categorical_field_one);
+    if (isCheckboxField(this.data_dictionary[this.parameters.categorical_field_one])) {
+      this_report = getCheckboxReport(this_report, this.data_dictionary[this.parameters.categorical_field_one]);
     }
 
     // If the second category is a checkbox field, get a checkbox field report
-    if (isCheckboxField(this.parameters.categorical_field_two)) {
-      this_report = getCheckboxReport(this.parameters.categorical_field_two);
+    if (isCheckboxField(this.data_dictionary[this.parameters.categorical_field_two])) {
+      this_report = getCheckboxReport(this_report, this.data_dictionary[this.parameters.categorical_field_two]);
     }
 
     // Get a dataframe that only has entries for the instrument specified by the instrument parameter
@@ -68725,10 +68725,10 @@ function CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render(_ctx, _ca
 });
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=b0c28b3e&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=124e416a&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=b0c28b3e&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=124e416a&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue
 
@@ -68738,7 +68738,7 @@ function CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render(_ctx, _ca
 ;
 
 
-const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_b0c28b3e_scoped_true_render],['__scopeId',"data-v-b0c28b3e"]])
+const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_124e416a_scoped_true_render],['__scopeId',"data-v-124e416a"]])
 
 /* harmony default export */ var CrosstabTable = (CrosstabTable_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/TableComponent.vue?vue&type=script&lang=js
