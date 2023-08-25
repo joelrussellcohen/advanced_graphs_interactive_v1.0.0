@@ -38,14 +38,17 @@
             },
         },
         data() {
+            // Get a reference to the field
+            var theField = this.data_dictionary[this.parameters.categorical_field];
+
             // Get the choices for the categorical field
-            var choices = parseChoicesOrCalculations(this.data_dictionary[this.parameters.categorical_field]);
+            var choices = parseChoicesOrCalculations(theField);
 
             var this_report = this.report;
-
+            
             // If the category is a checkbox field, get a checkbox field report
-            if (isCheckboxField(this.parameters.categorical_field)) {
-                this_report = getCheckboxReport(this.parameters.categorical_field);
+            if (isCheckboxField(theField)) {
+                this_report = getCheckboxReport(this_report, theField);
             }
 
             // Get a dataframe that only has entries for the instrument specified by the instrument parameter
@@ -80,7 +83,6 @@
             if (!(this.parameters.is_count || this.parameters.numeric_field == '')) {
                 counts = d3.rollup(filteredReport, v => d3[this.parameters.aggregation_function](v, barHeightFunction), d => d[this.parameters.categorical_field]);
             }
-
 
             // Flatten the counts and add a percents column by dividing the count by the sum of the counts
             var countsArray = Array.from(counts, ([category, count]) => ({ category: choices[category], count, percent: count / d3.sum(Array.from(counts, ([, count]) => count)) }));

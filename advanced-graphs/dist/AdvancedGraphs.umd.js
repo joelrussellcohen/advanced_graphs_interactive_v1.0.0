@@ -68277,32 +68277,32 @@ function TableComponentvue_type_template_id_63c8ea48_scoped_true_render(_ctx, _c
 }
 ;// CONCATENATED MODULE: ./src/components/Tables/TableComponent.vue?vue&type=template&id=63c8ea48&scoped=true
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=template&id=17c2dc44&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=template&id=250c69d8&scoped=true
 
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_withScopeId = n => (_pushScopeId("data-v-17c2dc44"), n = n(), _popScopeId(), n);
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_1 = {
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_withScopeId = n => (_pushScopeId("data-v-250c69d8"), n = n(), _popScopeId(), n);
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_1 = {
   class: "tableContainer"
 };
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_2 = {
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_2 = {
   class: "header"
 };
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_3 = {
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_3 = {
   key: 0
 };
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_4 = {
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_4 = {
   key: 1
 };
-const SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_5 = {
+const SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_5 = {
   key: 2
 };
-function SummaryTablevue_type_template_id_17c2dc44_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_1, [createBaseVNode("table", null, [createBaseVNode("tr", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_2, [createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.category), 1)]), createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.numeric), 1)])]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.tableData, (row, index) => {
+function SummaryTablevue_type_template_id_250c69d8_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_1, [createBaseVNode("table", null, [createBaseVNode("tr", SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_2, [createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.category), 1)]), createBaseVNode("th", null, [createBaseVNode("p", null, toDisplayString($data.numeric), 1)])]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.tableData, (row, index) => {
     return openBlock(), createElementBlock("tr", {
       key: index
-    }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString(row['category']), 1)]), createBaseVNode("td", null, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_3, toDisplayString(row['count']), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_4, toDisplayString($data.d3.format(".0%")(row['percent'])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_17c2dc44_scoped_true_hoisted_5, toDisplayString(row['count']) + " (" + toDisplayString($data.d3.format(".0%")(row['percent'])) + ")", 1)) : createCommentVNode("", true)])]);
+    }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString(row['category']), 1)]), createBaseVNode("td", null, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_3, toDisplayString(row['count']), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_4, toDisplayString($data.d3.format(".0%")(row['percent'])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", SummaryTablevue_type_template_id_250c69d8_scoped_true_hoisted_5, toDisplayString(row['count']) + " (" + toDisplayString($data.d3.format(".0%")(row['percent'])) + ")", 1)) : createCommentVNode("", true)])]);
   }), 128))])]);
 }
-;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=template&id=17c2dc44&scoped=true
+;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=template&id=250c69d8&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=script&lang=js
 
@@ -68318,13 +68318,16 @@ function SummaryTablevue_type_template_id_17c2dc44_scoped_true_render(_ctx, _cac
     }
   },
   data() {
+    // Get a reference to the field
+    var theField = this.data_dictionary[this.parameters.categorical_field];
+
     // Get the choices for the categorical field
-    var choices = parseChoicesOrCalculations(this.data_dictionary[this.parameters.categorical_field]);
+    var choices = parseChoicesOrCalculations(theField);
     var this_report = this.report;
 
     // If the category is a checkbox field, get a checkbox field report
-    if (isCheckboxField(this.parameters.categorical_field)) {
-      this_report = getCheckboxReport(this.parameters.categorical_field);
+    if (isCheckboxField(theField)) {
+      this_report = getCheckboxReport(this_report, theField);
     }
 
     // Get a dataframe that only has entries for the instrument specified by the instrument parameter
@@ -68411,10 +68414,10 @@ function SummaryTablevue_type_template_id_17c2dc44_scoped_true_render(_ctx, _cac
 });
 ;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=17c2dc44&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=250c69d8&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=17c2dc44&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue?vue&type=style&index=0&id=250c69d8&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Tables/SummaryTable.vue
 
@@ -68424,7 +68427,7 @@ function SummaryTablevue_type_template_id_17c2dc44_scoped_true_render(_ctx, _cac
 ;
 
 
-const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_17c2dc44_scoped_true_render],['__scopeId',"data-v-17c2dc44"]])
+const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_250c69d8_scoped_true_render],['__scopeId',"data-v-250c69d8"]])
 
 /* harmony default export */ var SummaryTable = (SummaryTable_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=b0c28b3e&scoped=true
