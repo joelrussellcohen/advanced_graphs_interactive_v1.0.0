@@ -73,13 +73,13 @@
             var this_report = this.report;
 
             // If the first category is a checkbox field, get a checkbox field report
-            if (isCheckboxField(this.parameters.categorical_field_one)) {
-                this_report = getCheckboxReport(this.parameters.categorical_field_one);
+            if (isCheckboxField(this.data_dictionary[this.parameters.categorical_field_one])) {
+                this_report = getCheckboxReport(this_report, this.data_dictionary[this.parameters.categorical_field_one]);
             }
 
             // If the second category is a checkbox field, get a checkbox field report
-            if (isCheckboxField(this.parameters.categorical_field_two)) {
-                this_report = getCheckboxReport(this.parameters.categorical_field_two);
+            if (isCheckboxField(this.data_dictionary[this.parameters.categorical_field_two])) {
+                this_report = getCheckboxReport(this_report, this.data_dictionary[this.parameters.categorical_field_two]);
             }
 
             // Get a dataframe that only has entries for the instrument specified by the instrument parameter
