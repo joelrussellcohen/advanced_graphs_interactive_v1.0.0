@@ -4,6 +4,13 @@ use ExternalModules\ExternalModules;
 
 include APP_PATH_DOCROOT . 'ProjectGeneral/header.php';
 
+?>
+<style>
+	.rcproject-navbar {
+		display: none !important;
+	}
+</style>
+<?php
 // Get the project ID
 $project_id = $_GET['pid'];
 

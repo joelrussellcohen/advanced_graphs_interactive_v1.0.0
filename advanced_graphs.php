@@ -4,6 +4,13 @@
 
 	include APP_PATH_DOCROOT . 'ProjectGeneral/header.php';
 
+?>
+<style>
+	.rcproject-navbar {
+		display: none !important;
+	}
+</style>
+<?php
 	// Get the project ID
 	$project_id = $_GET['pid'];
 
@@ -19,7 +26,7 @@
 ?>
 
 <div id="advanced_graphs">
-    
+
 </div>
 
 <script>
@@ -34,3 +41,8 @@
 			app.mount('#advanced_graphs');
 		});
 </script>
+
+<?php
+// Footer
+include APP_PATH_DOCROOT . 'ProjectGeneral/footer.php';
+?>
