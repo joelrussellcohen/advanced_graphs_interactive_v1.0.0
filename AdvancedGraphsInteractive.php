@@ -51,10 +51,12 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 				dash_id INT(10) AUTO_INCREMENT PRIMARY KEY,
 				project_id INT(10), INDEX(project_id),
 				report_id INT(10),
+				live_filters json,
 				title TEXT,
 				body LONGTEXT,
 				dash_order INT(3),
-				is_public tinyint(1) DEFAULT 0 NOT NULL)"
+				is_public tinyint(1) DEFAULT 0 NOT NULL),
+				ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
 			, []);
 			$this->log("Created new $dashboard_table_name table (if one did not already exist)");
 		} catch (\Throwable $e) {
