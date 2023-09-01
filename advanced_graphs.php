@@ -33,7 +33,7 @@
 	    // in an anonymous function to avoid polluting the global namespace
 		$(document).ready(function() {
 			var module = <?=ExternalModules::getJavascriptModuleObjectName($module)?>;
-			var dashboards = <?php echo json_encode($dashboards); ?>;
+			var dashboards = <?php echo json_encode($module::escape($dashboards)); ?>;
 
 			// Initialize the module from AdvancedGraphsModule.js
 			var app = AdvancedGraphs.createDashboardListApp(module, dashboards);

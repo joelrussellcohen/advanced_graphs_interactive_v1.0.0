@@ -41,7 +41,7 @@
     },
     computed: {
       rows() {
-        return this.dashboard && this.dashboard.body ? JSON.parse(this.dashboard.body) : [];
+        return this.dashboard && this.dashboard.body ? JSON.parse(JSON.stringify(this.dashboard.body)) : [];
       },
     },
     data() {

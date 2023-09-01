@@ -100,10 +100,10 @@ $module->loadCSS('advanced-graphs/dist/AdvancedGraphs.css');
     $(document).ready(function() {
         // Get the module object
         var module = <?=$module->getJavascriptModuleObjectName()?>;
-        var dashboard = <?php echo json_encode($dashboard); ?>;
-        var data_dictionary = <?php echo json_encode($data_dictionary); ?>;
-        var report = <?php echo json_encode($report); ?>;
-        var report_fields_by_reapeat_instrument = <?php echo json_encode($report_fields_by_reapeat_instrument); ?>;
+        var dashboard = <?php echo json_encode($module::escape($dashboard)); ?>;
+        var data_dictionary = <?php echo json_encode($module::escape($data_dictionary)); ?>;
+        var report = <?php echo json_encode($module::escape($report)); ?>;
+        var report_fields_by_reapeat_instrument = <?php echo json_encode($module::escape($report_fields_by_reapeat_instrument)); ?>;
 
         var app = AdvancedGraphs.createDashboardEditorApp(module, dashboard, report, data_dictionary, report_fields_by_reapeat_instrument);
         app.mount('#advanced_graphs');

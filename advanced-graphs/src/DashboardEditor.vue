@@ -64,7 +64,7 @@
             isPublic: this.dashboard.is_public || false,
             body: reactive( 
               this.dashboard.body ? 
-              JSON.parse(this.dashboard.body).map(row => row.map(cell => ({ ...cell, id: getUuid() }))): 
+              JSON.parse(JSON.stringify(this.dashboard.body)).map(row => row.map(cell => ({ ...cell, id: getUuid() }))): 
               [],
             ),
             localDashboard: this.dashboard,

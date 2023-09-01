@@ -409,8 +409,8 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 
 	// returns the name of the report
 	public function getReportName($project_id, $report_id) {
-		$sql = "select title from redcap_reports where project_id = $project_id and report_id = $report_id";
-		$q = $this->query($sql, []);
+		$sql = "select title from redcap_reports where project_id = ? and report_id = ?";
+		$q = $this->query($sql, [$project_id, $report_id]);
 		$row = $q->fetch_assoc();
 		return $row['title'];
 	}
@@ -418,9 +418,9 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	// returns the report fields
 	public function getReportFields($project_id, $report_id) {
 		$fields = array();
-		$sql = "select * from redcap_reports_fields where report_id = $report_id
+		$sql = "select * from redcap_reports_fields where report_id = ?
 				order by field_order";
-		$q = $this->query($sql, []);
+		$q = $this->query($sql, [$report_id]);
 		while ($row =  $q->fetch_assoc()) {
 			$fields[] = $row['field_name'];
 		}
@@ -651,18 +651,23 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		$q = $this->query($sql, $params);
 		$dashboards = [];
 		while ($row = $q->fetch_assoc()) {
+			// We need to decode the json in the body as we end up echo'ing out the 
+			// dashboard, which requires that we escape the dashboard, which messes
+			// up the json. 
+			$row['body'] = json_decode($row['body'],true);
 			$dashboards[] = $row;
 		}
+		
 		return $dashboards;
 	}
-
+	
 	// Obtain a dashboard's title/name
 	public function getDashboardName($pid, $dash_id)
 	{
 		$dashboard_table_name = $this->dashboard_table_name;
 		// Delete report
-		$sql = "select title from $dashboard_table_name where project_id = ".$pid." and dash_id = $dash_id";
-		$q = $this->query($sql, []);
+		$sql = "select title from $dashboard_table_name where project_id = ? and dash_id = ?";
+		$q = $this->query($sql, [$pid, $dash_id]);
 		$title = strip_tags(label_decode(db_result($q, 0)));
 		return $title;
 	}
@@ -688,12 +693,14 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	// Ensure all project dashboards have a hash
 	public function checkDashHash($dash_id=null)
 	{
+		$params = [PROJECT_ID];
 		$sql = "select dash_id from $dashboard_table_name
-				where project_id = ".PROJECT_ID." and hash is null";
+				where project_id = ? and hash is null";
 		if (isinteger($dash_id) && $dash_id > 0) {
-			$sql .= " and dash_id = $dash_id";
+			$sql .= " and dash_id = ?";
+			$params[] = $dash_id;
 		}
-		$q = $this->query($sql, []);
+		$q = $this->query($sql, $params);
 		$dash_ids = [];
 		while ($row = $q->fetch_assoc()) {
 			$dash_ids[] = $row['dash_id'];
@@ -706,8 +713,8 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 				// Generate new unique name (start with 3 digit number followed by 7 alphanumeric chars) - do not allow zeros
 				$unique_name = generateRandomHash(11, false, true);
 				// Update the table
-				$sql = "update $dashboard_table_name set hash = '".db_escape($unique_name)."' where dash_id = $dash_id";
-				$success = $this->query($sql, []);
+				$sql = "update $dashboard_table_name set hash = ? where dash_id = ?";
+				$success = $this->query($sql, [$unique_name, $dash_id]);
 			}
 		}
 	}
@@ -749,10 +756,12 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		$dash['title'] .= " (copy)";
 		// Increment the report order so we can add new report directly after original
 		$dash['dash_order']++;
+		$dash_order = $dash['dash_order'];
+
 		// Move all report orders up one to make room for new one
-		$sql = "update $dashboard_table_name set dash_order = dash_order + 1 where project_id = ".$pid."
-				and dash_order >= ".$dash['dash_order']." order by dash_order desc";
-		if (!$this->query($sql, [])) $errors++;
+		$sql = "update $dashboard_table_name set dash_order = dash_order + 1 where project_id = ?
+				and dash_order >= ? order by dash_order desc";
+		if (!$this->query($sql, [$pid, $dash_order])) $errors++;
 
 		// Loop through report attributes and add to $table to input into query
 		foreach ($dash as $key=>$val) {
@@ -857,5 +866,42 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 			$cols[$row['Field']] = $row['Default'];
 		}
 		return $cols;
+	}
+
+	public static function escape($value){
+		$type = gettype($value);
+
+		/**
+		 * The unnecessary casting on these first few types exists solely to inform psalm and avoid warnings.
+		 */
+		if($type === 'boolean'){
+			return (bool) $value;
+		}
+		else if($type === 'integer'){
+			return (int) $value;
+		}
+		else if($type === 'double'){
+			return (float) $value;
+		}
+		else if($type === 'array'){
+			$newValue = [];
+			foreach($value as $key=>$subValue){
+				$key = static::escape($key);
+				$subValue = static::escape($subValue);
+				$newValue[$key] = $subValue;
+			}
+
+			return $newValue;
+		}
+		else if($type === 'NULL'){
+			return null;
+		}
+		else{
+			/**
+			* Handle strings, resources, and custom objects (via the __toString() method. 
+			* Apart from escaping, this produces that same behavior as if the $value was echoed or appended via the "." operator.
+			*/
+			return htmlspecialchars(''.$value, ENT_QUOTES);
+		}
 	}
 }

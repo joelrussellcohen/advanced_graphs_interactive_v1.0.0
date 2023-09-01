@@ -30180,13 +30180,13 @@ const initDirectivesForSSR = () => {
 
 
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardEditor.vue?vue&type=template&id=6d18bcaa
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardEditor.vue?vue&type=template&id=37265f16
 
 const _hoisted_1 = /*#__PURE__*/createBaseVNode("h1", null, "Dashboard Editor", -1);
 const _hoisted_2 = {
   class: "AG-editor-final-buttons"
 };
-function DashboardEditorvue_type_template_id_6d18bcaa_render(_ctx, _cache, $props, $setup, $data, $options) {
+function DashboardEditorvue_type_template_id_37265f16_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_DashboardOptions = resolveComponent("DashboardOptions");
   const _component_editor_table = resolveComponent("editor-table");
   const _component_saved_modal = resolveComponent("saved-modal");
@@ -30219,7 +30219,7 @@ function DashboardEditorvue_type_template_id_6d18bcaa_render(_ctx, _cache, $prop
     ref: "confirmationModal"
   }, null, 512)], 64);
 }
-;// CONCATENATED MODULE: ./src/DashboardEditor.vue?vue&type=template&id=6d18bcaa
+;// CONCATENATED MODULE: ./src/DashboardEditor.vue?vue&type=template&id=37265f16
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(7658);
@@ -64467,42 +64467,42 @@ function GroupedBarGraphvue_type_template_id_59c47fa8_scoped_true_render(_ctx, _
 }
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraph.vue?vue&type=template&id=59c47fa8&scoped=true
 
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=62e6eb2c&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=3d674678&scoped=true
 
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_withScopeId = n => (_pushScopeId("data-v-62e6eb2c"), n = n(), _popScopeId(), n);
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_1 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_withScopeId = n => (_pushScopeId("data-v-3d674678"), n = n(), _popScopeId(), n);
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_1 = {
   class: "AG-bar-graph-options"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_2 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_2 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_3 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_3 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_4 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_4 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_5 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_5 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_6 = ["max"];
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_7 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_6 = ["max"];
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_7 = {
   class: "AG-bar-graph-options-block"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_8 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_8 = {
   class: "AG-bar-graph-options-row"
 };
-const GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_9 = {
+const GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_9 = {
   class: "AG-bar-graph-options-block"
 };
-function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_radio_component = resolveComponent("radio-component");
-  return openBlock(), createElementBlock("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_2, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_3, [createBaseVNode("label", null, [withDirectives(createBaseVNode("input", {
+  return openBlock(), createElementBlock("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_1, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_2, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_3, [createBaseVNode("label", null, [withDirectives(createBaseVNode("input", {
     ref: "show_legend",
     type: "checkbox",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.show_legend = $event),
     onChange: _cache[1] || (_cache[1] = (...args) => $options.updateParameters && $options.updateParameters(...args))
-  }, null, 544), [[vModelCheckbox, $data.show_legend]]), createTextVNode(" " + toDisplayString($options.module.tt("grouped_show_legend")), 1)])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_4, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_5, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_x_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bottom_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }, null, 544), [[vModelCheckbox, $data.show_legend]]), createTextVNode(" " + toDisplayString($options.module.tt("grouped_show_legend")), 1)])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_4, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_5, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_x_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bottom_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bottom_margin",
     type: "number",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $data.bottom_margin = $event),
@@ -64516,7 +64516,7 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
     max: $data.bottom_margin,
     "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => $data.x_title_offset = $event),
     onInput: _cache[5] || (_cache[5] = (...args) => $options.updateParameters && $options.updateParameters(...args))
-  }, null, 40, GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_6), [[vModelText, $data.x_title_offset, void 0, {
+  }, null, 40, GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_6), [[vModelText, $data.x_title_offset, void 0, {
     number: true
   }]])]), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_x_title_size")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "x_title_size",
@@ -64593,7 +64593,7 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
     onInput: _cache[21] || (_cache[21] = (...args) => $options.updateParameters && $options.updateParameters(...args))
   }, null, 544), [[vModelText, $data.color_label_rotate, void 0, {
     number: true
-  }]])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_7, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_y_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_left_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }]])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_7, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_y_axis")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_left_margin")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bottom_margin",
     type: "number",
     "onUpdate:modelValue": _cache[22] || (_cache[22] = $event => $data.left_margin = $event),
@@ -64651,7 +64651,7 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
     onInput: _cache[34] || (_cache[34] = (...args) => $options.updateParameters && $options.updateParameters(...args))
   }, null, 544), [[vModelText, $data.y_rotate, void 0, {
     number: true
-  }]])])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_8, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_hoisted_9, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_bar_labels")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bar_label_size")) + ":", 1), withDirectives(createBaseVNode("input", {
+  }]])])])]), createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_8, [createBaseVNode("div", GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_hoisted_9, [createBaseVNode("h3", null, toDisplayString($options.module.tt("grouped_bar_labels")), 1), createBaseVNode("label", null, [createTextVNode(toDisplayString($options.module.tt("grouped_bar_label_size")) + ":", 1), withDirectives(createBaseVNode("input", {
     ref: "bar_label_size",
     type: "range",
     min: "0",
@@ -64672,7 +64672,7 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
     number: true
   }]])])])])]);
 }
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=62e6eb2c&scoped=true
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=template&id=3d674678&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=script&lang=js
 
@@ -64856,7 +64856,6 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
   methods: {
     updateParameters() {
       console.log('updateParameters', this.show_legend);
-      console.log('color label rotate from optons', this.color_label_rotate);
       this.$emit("updateParameters", {
         ...this.parameters,
         x_title_size: this.x_title_size,
@@ -64914,10 +64913,10 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
 });
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=62e6eb2c&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=3d674678&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=62e6eb2c&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue?vue&type=style&index=0&id=3d674678&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/GroupedBarGraph/GroupedBarGraphOptions.vue
 
@@ -64927,7 +64926,7 @@ function GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render(
 ;
 
 
-const GroupedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphOptionsvue_type_script_lang_js, [['render',GroupedBarGraphOptionsvue_type_template_id_62e6eb2c_scoped_true_render],['__scopeId',"data-v-62e6eb2c"]])
+const GroupedBarGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(GroupedBarGraphOptionsvue_type_script_lang_js, [['render',GroupedBarGraphOptionsvue_type_template_id_3d674678_scoped_true_render],['__scopeId',"data-v-3d674678"]])
 
 /* harmony default export */ var GroupedBarGraphOptions = (GroupedBarGraphOptions_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/GroupedBarGraph/StackedBarGraphOptions.vue?vue&type=template&id=abcb1f94&scoped=true
@@ -71854,7 +71853,7 @@ const SavedModal_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SavedMo
     return {
       title: this.dashboard.title || this.module.tt('dbe_new_dashboard'),
       isPublic: this.dashboard.is_public || false,
-      body: reactive(this.dashboard.body ? JSON.parse(this.dashboard.body).map(row => row.map(cell => ({
+      body: reactive(this.dashboard.body ? JSON.parse(JSON.stringify(this.dashboard.body)).map(row => row.map(cell => ({
         ...cell,
         id: getUuid()
       }))) : []),
@@ -71950,7 +71949,7 @@ const SavedModal_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SavedMo
 
 
 ;
-const DashboardEditor_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DashboardEditorvue_type_script_lang_js, [['render',DashboardEditorvue_type_template_id_6d18bcaa_render]])
+const DashboardEditor_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DashboardEditorvue_type_script_lang_js, [['render',DashboardEditorvue_type_template_id_37265f16_render]])
 
 /* harmony default export */ var DashboardEditor = (DashboardEditor_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardList.vue?vue&type=template&id=3ccf7c8e
@@ -72083,34 +72082,34 @@ function DashboardListvue_type_template_id_3ccf7c8e_render(_ctx, _cache, $props,
 const DashboardList_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DashboardListvue_type_script_lang_js, [['render',DashboardListvue_type_template_id_3ccf7c8e_render]])
 
 /* harmony default export */ var DashboardList = (DashboardList_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardViewer.vue?vue&type=template&id=61048cc0&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardViewer.vue?vue&type=template&id=4eacb3a8&scoped=true
 
-const DashboardViewervue_type_template_id_61048cc0_scoped_true_withScopeId = n => (_pushScopeId("data-v-61048cc0"), n = n(), _popScopeId(), n);
-const DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_1 = {
+const DashboardViewervue_type_template_id_4eacb3a8_scoped_true_withScopeId = n => (_pushScopeId("data-v-4eacb3a8"), n = n(), _popScopeId(), n);
+const DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_1 = {
   class: "AG-viewer-title"
 };
-const DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_2 = {
+const DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_2 = {
   class: "AG-viewer-dashboard"
 };
-const DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_3 = {
+const DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_3 = {
   class: "AG-viewer-col"
 };
-function DashboardViewervue_type_template_id_61048cc0_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock(runtime_core_esm_bundler_Fragment, null, [createBaseVNode("div", DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_1, [createBaseVNode("h1", null, toDisplayString($props.dashboard.title), 1)]), createBaseVNode("div", DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_2, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($options.rows, (row, index) => {
+function DashboardViewervue_type_template_id_4eacb3a8_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(runtime_core_esm_bundler_Fragment, null, [createBaseVNode("div", DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_1, [createBaseVNode("h1", null, toDisplayString($props.dashboard.title), 1)]), createBaseVNode("div", DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_2, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($options.rows, (row, index) => {
     return openBlock(), createElementBlock("div", {
       key: index,
       class: "AG-viewer-row"
     }, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(row, (graph, index) => {
       return openBlock(), createElementBlock("div", {
         key: index
-      }, [createBaseVNode("div", DashboardViewervue_type_template_id_61048cc0_scoped_true_hoisted_3, [(openBlock(), createBlock(resolveDynamicComponent($data.GraphTypes[graph.type].graph), {
+      }, [createBaseVNode("div", DashboardViewervue_type_template_id_4eacb3a8_scoped_true_hoisted_3, [(openBlock(), createBlock(resolveDynamicComponent($data.GraphTypes[graph.type].graph), {
         parameters: graph.parameters,
         editorMode: false
       }, null, 8, ["parameters"]))])]);
     }), 128))]);
   }), 128))])], 64);
 }
-;// CONCATENATED MODULE: ./src/DashboardViewer.vue?vue&type=template&id=61048cc0&scoped=true
+;// CONCATENATED MODULE: ./src/DashboardViewer.vue?vue&type=template&id=4eacb3a8&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardViewer.vue?vue&type=script&lang=js
 
@@ -72131,7 +72130,7 @@ function DashboardViewervue_type_template_id_61048cc0_scoped_true_render(_ctx, _
   },
   computed: {
     rows() {
-      return this.dashboard && this.dashboard.body ? JSON.parse(this.dashboard.body) : [];
+      return this.dashboard && this.dashboard.body ? JSON.parse(JSON.stringify(this.dashboard.body)) : [];
     }
   },
   data() {
@@ -72142,10 +72141,10 @@ function DashboardViewervue_type_template_id_61048cc0_scoped_true_render(_ctx, _
 });
 ;// CONCATENATED MODULE: ./src/DashboardViewer.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardViewer.vue?vue&type=style&index=0&id=61048cc0&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/DashboardViewer.vue?vue&type=style&index=0&id=4eacb3a8&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/DashboardViewer.vue?vue&type=style&index=0&id=61048cc0&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/DashboardViewer.vue?vue&type=style&index=0&id=4eacb3a8&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/DashboardViewer.vue
 
@@ -72155,7 +72154,7 @@ function DashboardViewervue_type_template_id_61048cc0_scoped_true_render(_ctx, _
 ;
 
 
-const DashboardViewer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DashboardViewervue_type_script_lang_js, [['render',DashboardViewervue_type_template_id_61048cc0_scoped_true_render],['__scopeId',"data-v-61048cc0"]])
+const DashboardViewer_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(DashboardViewervue_type_script_lang_js, [['render',DashboardViewervue_type_template_id_4eacb3a8_scoped_true_render],['__scopeId',"data-v-4eacb3a8"]])
 
 /* harmony default export */ var DashboardViewer = (DashboardViewer_exports_);
 ;// CONCATENATED MODULE: ./node_modules/@fortawesome/fontawesome-svg-core/index.mjs
